@@ -1,0 +1,1531 @@
+[
+  {
+    "id": 0,
+    "title": "Effectiveness of a brain-computer interface based programme for the treatment of ADHD: a pilot study.",
+    "year": 2025,
+    "citations": 73,
+    "bci_keywords": [
+      "brain",
+      "attention"
+    ],
+    "keyword_count": 2,
+    "abstract": "Majority of children with attention deficit hyperactivity disorder (ADHD) have significant inattentive symptoms. We developed a progressive series of activities involving brain-computer interface-based games which could train users to improve their concentration. This pilot study investigated if the intervention could be utilized in children and if it could improve inattentive symptoms of ADHD. Ten medication-naive children aged 7 to 12 diagnosed with ADHD (combined or inattentive subtypes) received 20 sessions of therapy over a 10-week period. They were compared with age- and gendermatched controls. Both parent and teacher-rated inattentive score on the ADHD Rating Scale-IV improved more in the intervention group. A larger scale trial is warranted to further investigate the efficacy of our treatment programme in treating ADHD."
+  },
+  {
+    "id": 1,
+    "title": "BCI2000: a general-purpose brain-computer interface (BCI) system",
+    "year": 2004,
+    "citations": 3128,
+    "bci_keywords": [
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 2,
+    "title": "Recent applications of EEG-based brain-computer-interface in the medical field",
+    "year": 2025,
+    "citations": 85,
+    "bci_keywords": [
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "rehabilitation"
+    ],
+    "keyword_count": 7,
+    "abstract": "Brain-computer interfaces (BCIs) represent an emerging technology that facilitates direct communication between the brain and external devices. In recent years, numerous review articles have explored various aspects of BCIs, including their fundamental principles, technical advancements, and applications in specific domains. However, these reviews often focus on signal processing, hardware development, or limited applications such as motor rehabilitation or communication. This paper aims to offer a comprehensive review of recent electroencephalogram (EEG)-based BCI applications in the medical field across 8 critical areas, encompassing rehabilitation, daily communication, epilepsy, cerebral resuscitation, sleep, neurodegenerative diseases, anesthesiology, and emotion recognition. Moreover, the current challenges and future trends of BCIs were also discussed, including personal privacy and ethical concerns, network security vulnerabilities, safety issues, and biocompatibility."
+  },
+  {
+    "id": 3,
+    "title": "A high-performance brain–computer interface for finger decoding and quadcopter game control in an individual with paralysis",
+    "year": 2025,
+    "citations": 56,
+    "bci_keywords": [
+      "brain",
+      "paralysis",
+      "decoding"
+    ],
+    "keyword_count": 3,
+    "abstract": "People with paralysis express unmet needs for peer support, leisure activities and sporting activities. Many within the general population rely on social media and massively multiplayer video games to address these needs. We developed a high-performance, finger-based brain–computer-interface system allowing continuous control of three independent finger groups, of which the thumb can be controlled in two dimensions, yielding a total of four degrees of freedom. The system was tested in a human research participant with tetraplegia due to spinal cord injury over sequential trials requiring fingers to reach and hold on targets, with an average acquisition rate of 76 targets per minute and completion time of 1.58 ± 0.06 seconds—comparing favorably to prior animal studies despite a twofold increase in the decoded degrees of freedom. More importantly, finger positions were then used to control a virtual quadcopter—the number-one restorative priority for the participant—using a brain-to-finger-to-computer interface to allow dexterous navigation around fixed- and random-ringed obstacle courses. The participant expressed or demonstrated a sense of enablement, recreation and social connectedness that addresses many of the unmet needs of people with paralysis. A finger-based brain–computer interface was developed for a person with tetraplegia to allow him to fly a virtual quadcopter, an innovation that can lead to improved social connectedness, recreation and a sense of enablement."
+  },
+  {
+    "id": 4,
+    "title": "Brain Neuroplasticity Leveraging Virtual Reality and Brain–Computer Interface Technologies",
+    "year": 2024,
+    "citations": 85,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "motor",
+      "cognitive",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 7,
+    "abstract": "This study explores neuroplasticity through the use of virtual reality (VR) and brain–computer interfaces (BCIs). Neuroplasticity is the brain’s ability to reorganize itself by forming new neural connections in response to learning, experience, and injury. VR offers a controlled environment to manipulate sensory inputs, while BCIs facilitate real-time monitoring and modulation of neural activity. By combining VR and BCI, researchers can stimulate specific brain regions, trigger neurochemical changes, and influence cognitive functions such as memory, perception, and motor skills. Key findings indicate that VR and BCI interventions are promising for rehabilitation therapies, treatment of phobias and anxiety disorders, and cognitive enhancement. Personalized VR experiences, adapted based on BCI feedback, enhance the efficacy of these interventions. This study underscores the potential for integrating VR and BCI technologies to understand and harness neuroplasticity for cognitive and therapeutic applications. The researchers utilized the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) method to conduct a comprehensive and systematic review of the existing literature on neuroplasticity, VR, and BCI. This involved identifying relevant studies through database searches, screening for eligibility, and assessing the quality of the included studies. Data extraction focused on the effects of VR and BCI on neuroplasticity and cognitive functions. The PRISMA method ensured a rigorous and transparent approach to synthesizing evidence, allowing the researchers to draw robust conclusions about the potential of VR and BCI technologies in promoting neuroplasticity and cognitive enhancement."
+  },
+  {
+    "id": 5,
+    "title": "Brain–computer interface: trend, challenges, and threats",
+    "year": 2023,
+    "citations": 122,
+    "bci_keywords": [
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 2,
+    "abstract": "Brain–computer interface (BCI), an emerging technology that facilitates communication between brain and computer, has attracted a great deal of research in recent years. Researchers provide experimental results demonstrating that BCI can restore the capabilities of physically challenged people, hence improving the quality of their lives. BCI has revolutionized and positively impacted several industries, including entertainment and gaming, automation and control, education, neuromarketing, and neuroergonomics. Notwithstanding its broad range of applications, the global trend of BCI remains lightly discussed in the literature. Understanding the trend may inform researchers and practitioners on the direction of the field, and on where they should invest their efforts more. Noting this significance, we have analyzed 25,336 metadata of BCI publications from Scopus to determine advancement of the field. The analysis shows an exponential growth of BCI publications in China from 2019 onwards, exceeding those from the United States that started to decline during the same period. Implications and reasons for this trend are discussed. Furthermore, we have extensively discussed challenges and threats limiting exploitation of BCI capabilities. A typical BCI architecture is hypothesized to address two prominent BCI threats, privacy and security, as an attempt to make the technology commercially viable to the society."
+  },
+  {
+    "id": 6,
+    "title": "Status of deep learning for EEG-based brain–computer interface applications",
+    "year": 2023,
+    "citations": 117,
+    "bci_keywords": [
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "motor",
+      "attention",
+      "seizure",
+      "stroke",
+      "deep learning",
+      "machine learning",
+      "classification",
+      "rehabilitation"
+    ],
+    "keyword_count": 12,
+    "abstract": "In the previous decade, breakthroughs in the central nervous system bioinformatics and computational innovation have prompted significant developments in brain–computer interface (BCI), elevating it to the forefront of applied science and research. BCI revitalization enables neurorehabilitation strategies for physically disabled patients (e.g., disabled patients and hemiplegia) and patients with brain injury (e.g., patients with stroke). Different methods have been developed for electroencephalogram (EEG)-based BCI applications. Due to the lack of a large set of EEG data, methods using matrix factorization and machine learning were the most popular. However, things have changed recently because a number of large, high-quality EEG datasets are now being made public and used in deep learning-based BCI applications. On the other hand, deep learning is demonstrating great prospects for solving complex relevant tasks such as motor imagery classification, epileptic seizure detection, and driver attention recognition using EEG data. Researchers are doing a lot of work on deep learning-based approaches in the BCI field right now. Moreover, there is a great demand for a study that emphasizes only deep learning models for EEG-based BCI applications. Therefore, we introduce this study to the recent proposed deep learning-based approaches in BCI using EEG data (from 2017 to 2022). The main differences, such as merits, drawbacks, and applications are introduced. Furthermore, we point out current challenges and the directions for future studies. We argue that this review study will help the EEG research community in their future research."
+  },
+  {
+    "id": 7,
+    "title": "A comprehensive review of EEG-based brain–computer interface paradigms",
+    "year": 2019,
+    "citations": 833,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "prosthetic",
+      "motor",
+      "stroke",
+      "machine learning",
+      "classification",
+      "decoding",
+      "wireless",
+      "rehabilitation"
+    ],
+    "keyword_count": 12,
+    "abstract": "Advances in brain science and computer technology in the past decade have led to exciting developments in brain–computer interface (BCI), thereby making BCI a top research area in applied science. The renaissance of BCI opens new methods of neurorehabilitation for physically disabled people (e.g. paralyzed patients and amputees) and patients with brain injuries (e.g. stroke patients). Recent technological advances such as wireless recording, machine learning analysis, and real-time temporal resolution have increased interest in electroencephalographic (EEG) based BCI approaches. Many BCI studies have focused on decoding EEG signals associated with whole-body kinematics/kinetics, motor imagery, and various senses. Thus, there is a need to understand the various experimental paradigms used in EEG-based BCI systems. Moreover, given that there are many available options, it is essential to choose the most appropriate BCI application to properly manipulate a neuroprosthetic or neurorehabilitation device. The current review evaluates EEG-based BCI paradigms regarding their advantages and disadvantages from a variety of perspectives. For each paradigm, various EEG decoding algorithms and classification methods are evaluated. The applications of these paradigms with targeted patients are summarized. Finally, potential problems with EEG-based BCI systems are discussed, and possible solutions are proposed."
+  },
+  {
+    "id": 8,
+    "title": "Brain-computer interface technology: a review of the first international meeting.",
+    "year": 2000,
+    "citations": 2282,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 9,
+    "title": "Human emotion recognition from EEG-based brain–computer interface using machine learning: a comprehensive review",
+    "year": 2022,
+    "citations": 346,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "deep learning",
+      "machine learning",
+      "classification",
+      "invasive",
+      "non-invasive"
+    ],
+    "keyword_count": 11,
+    "abstract": "Affective computing, a subcategory of artificial intelligence, detects, processes, interprets, and mimics human emotions. Thanks to the continued advancement of portable non-invasive human sensor technologies, like brain–computer interfaces (BCI), emotion recognition has piqued the interest of academics from a variety of domains. Facial expressions, speech, behavior (gesture/posture), and physiological signals can all be used to identify human emotions. However, the first three may be ineffectual because people may hide their true emotions consciously or unconsciously (so-called social masking). Physiological signals can provide more accurate and objective emotion recognition. Electroencephalogram (EEG) signals respond in real time and are more sensitive to changes in affective states than peripheral neurophysiological signals. Thus, EEG signals can reveal important features of emotional states. Recently, several EEG-based BCI emotion recognition techniques have been developed. In addition, rapid advances in machine and deep learning have enabled machines or computers to understand, recognize, and analyze emotions. This study reviews emotion recognition methods that rely on multi-channel EEG signal-based BCIs and provides an overview of what has been accomplished in this area. It also provides an overview of the datasets and methods used to elicit emotional states. According to the usual emotional recognition pathway, we review various EEG feature extraction, feature selection/reduction, machine learning methods (e.g., k-nearest neighbor), support vector machine, decision tree, artificial neural network, random forest, and naive Bayes) and deep learning methods (e.g., convolutional and recurrent neural networks with long short term memory). In addition, EEG rhythms that are strongly linked to emotions as well as the relationship between distinct brain areas and emotions are discussed. We also discuss several human emotion recognition studies, published between 2015 and 2021, that use EEG data and compare different machine and deep learning algorithms. Finally, this review suggests several challenges and future research directions in the recognition and classification of human emotional states using EEG."
+  },
+  {
+    "id": 10,
+    "title": "Flexible Electrodes for Brain–Computer Interface System",
+    "year": 2023,
+    "citations": 95,
+    "bci_keywords": [
+      "electrode",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 6,
+    "abstract": "Brain–computer interface (BCI) has been the subject of extensive research recently. Governments and companies have substantially invested in relevant research and applications. The restoration of communication and motor function, the treatment of psychological disorders, gaming, and other daily and therapeutic applications all benefit from BCI. The electrodes hold the key to the essential, fundamental BCI precondition of electrical brain activity detection and delivery. However, the traditional rigid electrodes are limited due to their mismatch in Young's modulus, potential damages to the human body, and a decline in signal quality with time. These factors make the development of flexible electrodes vital and urgent. Flexible electrodes made of soft materials have grown in popularity in recent years as an alternative to conventional rigid electrodes because they offer greater conformance, the potential for higher signal‐to‐noise ratio (SNR) signals, and a wider range of applications. Therefore, the latest classifications and future developmental directions of fabricating these flexible electrodes are explored in this paper to further encourage the speedy advent of flexible electrodes for BCI. In summary, the perspectives and future outlook for this developing discipline are provided."
+  },
+  {
+    "id": 11,
+    "title": "State-of-the-Art on Brain-Computer Interface Technology",
+    "year": 2023,
+    "citations": 118,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 3,
+    "abstract": "This paper provides a comprehensive overview of the state-of-the-art in brain–computer interfaces (BCI). It begins by providing an introduction to BCIs, describing their main operation principles and most widely used platforms. The paper then examines the various components of a BCI system, such as hardware, software, and signal processing algorithms. Finally, it looks at current trends in research related to BCI use for medical, educational, and other purposes, as well as potential future applications of this technology. The paper concludes by highlighting some key challenges that still need to be addressed before widespread adoption can occur. By presenting an up-to-date assessment of the state-of-the-art in BCI technology, this paper will provide valuable insight into where this field is heading in terms of progress and innovation."
+  },
+  {
+    "id": 12,
+    "title": "A brain-computer interface that evokes tactile sensations improves robotic arm control",
+    "year": 2021,
+    "citations": 497,
+    "bci_keywords": [
+      "neural",
+      "brain",
+      "cortex",
+      "neuron",
+      "prosthetic",
+      "motor",
+      "feedback"
+    ],
+    "keyword_count": 7,
+    "abstract": "A boost for brain–computer interfaces The finely controlled movement of our limbs requires two-way neuronal communication between the brain and the body periphery. This includes afferent information from muscles, joints, and skin, as well as visual feedback to plan, initiate, and execute motor output. In tetraplegia, this neural communication is interrupted in both directions at the level of the spinal cord. Brain–computer interfaces have been developed to produce voluntary motor output controlled by directly recording from brain activity. Flesher et al. added an afferent channel to the brain–computer interface to mimic sensory input from the skin of a hand (see the Perspective by Faisal). The improvements achieved by adding the afferent input were substantial in a battery of motor tasks tested in a human subject. Science, abd0380, this issue p. 831; see also abi7262, p. 791 Creating artificial tactile feedback greatly improves the ability of a person with tetraplegia to manipulate objects with a robotic limb. Prosthetic arms controlled by a brain-computer interface can enable people with tetraplegia to perform functional movements. However, vision provides limited feedback because information about grasping objects is best relayed through tactile feedback. We supplemented vision with tactile percepts evoked using a bidirectional brain-computer interface that records neural activity from the motor cortex and generates tactile sensations through intracortical microstimulation of the somatosensory cortex. This enabled a person with tetraplegia to substantially improve performance with a robotic limb; trial times on a clinical upper-limb assessment were reduced by half, from a median time of 20.9 to 10.2 seconds. Faster times were primarily due to less time spent attempting to grasp objects, revealing that mimicking known biological control principles results in task performance that is closer to able-bodied human abilities."
+  },
+  {
+    "id": 13,
+    "title": "Modulating Brain Activity with Invasive Brain–Computer Interface: A Narrative Review",
+    "year": 2023,
+    "citations": 67,
+    "bci_keywords": [
+      "neural",
+      "electrode",
+      "bci",
+      "brain",
+      "neuron",
+      "signal",
+      "attention",
+      "decoding",
+      "invasive"
+    ],
+    "keyword_count": 9,
+    "abstract": "Brain-computer interface (BCI) can be used as a real-time bidirectional information gateway between the brain and machines. In particular, rapid progress in invasive BCI, propelled by recent developments in electrode materials, miniature and power-efficient electronics, and neural signal decoding technologies has attracted wide attention. In this review, we first introduce the concepts of neuronal signal decoding and encoding that are fundamental for information exchanges in BCI. Then, we review the history and recent advances in invasive BCI, particularly through studies using neural signals for controlling external devices on one hand, and modulating brain activity on the other hand. Specifically, regarding modulating brain activity, we focus on two types of techniques, applying electrical stimulation to cortical and deep brain tissues, respectively. Finally, we discuss the related ethical issues concerning the clinical application of this emerging technology."
+  },
+  {
+    "id": 14,
+    "title": "Review on brain-computer interface technologies in healthcare",
+    "year": 2023,
+    "citations": 58,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 15,
+    "title": "FBCNet: A Multi-view Convolutional Neural Network for Brain-Computer Interface",
+    "year": 2021,
+    "citations": 226,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "stroke",
+      "classification",
+      "decoding"
+    ],
+    "keyword_count": 8,
+    "abstract": "Lack of adequate training samples and noisy high-dimensional features are key challenges faced by Motor Imagery (MI) decoding algorithms for electroencephalogram (EEG) based Brain-Computer Interface (BCI). To address these challenges, inspired from neuro-physiological signatures of MI, this paper proposes a novel Filter-Bank Convolutional Network (FBCNet) for MI classification. FBCNet employs a multi-view data representation followed by spatial filtering to extract spectro-spatially discriminative features. This multistage approach enables efficient training of the network even when limited training data is available. More significantly, in FBCNet, we propose a novel Variance layer that effectively aggregates the EEG time-domain information. With this design, we compare FBCNet with state-of-the-art (SOTA) BCI algorithm on four MI datasets: The BCI competition IV dataset 2a (BCIC-IV-2a), the OpenBMI dataset, and two large datasets from chronic stroke patients. The results show that, by achieving 76.20% 4-class classification accuracy, FBCNet sets a new SOTA for BCIC-IV-2a dataset. On the other three datasets, FBCNet yields up to 8% higher binary classification accuracies. Additionally, using explainable AI techniques we present one of the first reports about the differences in discriminative EEG features between healthy subjects and stroke patients. Also, the FBCNet source code is available at https://github.com/ravikiran-mane/FBCNet."
+  },
+  {
+    "id": 16,
+    "title": "Review of Machine Learning Techniques for EEG Based Brain Computer Interface",
+    "year": 2022,
+    "citations": 231,
+    "bci_keywords": [
+      "eeg",
+      "brain",
+      "machine learning"
+    ],
+    "keyword_count": 3,
+    "abstract": null
+  },
+  {
+    "id": 17,
+    "title": "Brain-Computer Interface: Applications to Speech Decoding and Synthesis to Augment Communication",
+    "year": 2022,
+    "citations": 96,
+    "bci_keywords": [
+      "brain",
+      "decoding"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 18,
+    "title": "LGGNet: Learning From Local-Global-Graph Representations for Brain–Computer Interface",
+    "year": 2021,
+    "citations": 166,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "cognitive",
+      "attention",
+      "classification"
+    ],
+    "keyword_count": 7,
+    "abstract": "Neuropsychological studies suggest that co-operative activities among different brain functional areas drive high-level cognitive processes. To learn the brain activities within and among different functional areas of the brain, we propose local-global-graph network (LGGNet), a novel neurologically inspired graph neural network (GNN), to learn local-global-graph (LGG) representations of electroencephalography (EEG) for brain–computer interface (BCI). The input layer of LGGNet comprises a series of temporal convolutions with multiscale 1-D convolutional kernels and kernel-level attentive fusion. It captures temporal dynamics of EEG which then serves as input to the proposed local- and global-graph-filtering layers. Using a defined neurophysiologically meaningful set of local and global graphs, LGGNet models the complex relations within and among functional areas of the brain. Under the robust nested cross-validation settings, the proposed method is evaluated on three publicly available datasets for four types of cognitive classification tasks, namely the attention, fatigue, emotion, and preference classification tasks. LGGNet is compared with state-of-the-art (SOTA) methods, such as DeepConvNet, EEGNet, R2G-STNN, TSception, regularized graph neural network (RGNN), attention-based multiscale convolutional neural network-dynamical graph convolutional network (AMCNN-DGCN), hierarchical recurrent neural network (HRNN), and GraphNet. The results show that LGGNet outperforms these methods, and the improvements are statistically significant ( $p< 0.05$ ) in most cases. The results show that bringing neuroscience prior knowledge into neural network design yields an improvement of classification performance. The source code can be found at https://github.com/yi-ding-cs/LGG."
+  },
+  {
+    "id": 19,
+    "title": "Current Status, Challenges, and Possible Solutions of EEG-Based Brain-Computer Interface: A Comprehensive Review",
+    "year": 2020,
+    "citations": 415,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "attention",
+      "classification"
+    ],
+    "keyword_count": 6,
+    "abstract": "Brain-Computer Interface (BCI), in essence, aims at controlling different assistive devices through the utilization of brain waves. It is worth noting that the application of BCI is not limited to medical applications, and hence, the research in this field has gained due attention. Moreover, the significant number of related publications over the past two decades further indicates the consistent improvements and breakthroughs that have been made in this particular field. Nonetheless, it is also worth mentioning that with these improvements, new challenges are constantly discovered. This article provides a comprehensive review of the state-of-the-art of a complete BCI system. First, a brief overview of electroencephalogram (EEG)-based BCI systems is given. Secondly, a considerable number of popular BCI applications are reviewed in terms of electrophysiological control signals, feature extraction, classification algorithms, and performance evaluation metrics. Finally, the challenges to the recent BCI systems are discussed, and possible solutions to mitigate the issues are recommended."
+  },
+  {
+    "id": 20,
+    "title": "fMRI Brain Decoding and Its Applications in Brain–Computer Interface: A Survey",
+    "year": 2022,
+    "citations": 71,
+    "bci_keywords": [
+      "neural",
+      "ecog",
+      "fmri",
+      "bci",
+      "brain",
+      "attention",
+      "deep learning",
+      "machine learning",
+      "decoding"
+    ],
+    "keyword_count": 9,
+    "abstract": "Brain neural activity decoding is an important branch of neuroscience research and a key technology for the brain–computer interface (BCI). Researchers initially developed simple linear models and machine learning algorithms to classify and recognize brain activities. With the great success of deep learning on image recognition and generation, deep neural networks (DNN) have been engaged in reconstructing visual stimuli from human brain activity via functional magnetic resonance imaging (fMRI). In this paper, we reviewed the brain activity decoding models based on machine learning and deep learning algorithms. Specifically, we focused on current brain activity decoding models with high attention: variational auto-encoder (VAE), generative confrontation network (GAN), and the graph convolutional network (GCN). Furthermore, brain neural-activity-decoding-enabled fMRI-based BCI applications in mental and psychological disease treatment are presented to illustrate the positive correlation between brain decoding and BCI. Finally, existing challenges and future research directions are addressed."
+  },
+  {
+    "id": 21,
+    "title": "Brain-Computer Interface: Advancement and Challenges",
+    "year": 2021,
+    "citations": 209,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 3,
+    "abstract": "Brain-Computer Interface (BCI) is an advanced and multidisciplinary active research domain based on neuroscience, signal processing, biomedical sensors, hardware, etc. Since the last decades, several groundbreaking research has been conducted in this domain. Still, no comprehensive review that covers the BCI domain completely has been conducted yet. Hence, a comprehensive overview of the BCI domain is presented in this study. This study covers several applications of BCI and upholds the significance of this domain. Then, each element of BCI systems, including techniques, datasets, feature extraction methods, evaluation measurement matrices, existing BCI algorithms, and classifiers, are explained concisely. In addition, a brief overview of the technologies or hardware, mostly sensors used in BCI, is appended. Finally, the paper investigates several unsolved challenges of the BCI and explains them with possible solutions."
+  },
+  {
+    "id": 22,
+    "title": "Brain–Computer Interface-Controlled Exoskeletons in Clinical Neurorehabilitation: Ready or Not?",
+    "year": 2022,
+    "citations": 64,
+    "bci_keywords": [
+      "neural",
+      "brain",
+      "signal",
+      "motor",
+      "stroke",
+      "paralysis",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 8,
+    "abstract": "The development of brain–computer interface-controlled exoskeletons promises new treatment strategies for neurorehabilitation after stroke or spinal cord injury. By converting brain/neural activity into control signals of wearable actuators, brain/neural exoskeletons (B/NEs) enable the execution of movements despite impaired motor function. Beyond the use as assistive devices, it was shown that—upon repeated use over several weeks—B/NEs can trigger motor recovery, even in chronic paralysis. Recent development of lightweight robotic actuators, comfortable and portable real-world brain recordings, as well as reliable brain/neural control strategies have paved the way for B/NEs to enter clinical care. Although B/NEs are now technically ready for broader clinical use, their promotion will critically depend on early adopters, for example, research-oriented physiotherapists or clinicians who are open for innovation. Data collected by early adopters will further elucidate the underlying mechanisms of B/NE-triggered motor recovery and play a key role in increasing efficacy of personalized treatment strategies. Moreover, early adopters will provide indispensable feedback to the manufacturers necessary to further improve robustness, applicability, and adoption of B/NEs into existing therapy plans."
+  },
+  {
+    "id": 23,
+    "title": "A Comprehensive Review on Critical Issues and Possible Solutions of Motor Imagery Based Electroencephalography Brain-Computer Interface",
+    "year": 2021,
+    "citations": 162,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 6,
+    "abstract": "Motor imagery (MI) based brain–computer interface (BCI) aims to provide a means of communication through the utilization of neural activity generated due to kinesthetic imagination of limbs. Every year, a significant number of publications that are related to new improvements, challenges, and breakthrough in MI-BCI are made. This paper provides a comprehensive review of the electroencephalogram (EEG) based MI-BCI system. It describes the current state of the art in different stages of the MI-BCI (data acquisition, MI training, preprocessing, feature extraction, channel and feature selection, and classification) pipeline. Although MI-BCI research has been going for many years, this technology is mostly confined to controlled lab environments. We discuss recent developments and critical algorithmic issues in MI-based BCI for commercial deployment."
+  },
+  {
+    "id": 24,
+    "title": "Brain-computer interface for hands-free teleoperation of construction robots",
+    "year": 2021,
+    "citations": 141,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 3,
+    "abstract": "Abstract Recently, the use of collaborative robots has started to emerge at construction sites. Such incorporation into these human-dominated environments can raise safety concerns as most robots are not fully automated and require some sort of control mechanism. Conventional control systems may fall short under specific situations in which workers require robotic assistance but cannot use their hands to control the robot. Brain-computer interface (BCI) can offer such hands-free controllability, a non-muscular communicative channel that can establish an interpretive pathway between humans and robots. This paper proposes a BCI-based system to remotely control a robot by continuously capturing workers' brainwaves acquired from a wearable electroencephalogram (EEG) device and interpreting them into robotic commands with 90% accuracy. The findings revealed the proposed system holds promise for enhancing robot control in hazardous operations where the ability of the worker to physically direct the robot is limited, such as underwater and space construction."
+  },
+  {
+    "id": 25,
+    "title": "2020 International brain–computer interface competition: A review",
+    "year": 2022,
+    "citations": 55,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "classification",
+      "decoding"
+    ],
+    "keyword_count": 5,
+    "abstract": "The brain-computer interface (BCI) has been investigated as a form of communication tool between the brain and external devices. BCIs have been extended beyond communication and control over the years. The 2020 international BCI competition aimed to provide high-quality neuroscientific data for open access that could be used to evaluate the current degree of technical advances in BCI. Although there are a variety of remaining challenges for future BCI advances, we discuss some of more recent application directions: (i) few-shot EEG learning, (ii) micro-sleep detection (iii) imagined speech decoding, (iv) cross-session classification, and (v) EEG(+ear-EEG) detection in an ambulatory environment. Not only did scientists from the BCI field compete, but scholars with a broad variety of backgrounds and nationalities participated in the competition to address these challenges. Each dataset was prepared and separated into three data that were released to the competitors in the form of training and validation sets followed by a test set. Remarkable BCI advances were identified through the 2020 competition and indicated some trends of interest to BCI researchers."
+  },
+  {
+    "id": 26,
+    "title": "Learning Temporal Information for Brain-Computer Interface Using Convolutional Neural Networks",
+    "year": 2018,
+    "citations": 543,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "deep learning",
+      "classification"
+    ],
+    "keyword_count": 7,
+    "abstract": "Deep learning (DL) methods and architectures have been the state-of-the-art classification algorithms for computer vision and natural language processing problems. However, the successful application of these methods in motor imagery (MI) brain–computer interfaces (BCIs), in order to boost classification performance, is still limited. In this paper, we propose a classification framework for MI data by introducing a new temporal representation of the data and also utilizing a convolutional neural network (CNN) architecture for classification. The new representation is generated from modifying the filter-bank common spatial patterns method, and the CNN is designed and optimized accordingly for the representation. Our framework outperforms the best classification method in the literature on the BCI competition IV-2a 4-class MI data set by 7% increase in average subject accuracy. Furthermore, by studying the convolutional weights of the trained networks, we gain an insight into the temporal characteristics of EEG."
+  },
+  {
+    "id": 27,
+    "title": "A systematic review on hybrid EEG/fNIRS in brain-computer interface",
+    "year": 2021,
+    "citations": 129,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 4,
+    "abstract": "Abstract As a relatively new field of neurology and computer science, brain computer interface (BCI) has many established and burgeoning applications across scientific disciplines. Many neural monitoring technologies have been developed for BCI studies. Combining multiple monitoring technologies provides a new approach that synthesizes the advantages and overcomes the limitations of each technology. This article presents a systematic review on the applications, limitations, and future directions for the hybridization of electroencephalography (EEG) and functional near-infrared spectroscopy (fNIRS) into one synchronous multimodality. This review investigated research questions on design and usability of hybrid EEG-fNIRS studies. In this article, 765 papers were included in the initial search and 128 papers were selected through the PRISMA protocol. The review results show the possibility of improving the performance of hybrid EEG-fNIRS by optimizing the feature extraction algorithms and physical designing as well as expending more possible applications in information processing related fields."
+  },
+  {
+    "id": 28,
+    "title": "Home Use of a Percutaneous Wireless Intracortical Brain-Computer Interface by Individuals With Tetraplegia",
+    "year": 2021,
+    "citations": 116,
+    "bci_keywords": [
+      "neural",
+      "electrode",
+      "bci",
+      "brain",
+      "signal",
+      "implant",
+      "motor",
+      "stroke",
+      "paralysis",
+      "decoding",
+      "wireless"
+    ],
+    "keyword_count": 11,
+    "abstract": "Objective. Individuals with neurological disease or injury such as amyotrophic lateral sclerosis, spinal cord injury or stroke may become tetraplegic, unable to speak or even locked-in. For people with these conditions, current assistive technologies are often ineffective. Brain-computer interfaces are being developed to enhance independence and restore communication in the absence of physical movement. Over the past decade, individuals with tetraplegia have achieved rapid on-screen typing and point-and-click control of tablet apps using intracortical brain-computer interfaces (iBCIs) that decode intended arm and hand movements from neural signals recorded by implanted microelectrode arrays. However, cables used to convey neural signals from the brain tether participants to amplifiers and decoding computers and require expert oversight, severely limiting when and where iBCIs could be available for use. Here, we demonstrate the first human use of a wireless broadband iBCI. Methods. Based on a prototype system previously used in pre-clinical research, we replaced the external cables of a 192-electrode iBCI with wireless transmitters and achieved high-resolution recording and decoding of broadband field potentials and spiking activity from people with paralysis. Two participants in an ongoing pilot clinical trial completed on-screen item selection tasks to assess iBCI-enabled cursor control. Results: Communication bitrates were equivalent between cabled and wireless configurations. Participants also used the wireless iBCI to control a standard commercial tablet computer to browse the web and use several mobile applications. Within-day comparison of cabled and wireless interfaces evaluated bit error rate, packet loss, and the recovery of spike rates and spike waveforms from the recorded neural signals. In a representative use case, the wireless system recorded intracortical signals from two arrays in one participant continuously through a 24-hour period at home. Significance. Wireless multi-electrode recording of broadband neural signals over extended periods introduces a valuable tool for human neuroscience research and is an important step toward practical deployment of iBCI technology for independent use by individuals with paralysis. On-demand access to high-performance iBCI technology in the home promises to enhance independence and restore communication and mobility for individuals with severe motor impairment."
+  },
+  {
+    "id": 29,
+    "title": "Review of brain encoding and decoding mechanisms for EEG-based brain–computer interface",
+    "year": 2021,
+    "citations": 82,
+    "bci_keywords": [
+      "eeg",
+      "brain",
+      "decoding"
+    ],
+    "keyword_count": 3,
+    "abstract": null
+  },
+  {
+    "id": 30,
+    "title": "High-speed spelling with a noninvasive brain–computer interface",
+    "year": 2015,
+    "citations": 867,
+    "bci_keywords": [
+      "brain",
+      "invasive"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 31,
+    "title": "Stabilization of a brain-computer interface via the alignment of low-dimensional spaces of neural activity",
+    "year": 2020,
+    "citations": 212,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "neuron"
+    ],
+    "keyword_count": 4,
+    "abstract": "The instability of neural recordings can render clinical brain–computer interfaces (BCIs) uncontrollable. Here, we show that the alignment of low-dimensional neural manifolds (low-dimensional spaces that describe specific correlation patterns between neurons) can be used to stabilize neural activity, thereby maintaining BCI performance in the presence of recording instabilities. We evaluated the stabilizer with non-human primates during online cursor control via intracortical BCIs in the presence of severe and abrupt recording instabilities. The stabilized BCIs recovered proficient control under different instability conditions and across multiple days. The stabilizer does not require knowledge of user intent and can outperform supervised recalibration. It stabilized BCIs even when neural activity contained little information about the direction of cursor movement. The stabilizer may be applicable to other neural interfaces and may improve the clinical viability of BCIs. Neural activity residing in a low-dimensional space that reflects specific correlation patterns among neurons can be used to maintain the performance of brain–computer interfaces in the presence of recording instabilities."
+  },
+  {
+    "id": 32,
+    "title": "Generative Adversarial Networks-Based Data Augmentation for Brain–Computer Interface",
+    "year": 2020,
+    "citations": 192,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "attention",
+      "classification"
+    ],
+    "keyword_count": 7,
+    "abstract": "The performance of a classifier in a brain–computer interface (BCI) system is highly dependent on the quality and quantity of training data. Typically, the training data are collected in a laboratory where the users perform tasks in a controlled environment. However, users’ attention may be diverted in real-life BCI applications and this may decrease the performance of the classifier. To improve the robustness of the classifier, additional data can be acquired in such conditions, but it is not practical to record electroencephalogram (EEG) data over several long calibration sessions. A potentially time- and cost-efficient solution is artificial data generation. Hence, in this study, we proposed a framework based on the deep convolutional generative adversarial networks (DCGANs) for generating artificial EEG to augment the training set in order to improve the performance of a BCI classifier. To make a comparative investigation, we designed a motor task experiment with diverted and focused attention conditions. We used an end-to-end deep convolutional neural network for classification between movement intention and rest using the data from 14 subjects. The results from the leave-one subject-out (LOO) classification yielded baseline accuracies of 73.04% for diverted attention and 80.09% for focused attention without data augmentation. Using the proposed DCGANs-based framework for augmentation, the results yielded a significant improvement of 7.32% for diverted attention ( $p < 0.01$ ) and 5.45% for focused attention ( $p < 0.01$ ). In addition, we implemented the method on the data set IVa from BCI competition III to distinguish different motor imagery tasks. The proposed method increased the accuracy by 3.57% ( $p < 0.02$ ). This study shows that using GANs for EEG augmentation can significantly improve BCI performance, especially in real-life applications, whereby users’ attention may be diverted."
+  },
+  {
+    "id": 33,
+    "title": "Brain-Computer Interface-Based Soft Robotic Glove Rehabilitation for Stroke",
+    "year": 2020,
+    "citations": 130,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "motor",
+      "stroke",
+      "rehabilitation"
+    ],
+    "keyword_count": 5,
+    "abstract": "Objective: This randomized controlled feasibility study investigates the ability for clinical application of the Brain-Computer Interface-based Soft Robotic Glove (BCI-SRG) incorporating activities of daily living (ADL)-oriented tasks for stroke rehabilitation. Methods: Eleven recruited chronic stroke patients were randomized into BCI-SRG or Soft Robotic Glove (SRG) group. Each group underwent 120-minute intervention per session comprising 30-minute standard arm therapy and 90-minute experimental therapy (BCI-SRG or SRG). To perform ADL tasks, BCI-SRG group used motor imagery-BCI and SRG, while SRG group used SRG without motor imagery-BCI. Both groups received 18 sessions of intervention over 6 weeks. Fugl-Meyer Motor Assessment (FMA) and Action Research Arm Test (ARAT) scores were measured at baseline (week 0), post- intervention (week 6), and follow-ups (week 12 and 24). In total, 10/11 patients completed the study with 5 in each group and 1 dropped out. Results: Though there were no significant intergroup differences for FMA and ARAT during 6-week intervention, the improvement of FMA and ARAT seemed to sustain beyond 6-week intervention for BCI-SRG group, as compared with SRG control. Incidentally, all BCI-SRG subjects reported a sense of vivid movement of the stroke-impaired upper limb and 3/5 had this phenomenon persisting beyond intervention while none of SRG did. Conclusion: BCI-SRG suggested probable trends of sustained functional improvements with peculiar kinesthetic experience outlasting active intervention in chronic stroke despite the dire need for large-scale investigations to verify statistical significance. Significance: Addition of BCI to soft robotic training for ADL-oriented stroke rehabilitation holds promise for sustained improvements as well as elicited perception of motor movements."
+  },
+  {
+    "id": 34,
+    "title": "Intra- and Inter-subject Variability in EEG-Based Sensorimotor Brain Computer Interface: A Review",
+    "year": 2020,
+    "citations": 274,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "machine learning",
+      "rehabilitation"
+    ],
+    "keyword_count": 6,
+    "abstract": "Brain computer interfaces (BCI) for the rehabilitation of motor impairments exploit sensorimotor rhythms (SMR) in the electroencephalogram (EEG). However, the neurophysiological processes underpinning the SMR often vary over time and across subjects. Inherent intra- and inter-subject variability causes covariate shift in data distributions that impede the transferability of model parameters amongst sessions/subjects. Transfer learning includes machine learning-based methods to compensate for inter-subject and inter-session (intra-subject) variability manifested in EEG-derived feature distributions as a covariate shift for BCI. Besides transfer learning approaches, recent studies have explored psychological and neurophysiological predictors as well as inter-subject associativity assessment, which may augment transfer learning in EEG-based BCI. Here, we highlight the importance of measuring inter-session/subject performance predictors for generalized BCI frameworks for both normal and motor-impaired people, reducing the necessity for tedious and annoying calibration sessions and BCI training."
+  },
+  {
+    "id": 35,
+    "title": "Theta–gamma coupling as a cortical biomarker of brain–computer interface-mediated motor recovery in chronic stroke",
+    "year": 2022,
+    "citations": 29,
+    "bci_keywords": [
+      "eeg",
+      "brain",
+      "cortex",
+      "signal",
+      "motor",
+      "stroke",
+      "rehabilitation"
+    ],
+    "keyword_count": 7,
+    "abstract": "Abstract Chronic stroke patients with upper-limb motor disabilities are now beginning to see treatment options that were not previously available. To date, the two options recently approved by the United States Food and Drug Administration include vagus nerve stimulation and brain–computer interface therapy. While the mechanisms for vagus nerve stimulation have been well defined, the mechanisms underlying brain–computer interface-driven motor rehabilitation are largely unknown. Given that cross-frequency coupling has been associated with a wide variety of higher-order functions involved in learning and memory, we hypothesized this rhythm-specific mechanism would correlate with the functional improvements effected by a brain–computer interface. This study investigated whether the motor improvements in chronic stroke patients induced with a brain–computer interface therapy are associated with alterations in phase–amplitude coupling, a type of cross-frequency coupling. Seventeen chronic hemiparetic stroke patients used a robotic hand orthosis controlled with contralesional motor cortical signals measured with EEG. Patients regularly performed a therapeutic brain–computer interface task for 12 weeks. Resting-state EEG recordings and motor function data were acquired before initiating brain–computer interface therapy and once every 4 weeks after the therapy. Changes in phase–amplitude coupling values were assessed and correlated with motor function improvements. To establish whether coupling between two different frequency bands was more functionally important than either of those rhythms alone, we calculated power spectra as well. We found that theta–gamma coupling was enhanced bilaterally at the motor areas and showed significant correlations across brain–computer interface therapy sessions. Importantly, an increase in theta–gamma coupling positively correlated with motor recovery over the course of rehabilitation. The sources of theta–gamma coupling increase following brain–computer interface therapy were mostly located in the hand regions of the primary motor cortex on the left and right cerebral hemispheres. Beta–gamma coupling decreased bilaterally at the frontal areas following the therapy, but these effects did not correlate with motor recovery. Alpha–gamma coupling was not altered by brain–computer interface therapy. Power spectra did not change significantly over the course of the brain–computer interface therapy. The significant functional improvement in chronic stroke patients induced by brain–computer interface therapy was strongly correlated with increased theta–gamma coupling in bihemispheric motor regions. These findings support the notion that specific cross-frequency coupling dynamics in the brain likely play a mechanistic role in mediating motor recovery in the chronic phase of stroke recovery."
+  },
+  {
+    "id": 36,
+    "title": "Progress in Brain Computer Interface: Challenges and Opportunities",
+    "year": 2019,
+    "citations": 325,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal",
+      "classification",
+      "rehabilitation"
+    ],
+    "keyword_count": 5,
+    "abstract": "Brain computer interfaces (BCI) provide a direct communication link between the brain and a computer or other external devices. They offer an extended degree of freedom either by strengthening or by substituting human peripheral working capacity and have potential applications in various fields such as rehabilitation, affective computing, robotics, gaming, and neuroscience. Significant research efforts on a global scale have delivered common platforms for technology standardization and help tackle highly complex and non-linear brain dynamics and related feature extraction and classification challenges. Time-variant psycho-neurophysiological fluctuations and their impact on brain signals impose another challenge for BCI researchers to transform the technology from laboratory experiments to plug-and-play daily life. This review summarizes state-of-the-art progress in the BCI field over the last decades and highlights critical challenges."
+  },
+  {
+    "id": 37,
+    "title": "A memristor-based adaptive neuromorphic decoder for brain–computer interfaces",
+    "year": 2025,
+    "citations": 72,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 38,
+    "title": "Brain computer interface advancement in neurosciences: Applications and issues",
+    "year": 2020,
+    "citations": 117,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 3,
+    "abstract": "Abstract Neurosciences and Neuro-technology are continuously advancing and so individuals, society and healthcare professionals have to up date themselves with advancement. Brain computer Interface (BCI) is one such emerging technology in Neurosciences. In a nutshell, BCI technology provides a direct communication between brain and external device bypassing the normal neuromuscular pathways. BCI not only serves medical field & health care but also has role in various other arenas of human life like entertainment, gaming, education, self-control, marketing and so on. Associated with its advantages, BCI takes along with its pitfalls too which may fall into various categories like technological, neurological and ethical. In this review paper, authors discuss about the basic concept of BCI, brain signals and components. We also reviewed the applications of BCI in different fields and practical issues related to usability of BCI. Given the fact that it has a multidisciplinary realm, i.e. neurosciences, physicians of all specialties, nurses, engineers, hospital manager and administration, this review on the subject is written in common language."
+  },
+  {
+    "id": 39,
+    "title": "Plug-and-play control of a brain–computer interface through neural map stabilization",
+    "year": 2020,
+    "citations": 112,
+    "bci_keywords": [
+      "neural",
+      "brain"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 40,
+    "title": "Signal processing techniques for motor imagery brain computer interface: A review",
+    "year": 2019,
+    "citations": 203,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "neuron",
+      "signal",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 7,
+    "abstract": "Abstract Motor Imagery Brain Computer Interface (MI-BCI) provides a non-muscular channel for communication to those who are suffering from neuronal disorders. The designing of an accurate and reliable MI-BCI system requires the extraction of informative and discriminative features. Common Spatial Pattern (CSP) has been potent and is widely used in BCI for extracting features in motor imagery tasks. The classifiers translate these features into device commands. Many classification algorithms have been devised, among those Support Vector Machine (SVM) and Linear Discriminate Analysis (LDA) have been widely used. In recent studies, the researchers are using deep neural networks for the classification of motor imagery tasks. This paper provides a comprehensive review of dominant feature extraction methods and classification algorithms in brain-computer interface for motor imagery tasks. Authors discuss existing challenges in the domain of motor imagery brain-computer interface and suggest possible research directions."
+  },
+  {
+    "id": 41,
+    "title": "Combination of Augmented Reality Based Brain- Computer Interface and Computer Vision for High-Level Control of a Robotic Arm",
+    "year": 2020,
+    "citations": 92,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "attention",
+      "classification"
+    ],
+    "keyword_count": 6,
+    "abstract": "Recent advances in robotics, neuroscience, and signal processing make it possible to operate a robot through electroencephalography (EEG)-based brain-computer interface (BCI). Although some successful attempts have been made in recent years, the practicality of the entire system still has much room for improvement. The present study designed and realized a robotic arm control system by combing augmented reality (AR), computer vision, and steady-state visual evoked potential (SSVEP)-BCI. AR environment was implemented by a Microsoft HoloLens. Flickering stimuli for eliciting SSVEPs were presented on the HoloLens, which allowed users to see both the robotic arm and the user interface of the BCI. Thus users did not need to switch attention between the visual stimulator and the robotic arm. A four-command SSVEP-BCI was built for users to choose the specific object to be operated by the robotic arm. Once an object was selected, the computer vision would provide the location and color of the object in the workspace. Subsequently, the object was autonomously picked up and placed by the robotic arm. According to the online results obtained from twelve participants, the mean classification accuracy of the proposed system was 93.96 ± 5.05%. Moreover, all subjects could utilize the proposed system to successfully pick and place objects in a specific order. These results demonstrated the potential of combining AR-BCI and computer vision to control robotic arms, which is expected to further promote the practicality of BCI-controlled robots."
+  },
+  {
+    "id": 42,
+    "title": "Prognosis for patients with cognitive motor dissociation identified by brain-computer interface",
+    "year": 2020,
+    "citations": 128,
+    "bci_keywords": [
+      "brain",
+      "motor",
+      "cognitive"
+    ],
+    "keyword_count": 3,
+    "abstract": "See Owen (doi:10.1093/brain/awaa056) for a scientific commentary on this article. Pan et al. report that in patients with disorders of consciousness who show no detectable command-following behaviours, about 80% of those identified via a brain-computer interface as having cognitive motor dissociation (CMD) regained or improved consciousness on a behavioural level, versus about 20% of non-CMD patients."
+  },
+  {
+    "id": 43,
+    "title": "Filter bank canonical correlation analysis for implementing a high-speed SSVEP-based brain–computer interface",
+    "year": 2015,
+    "citations": 721,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 44,
+    "title": "Challenges and Opportunities for the Future of Brain-Computer Interface in Neurorehabilitation",
+    "year": 2021,
+    "citations": 45,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 7,
+    "abstract": "Brain-computer interfaces (BCIs) provide a unique technological solution to circumvent the damaged motor system. For neurorehabilitation, the BCI can be used to translate neural signals associated with movement intentions into tangible feedback for the patient, when they are unable to generate functional movement themselves. Clinical interest in BCI is growing rapidly, as it would facilitate rehabilitation to commence earlier following brain damage and provides options for patients who are unable to partake in traditional physical therapy. However, substantial challenges with existing BCI implementations have prevented its widespread adoption. Recent advances in knowledge and technology provide opportunities to facilitate a change, provided that researchers and clinicians using BCI agree on standardisation of guidelines for protocols and shared efforts to uncover mechanisms. We propose that addressing the speed and effectiveness of learning BCI control are priorities for the field, which may be improved by multimodal or multi-stage approaches harnessing more sensitive neuroimaging technologies in the early learning stages, before transitioning to more practical, mobile implementations. Clarification of the neural mechanisms that give rise to improvement in motor function is an essential next step towards justifying clinical use of BCI. In particular, quantifying the unknown contribution of non-motor mechanisms to motor recovery calls for more stringent control conditions in experimental work. Here we provide a contemporary viewpoint on the factors impeding the scalability of BCI. Further, we provide a future outlook for optimal design of the technology to best exploit its unique potential, and best practices for research and reporting of findings."
+  },
+  {
+    "id": 45,
+    "title": "uBrain: a unary brain computer interface",
+    "year": 2022,
+    "citations": 25,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 5,
+    "abstract": "Brain computer interfaces (BCIs) have been widely adopted to enhance human perception via brain signals with abundant spatial-temporal dynamics, such as electroencephalogram (EEG). In recent years, BCI algorithms are moving from classical feature engineering to emerging deep neural networks (DNNs), allowing to identify the spatial-temporal dynamics with improved accuracy. However, existing BCI architectures are not leveraging such dynamics for hardware efficiency. In this work, we present uBrain, a unary computing BCI architecture for DNN models with cascaded convolutional and recurrent neural networks to achieve high task capability and hardware efficiency. uBrain co-designs the algorithm and hardware: the DNN architecture and the hardware architecture are optimized with customized unary operations and immediate signal processing after sensing, respectively. Experiments show that uBrain, with negligible accuracy loss, surpasses the CPU, systolic array and stochastic computing baselines in on-chip power efficiency by 9.0×, 6.2× and 2.0×."
+  },
+  {
+    "id": 46,
+    "title": "Developing a Novel Tactile P300 Brain-Computer Interface With a Cheeks-Stim Paradigm",
+    "year": 2020,
+    "citations": 89,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "classification",
+      "feedback"
+    ],
+    "keyword_count": 4,
+    "abstract": "Objective: Tactile brain-computer interface (BCI) systems can provide new communication and control options for patients with impairments of eye movements or vision. One of the most common modalities used in these BCIs is the P300 potential. Until now, tactile P300 BCIs have been successfully constructed by situating tactile stimuli at various parts of the human body. This article proposed a novel tactile P300 BCI paradigm for further expanding the tactile stimulation methods. Methods: In our proposed paradigm, the spatial target vibrotactile stimuli were delivered to subject's left and right cheeks. To validate the feasibility of our proposed paradigm, a traditional tactile P300 BCI paradigm employing spatial target vibrotactile stimuli to subject's left and right wrists was used for comparison. Results: The experimental results of nine healthy subjects demonstrated that the proposed paradigm could obtain significantly higher classification accuracy and information transfer rate than the traditional paradigm (both for p < 0.05). Furthermore, the subjective feedback showed that our proposed paradigm was more favored by the subjects compared to the traditional paradigm, and most subjects reported that the new paradigm helped them easily distinguish between targets and non-targets. Conclusion: The proposed tactile P300 BCI paradigm is feasible, and can bring about superior performance and use-evaluation. Significance: The new paradigm might lead to many promising applications of such BCIs."
+  },
+  {
+    "id": 47,
+    "title": "Weighted Transfer Learning for Improving Motor Imagery-Based Brain–Computer Interface",
+    "year": 2019,
+    "citations": 153,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 5,
+    "abstract": "One of the major limitations of motor imagery (MI)-based brain–computer interface (BCI) is its long calibration time. Due to between sessions/subjects variations in the properties of brain signals, typically, a large amount of training data needs to be collected at the beginning of each session to calibrate the parameters of the BCI system for the target user. In this paper, we propose a novel transfer learning approach on the classification domain to reduce the calibration time without sacrificing the classification accuracy of MI-BCI. Thus, when only few subject-specific trials are available for training, the estimation of the classification parameters is improved by incorporating previously recorded data from other users. For this purpose, a regularization parameter is added to the objective function of the classifier to make the classification parameters as close as possible to the classification parameters of the previous users who have feature spaces similar to that of the target subject. In this paper, a new similarity measure based on the Kullback–Leibler divergence (KL) is used to measure the similarity between two feature spaces obtained using subject-specific common spatial patterns (CSP). The proposed transfer learning approach is applied on the logistic regression classifier and evaluated using three datasets. The results showed that compared with the subject-specific classifier, the proposed weighted transfer learning classifier improved the classification results, particularly when few subject-specific trials were available for training (p < 0.05). Importantly, this improvement was more pronounced for users with medium and poor accuracy. Moreover, the statistical results showed that the proposed weighted transfer learning classifier performed significantly better than the considered comparable baseline algorithms."
+  },
+  {
+    "id": 48,
+    "title": "State-of-the-art non-invasive brain–computer interface for neural rehabilitation: A review",
+    "year": 2020,
+    "citations": 81,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "cognitive",
+      "attention",
+      "stroke",
+      "invasive",
+      "non-invasive",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 13,
+    "abstract": "Brain–computer interface (BCI) is a novel communication method between brain and machine. It enables signals from the human brain to influence or control external devices. Currently, much research interest is focused on the BCI-based neural rehabilitation of patients with motor and cognitive diseases. Over the decades, BCI has become an alternative treatment for motor and cognitive rehabilitation. Previous studies demonstrated the usefulness of BCI intervention in restoring motor function and recovery of the damaged brain. Electroencephalogram (EEG)-based BCI intervention could cast light on the mechanisms underlying neuroplasticity during upper limb recovery by providing feedback to the damaged brain. BCI could act as a useful tool to aid patients with daily communication and basic movement in severe motor loss cases like amyotrophic lateral sclerosis (ALS). Furthermore, recent findings have reported the therapeutic efficacy of BCI in people suffering from other diseases with different levels of motor impairment such as spastic cerebral palsy, neuropathic pain, etc. Besides motor functional recovery, BCI also plays its role in improving the behavior of patients with cognitive diseases like attention-deficit/hyperactivity disorder (ADHD). The BCI-based neurofeedback training is focused on either reducing the ratio of theta and beta rhythm, or enabling the patients to regulate their own slow cortical potentials, and both have made progress in increasing attention and alertness. With summary of several clinical studies with strong evidence, we present cutting edge results from the clinical application of BCI in motor and cognitive diseases, including stroke, spinal cord injury, ALS, and ADHD."
+  },
+  {
+    "id": 49,
+    "title": "Brain–computer interface robotics for hand rehabilitation after stroke: a systematic review",
+    "year": 2019,
+    "citations": 187,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "motor",
+      "stroke",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 6,
+    "abstract": "Background Hand rehabilitation is core to helping stroke survivors regain activities of daily living. Recent studies have suggested that the use of electroencephalography-based brain-computer interfaces (BCI) can promote this process. Here, we report the first systematic examination of the literature on the use of BCI-robot systems for the rehabilitation of fine motor skills associated with hand movement and profile these systems from a technical and clinical perspective. Methods A search for January 2010–October 2019 articles using Ovid MEDLINE, Embase, PEDro, PsycINFO, IEEE Xplore and Cochrane Library databases was performed. The selection criteria included BCI-hand robotic systems for rehabilitation at different stages of development involving tests on healthy participants or people who have had a stroke. Data fields include those related to study design, participant characteristics, technical specifications of the system, and clinical outcome measures. Results 30 studies were identified as eligible for qualitative review and among these, 11 studies involved testing a BCI-hand robot on chronic and subacute stroke patients. Statistically significant improvements in motor assessment scores relative to controls were observed for three BCI-hand robot interventions. The degree of robot control for the majority of studies was limited to triggering the device to perform grasping or pinching movements using motor imagery. Most employed a combination of kinaesthetic and visual response via the robotic device and display screen, respectively, to match feedback to motor imagery. Conclusion 19 out of 30 studies on BCI-robotic systems for hand rehabilitation report systems at prototype or pre-clinical stages of development. We identified large heterogeneity in reporting and emphasise the need to develop a standard protocol for assessing technical and clinical outcomes so that the necessary evidence base on efficiency and efficacy can be developed."
+  },
+  {
+    "id": 50,
+    "title": "Artificial Intelligence based Human Attention Detection through Brain Computer Interface for Health Care Monitoring",
+    "year": 2021,
+    "citations": 36,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "attention",
+      "decoding"
+    ],
+    "keyword_count": 5,
+    "abstract": "Attention as a key aspect of brain activity is one of the most usable area of brain study. It has a significant impact on the brain activities such as learning process and critical activities like driving vehicles. As real-time bidirectional linkages between living brains and actuators, brain-computer interfaces (BCIs) have showed considerable promise. The area of BCIs has been accelerated by artificial intelligence (AI), which can improve the analysis and decoding of brain activity. This paper deals with how attention of a person is detected using Electroencephalogram (EEG) and Brain Computer Interface (BCI)."
+  },
+  {
+    "id": 51,
+    "title": "Brain–Computer Interface Games Based on Consumer-Grade EEG Devices: A Systematic Literature Review",
+    "year": 2019,
+    "citations": 142,
+    "bci_keywords": [
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "attention"
+    ],
+    "keyword_count": 7,
+    "abstract": "ABSTRACT Brain–Computer Interfaces (BCIs) are specialized systems that allow users to control computer applications using their brain waves. With the advent of consumer-grade electroencephalography (EEG) devices, brain-controlled systems started to find applications outside of the medical field, opening many research opportunities in the area of Human-Computer Interaction (HCI). One particular area that is gaining more evidence due to the arrival of consumer-grade devices is that of computer games, as it allows more user-friendly applications of BCI technology for the general public. In this paper, the results of a Systematic Literature Review (SLR) of BCI games using consumer-grade devices are presented. Papers published in a time span of 12 years were reviewed and their data collected using a rigid systematic process. Several analyses were made based on the gathered data, and a clear view of the current scenario and challenges for HCI of BCI-based games using consumer-grade devices is provided. The search shows that although many games were created with simplified controls for research purposes, there was an increasing number of more user-friendly BCI games, especially for entertainment. The most predominant control signals were the attention and meditation, followed by motor imagery and emotion recognition, being mainly captured by NeuroSky and Emotiv EEG devices. The results also show that there are still many open issues and research opportunities in the field of HCI for BCI-based games, as most evaluations investigated only quantitative aspects of the BCI systems, while very few studies analyzed usability and qualitative aspects of the users’ interaction with the games."
+  },
+  {
+    "id": 52,
+    "title": "A Survey on Deep Learning based Brain Computer Interface: Recent Advances and New Frontiers",
+    "year": 2019,
+    "citations": 147,
+    "bci_keywords": [
+      "neural",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "deep learning",
+      "decoding"
+    ],
+    "keyword_count": 7,
+    "abstract": "Brain-Computer Interface (BCI) bridges the human's neural world and the outer physical world by decoding individuals' brain signals into commands recognizable by computer devices. Deep learning has lifted the performance of brain-computer interface systems significantly in recent years. In this article, we systematically investigate brain signal types for BCI and related deep learning concepts for brain signal analysis. We then present a comprehensive survey of deep learning techniques used for BCI, by summarizing over 230 contributions most published in the past five years. Finally, we discuss the applied areas, opening challenges, and future directions for deep learning-based BCI."
+  },
+  {
+    "id": 53,
+    "title": "Wearable Brain–Computer Interface Instrumentation for Robot-Based Rehabilitation by Augmented Reality",
+    "year": 2020,
+    "citations": 79,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "attention",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 5,
+    "abstract": "An instrument for remote control of the robot by wearable brain–computer interface (BCI) is proposed for rehabilitating children with attention-deficit/hyperactivity disorder (ADHD). Augmented reality (AR) glasses generate flickering stimuli, and a single-channel electroencephalographic BCI detects the elicited steady-state visual evoked potentials (SSVEPs). This allows benefiting from the SSVEP robustness by leaving available the view of robot movements. Together with the lack of training, a single channel maximizes the device’s wearability, fundamental for the acceptance by ADHD children. Effectively controlling the movements of a robot through a new channel enhances rehabilitation engagement and effectiveness. A case study at an accredited rehabilitation center on ten healthy adult subjects highlighted an average accuracy higher than 83%, with information transfer rate (ITR) up to 39 b/min. Preliminary further tests on four ADHD patients between six- and eight-years old provided highly positive feedback on device acceptance and attentional performance."
+  },
+  {
+    "id": 54,
+    "title": "Brain–Computer Interface Spellers: A Review",
+    "year": 2018,
+    "citations": 354,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor"
+    ],
+    "keyword_count": 5,
+    "abstract": "A Brain–Computer Interface (BCI) provides a novel non-muscular communication method via brain signals. A BCI-speller can be considered as one of the first published BCI applications and has opened the gate for many advances in the field. Although many BCI-spellers have been developed during the last few decades, to our knowledge, no reviews have described the different spellers proposed and studied in this vital field. The presented speller systems are categorized according to major BCI paradigms: P300, steady-state visual evoked potential (SSVEP), and motor imagery (MI). Different BCI paradigms require specific electroencephalogram (EEG) signal features and lead to the development of appropriate Graphical User Interfaces (GUIs). The purpose of this review is to consolidate the most successful BCI-spellers published since 2010, while mentioning some other older systems which were built explicitly for spelling purposes. We aim to assist researchers and concerned individuals in the field by illustrating the highlights of different spellers and presenting them in one review. It is almost impossible to carry out an objective comparison between different spellers, as each has its variables, parameters, and conditions. However, the gathered information and the provided taxonomy about different BCI-spellers can be helpful, as it could identify suitable systems for first-hand users, as well as opportunities of development and learning from previous studies for BCI researchers."
+  },
+  {
+    "id": 55,
+    "title": "The Potential for a Speech Brain–Computer Interface Using Chronic Electrocorticography",
+    "year": 2019,
+    "citations": 98,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 56,
+    "title": "Brain computer interface: control signals review",
+    "year": 2017,
+    "citations": 470,
+    "bci_keywords": [
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 57,
+    "title": "A Novel Multimodal Approach for Hybrid Brain–Computer Interface",
+    "year": 2020,
+    "citations": 61,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "classification",
+      "invasive",
+      "non-invasive"
+    ],
+    "keyword_count": 9,
+    "abstract": "Brain-computer interface (BCI) technologies have been widely used in many areas. In particular, non-invasive technologies such as electroencephalography (EEG) or near-infrared spectroscopy (NIRS) have been used to detect motor imagery, disease, or mental state. It has been already shown in literature that the hybrid of EEG and NIRS has better results than their respective individual signals. The fusion algorithm for EEG and NIRS sources is the key to implement them in real-life applications. In this research, we propose three fusion methods for the hybrid of the EEG and NIRS-based brain-computer interface system: linear fusion, tensor fusion, and <inline-formula> <tex-math notation=\"LaTeX\">$p$ </tex-math></inline-formula>th-order polynomial fusion. Firstly, our results prove that the hybrid BCI system is more accurate, as expected. Secondly, the <inline-formula> <tex-math notation=\"LaTeX\">$p$ </tex-math></inline-formula>th-order polynomial fusion has the best classification results out of the three methods, and also shows improvements compared with previous studies. For a motion imagery task and a mental arithmetic task, the best detection accuracy in previous papers were 74.20% and 88.1%, whereas our accuracy achieved was 77.53% and 90.19%. Furthermore, unlike complex artificial neural network methods, our proposed methods are not as computationally demanding."
+  },
+  {
+    "id": 58,
+    "title": "Brain-Computer Interface-Based Humanoid Control: A Review",
+    "year": 2020,
+    "citations": 72,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "machine learning"
+    ],
+    "keyword_count": 6,
+    "abstract": "A Brain-Computer Interface (BCI) acts as a communication mechanism using brain signals to control external devices. The generation of such signals is sometimes independent of the nervous system, such as in Passive BCI. This is majorly beneficial for those who have severe motor disabilities. Traditional BCI systems have been dependent only on brain signals recorded using Electroencephalography (EEG) and have used a rule-based translation algorithm to generate control commands. However, the recent use of multi-sensor data fusion and machine learning-based translation algorithms has improved the accuracy of such systems. This paper discusses various BCI applications such as tele-presence, grasping of objects, navigation, etc. that use multi-sensor fusion and machine learning to control a humanoid robot to perform a desired task. The paper also includes a review of the methods and system design used in the discussed applications."
+  },
+  {
+    "id": 59,
+    "title": "Implementation of a Brain-Computer Interface for Robotic Arm Control",
+    "year": 2021,
+    "citations": 29,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor"
+    ],
+    "keyword_count": 6,
+    "abstract": "Brain-Computer Interfaces (BCI) or Neural Control Interface (NCI), is a distinct and global technology that has revolutionized the world of control and signal processing. This technology has helped link humans and computers to achieve goals that are difficult to achieve for certain patients or people. This work combines the cutting edge BCI strategies into one single framework to control a 3D arm. In the proposed experiment, brain signals are utilized to move the automated arm and perform various assignments such as move any finger of the hand. To provide movement to the 3D arm robot in real-time, we acquired EEG data based 10-20 international system and forwarded these signals to the processing computer using OpenBCI Wi-FI, OpenBCI cyton board, and controlling the servo motors using OpenBCI GUI and Arduino Uno. The BCI designed system was evaluated by a real-time experiment study and applied on man and woman were induced by opening and closing hands, also the validation process has been done with different frequency and voltages where the experimental results demonstrate that the process will operate as designed with extreme precision and high performance."
+  },
+  {
+    "id": 60,
+    "title": "EEG datasets for motor imagery brain–computer interface",
+    "year": 2017,
+    "citations": 320,
+    "bci_keywords": [
+      "electrode",
+      "eeg",
+      "bci",
+      "brain",
+      "cortex",
+      "neuron",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 8,
+    "abstract": "Abstract Background: Most investigators of brain–computer interface (BCI) research believe that BCI can be achieved through induced neuronal activity from the cortex, but not by evoked neuronal activity. Motor imagery (MI)–based BCI is one of the standard concepts of BCI, in that the user can generate induced activity by imagining motor movements. However, variations in performance over sessions and subjects are too severe to overcome easily; therefore, a basic understanding and investigation of BCI performance variation is necessary to find critical evidence of performance variation. Here we present not only EEG datasets for MI BCI from 52 subjects, but also the results of a psychological and physiological questionnaire, EMG datasets, the locations of 3D EEG electrodes, and EEGs for non-task-related states. Findings: We validated our EEG datasets by using the percentage of bad trials, event-related desynchronization/synchronization (ERD/ERS) analysis, and classification analysis. After conventional rejection of bad trials, we showed contralateral ERD and ipsilateral ERS in the somatosensory area, which are well-known patterns of MI. Finally, we showed that 73.08% of datasets (38 subjects) included reasonably discriminative information. Conclusions: Our EEG datasets included the information necessary to determine statistical significance; they consisted of well-discriminated datasets (38 subjects) and less-discriminative datasets. These may provide researchers with opportunities to investigate human factors related to MI BCI performance variation, and may also achieve subject-to-subject transfer by using metadata, including a questionnaire, EEG coordinates, and EEGs for non-task-related states."
+  },
+  {
+    "id": 61,
+    "title": "High performance communication by people with paralysis using an intracortical brain-computer interface",
+    "year": 2017,
+    "citations": 482,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "paralysis"
+    ],
+    "keyword_count": 6,
+    "abstract": "Brain-computer interfaces (BCIs) have the potential to restore communication for people with tetraplegia and anarthria by translating neural activity into control signals for assistive communication devices. While previous pre-clinical and clinical studies have demonstrated promising proofs-of-concept (Serruya et al., 2002; Simeral et al., 2011; Bacher et al., 2015; Nuyujukian et al., 2015; Aflalo et al., 2015; Gilja et al., 2015; Jarosiewicz et al., 2015; Wolpaw et al., 1998; Hwang et al., 2012; Spüler et al., 2012; Leuthardt et al., 2004; Taylor et al., 2002; Schalk et al., 2008; Moran, 2010; Brunner et al., 2011; Wang et al., 2013; Townsend and Platsko, 2016; Vansteensel et al., 2016; Nuyujukian et al., 2016; Carmena et al., 2003; Musallam et al., 2004; Santhanam et al., 2006; Hochberg et al., 2006; Ganguly et al., 2011; O’Doherty et al., 2011; Gilja et al., 2012), the performance of human clinical BCI systems is not yet high enough to support widespread adoption by people with physical limitations of speech. Here we report a high-performance intracortical BCI (iBCI) for communication, which was tested by three clinical trial participants with paralysis. The system leveraged advances in decoder design developed in prior pre-clinical and clinical studies (Gilja et al., 2015; Kao et al., 2016; Gilja et al., 2012). For all three participants, performance exceeded previous iBCIs (Bacher et al., 2015; Jarosiewicz et al., 2015) as measured by typing rate (by a factor of 1.4–4.2) and information throughput (by a factor of 2.2–4.0). This high level of performance demonstrates the potential utility of iBCIs as powerful assistive communication devices for people with limited motor function. Clinical Trial No: NCT00912041 DOI: http://dx.doi.org/10.7554/eLife.18554.001"
+  },
+  {
+    "id": 62,
+    "title": "Shared control of a robotic arm using non-invasive brain-computer interface and computer vision guidance",
+    "year": 2019,
+    "citations": 92,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "invasive",
+      "non-invasive"
+    ],
+    "keyword_count": 6,
+    "abstract": "Abstract Control of a robotic arm using a brain–computer interface (BCI) for reach and grasp activities is one of the most fascinating applications for some severely disabled people, which is especially challenging for the non-invasive BCIs based on electroencephalography (EEG). In this paper, shared control is applied to realize the control of a dexterous robotic arm with a motor imagery-based (MI-based) BCI and computer vision guidance. With the utilization of the shared control, the subjects just need to move the robotic arm by performing only two different mental tasks to the surrounding area of the target. The accurate pose of the target is estimated by a depth camera equipped in the robot system. Once the endpoint of the robotic arm enters the pre-defined vision-guided region, the robotic arm will grasp the target autonomously. Five healthy and inexperienced subjects participated in the online experiments and the average success rate is above 70% even with no specific user training. The results show that the shared control can make the robotic arm accomplish the complex tasks (reach and grasp) with the simple two-class MI-based BCIs."
+  },
+  {
+    "id": 63,
+    "title": "Filter Bank Common Spatial Pattern (FBCSP) in Brain-Computer Interface",
+    "year": 2008,
+    "citations": 1447,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 64,
+    "title": "A closed-loop, music-based brain-computer interface for emotion mediation",
+    "year": 2019,
+    "citations": 82,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "invasive",
+      "non-invasive",
+      "feedback"
+    ],
+    "keyword_count": 5,
+    "abstract": "Emotions play a critical role in rational and intelligent behavior; a better fundamental knowledge of them is indispensable for understanding higher order brain function. We propose a non-invasive brain-computer interface (BCI) system to feedback a person’s affective state such that a closed-loop interaction between the participant’s brain responses and the musical stimuli is established. We realized this concept technically in a functional prototype of an algorithm that generates continuous and controllable patterns of synthesized affective music in real-time, which is embedded within a BCI architecture. We evaluated our concept in two separate studies. In the first study, we tested the efficacy of our music algorithm by measuring subjective affective responses from 11 participants. In a second pilot study, the algorithm was embedded in a real-time BCI architecture to investigate affective closed-loop interactions in 5 participants. Preliminary results suggested that participants were able to intentionally modulate the musical feedback by self-inducing emotions (e.g., by recalling memories), suggesting that the system was able not only to capture the listener’s current affective state in real-time, but also potentially provide a tool for listeners to mediate their own emotions by interacting with music. The proposed concept offers a tool to study emotions in the loop, promising to cast a complementary light on emotion-related brain research, particularly in terms of clarifying the interactive, spatio-temporal dynamics underlying affective processing in the brain."
+  },
+  {
+    "id": 65,
+    "title": "Interface, interaction, and intelligence in generalized brain-computer interfaces.",
+    "year": 2021,
+    "citations": 261,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 3,
+    "abstract": "A brain-computer interface (BCI) establishes a direct communication channel between a brain and an external device. With recent advances in neurotechnology and artificial intelligence (AI), the brain signals in BCI communication have been advanced from sensation and perception to higher-level cognition activities. While the field of BCI has grown rapidly in the past decades, the core technologies and innovative ideas behind seemingly unrelated BCI systems have never been summarized from an evolutionary point of view. Here, we review various BCI paradigms and present an evolutionary model of generalized BCI technology which comprises three stages: interface, interaction, and intelligence (I3). We also highlight challenges, opportunities, and future perspectives in the development of new BCI technology."
+  },
+  {
+    "id": 66,
+    "title": "Neuropsychological and neurophysiological aspects of brain‐computer‐interface (BCI) control in paralysis",
+    "year": 2020,
+    "citations": 65,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "neuron",
+      "motor",
+      "paralysis",
+      "invasive"
+    ],
+    "keyword_count": 7,
+    "abstract": "Brain‐computer interfaces (BCIs) aim to help paralysed patients to interact with their environment by controlling external devices using brain activity, thereby bypassing the dysfunctional motor system. Some neuronal disorders, such as amyotrophic lateral sclerosis (ALS), severely impair the communication capacity of patients. Several invasive and non‐invasive brain‐computer interfaces (BCIs), most notably using electroencephalography (EEG), have been developed to provide a means of communication to paralysed patients. However, except for a few reports, all available BCI literature for the paralysed (mostly ALS patients) describes patients with intact eye movement control, i.e. patients in a locked‐in state (LIS) but not a completely locked‐in state (CLIS). In this article we will discuss: (1) the fundamental neuropsychological learning factors and neurophysiological factors determining BCI performance in clinical applications; (2) the difference between LIS and CLIS; (3) recent development in BCIs for communication with patients in the completely locked‐in state; (4) the effect of BCI‐based communication on emotional well‐being and quality of life; and (5) the outlook and the methodology needed to provide a means of communication for patients who have none. Thus, we present an overview of available studies and recent results and try to anticipate future developments which may open new doors for BCI communication with the completely paralysed."
+  },
+  {
+    "id": 67,
+    "title": "A P300-Based Brain-Computer Interface for Improving Attention",
+    "year": 2019,
+    "citations": 70,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "cognitive",
+      "attention",
+      "feedback"
+    ],
+    "keyword_count": 5,
+    "abstract": "A Brain-computer Interface (BCI) can be used as a neurofeedback training tool to improve cognitive performance. BCIs aim to improve the effectiveness and efficiency of the conventional neurofeedback methods by focusing on the self-regulation of individualized neuromarkers rather than generic ones in a graphically appealing training environment. In this work, for the first time, we have modified a widely used P300-based speller BCI and used it as an engaging neurofeedack training game to enhance P300. According to the user's performance the game becomes more difficult in an adaptive manner, requiring the generation of a larger and stronger P300 (i.e., in terms of total energy) in response to target stimuli. Since the P300 is generated naturally without conscious effort in response to a target trial, unlike many rhythm-based neurofeedback tools, the ability to control the proposed P300-based neurofeedback training is obtained after a short calibration without undergoing tedious trial and error sessions. The performance of the proposed neurofeedback training was evaluated over a short time scale (approximately 30 min training) using 28 young adult participants who were randomly assigned to either the experimental group or the control group. In summary, our results show that the proposed P300-based BCI neurofeedback training yielded a significant enhancement in the ERP components of the target trials (i.e., 150–550 ms after the onset of stimuli which includes P300) as well as attenuation in the corresponding ERP components of the non-target trials. In addition, more centro-parietal alpha suppression was observed in the experimental group during the neurofeedback training as well as a post-training spatial attention task. Interestingly, a significant improvement in the response time of a spatial attention task performed immediately after the neurofeedback training was observed in the experimental group. This paper, as a proof-of-concept study, suggests that the proposed neurofeedback training tool is a promising tool for improving attention particularly for those who are at risk of attention deficiency."
+  },
+  {
+    "id": 68,
+    "title": "A Review on Electroencephalogram Based Brain Computer Interface for Elderly Disabled",
+    "year": 2019,
+    "citations": 86,
+    "bci_keywords": [
+      "electrode",
+      "eeg",
+      "bci",
+      "brain",
+      "signal"
+    ],
+    "keyword_count": 5,
+    "abstract": "Lack of communication causes problems for patients with neurodegenerative diseases, so the need for alternative methods is required to convey their thoughts with caretakers, friends, and family members. Brain–computer interface (BCI) is a device to control external devices by using mental thoughts without any other muscle movements to improve the communication quality for the disabled individual without any other help. The techniques of measuring electrical signal around the scalp during some activities by using electrodes are called electroencephalogram (EEG). By combining these two technologies together to form a brain–computer interaction, this helps the paralyzed individual to communicate with others to share the thoughts. In this paper, we deal with the history of EEG, electrode placements with measurements, and signal ranges, and also further discussed some of the prominent studies completed in designing BCI using EEG. This helps the new researchers to know the EEG measurement and position completely and paved the new way to create EEG-based interface research."
+  },
+  {
+    "id": 69,
+    "title": "Sensor Modalities for Brain-Computer Interface Technology: A Comprehensive Literature Review.",
+    "year": 2019,
+    "citations": 84,
+    "bci_keywords": [
+      "electrode",
+      "ecog",
+      "bci",
+      "brain",
+      "deep learning",
+      "classification",
+      "invasive",
+      "feedback"
+    ],
+    "keyword_count": 8,
+    "abstract": "Brain-computer interface (BCI) technology is rapidly developing and changing the paradigm of neurorestoration by linking cortical activity with control of an external effector to provide patients with tangible improvements in their ability to interact with the environment. The sensor component of a BCI circuit dictates the resolution of brain pattern recognition and therefore plays an integral role in the technology. Several sensor modalities are currently in use for BCI applications and are broadly either electrode-based or functional neuroimaging-based. Sensors vary in their inherent spatial and temporal resolutions, as well as in practical aspects such as invasiveness, portability, and maintenance. Hybrid BCI systems with multimodal sensory inputs represent a promising development in the field allowing for complimentary function. Artificial intelligence and deep learning algorithms have been applied to BCI systems to achieve faster and more accurate classifications of sensory input and improve user performance in various tasks. Neurofeedback is an important advancement in the field that has been implemented in several types of BCI systems by showing users a real-time display of their recorded brain activity during a task to facilitate their control over their own cortical activity. In this way, neurofeedback has improved BCI classification and enhanced user control over BCI output. Taken together, BCI systems have progressed significantly in recent years in terms of accuracy, speed, and communication. Understanding the sensory components of a BCI is essential for neurosurgeons and clinicians as they help advance this technology in the clinical setting."
+  },
+  {
+    "id": 70,
+    "title": "Brain–Computer Interface Software: A Review and Discussion",
+    "year": 2020,
+    "citations": 53,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal",
+      "feedback"
+    ],
+    "keyword_count": 4,
+    "abstract": "Software is a critical component of brain–computer interfaces (BCIs). While BCI hardware enables the retrieval of brain signals, BCI software is required to analyze these signals, produce output, and provide feedback. Users from multiple research areas have adopted BCI software platforms to investigate various concepts. Recently, interest in web-based BCI software has also emerged. The system design and control signal techniques of state-of-the-art BCI software platforms have been previously investigated. However, there is limited literature discussing user adoption of BCI software platforms. Additionally, there is a lack of work discussing the recent emergence of web tools relevant to BCI applications. This article aims to address these gaps by presenting a bibliometric review of the state-of-the-art BCI software. Furthermore, we discuss web-based BCIs and present tools that may be used to develop future web-based BCI applications."
+  },
+  {
+    "id": 71,
+    "title": "Deep learning for hybrid EEG-fNIRS brain–computer interface: application to motor imagery classification",
+    "year": 2018,
+    "citations": 183,
+    "bci_keywords": [
+      "eeg",
+      "brain",
+      "motor",
+      "deep learning",
+      "classification"
+    ],
+    "keyword_count": 5,
+    "abstract": null
+  },
+  {
+    "id": 72,
+    "title": "Independent home use of a brain-computer interface by people with amyotrophic lateral sclerosis",
+    "year": 2018,
+    "citations": 130,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 3,
+    "abstract": "Objective To assess the reliability and usefulness of an EEG-based brain-computer interface (BCI) for patients with advanced amyotrophic lateral sclerosis (ALS) who used it independently at home for up to 18 months. Methods Of 42 patients consented, 39 (93%) met the study criteria, and 37 (88%) were assessed for use of the Wadsworth BCI. Nine (21%) could not use the BCI. Of the other 28, 27 (men, age 28–79 years) (64%) had the BCI placed in their homes, and they and their caregivers were trained to use it. Use data were collected by Internet. Periodic visits evaluated BCI benefit and burden and quality of life. Results Over subsequent months, 12 (29% of the original 42) left the study because of death or rapid disease progression and 6 (14%) left because of decreased interest. Fourteen (33%) completed training and used the BCI independently, mainly for communication. Technical problems were rare. Patient and caregiver ratings indicated that BCI benefit exceeded burden. Quality of life remained stable. Of those not lost to the disease, half completed the study; all but 1 patient kept the BCI for further use. Conclusion The Wadsworth BCI home system can function reliably and usefully when operated by patients in their homes. BCIs that support communication are at present most suitable for people who are severely disabled but are otherwise in stable health. Improvements in BCI convenience and performance, including some now underway, should increase the number of people who find them useful and the extent to which they are used."
+  },
+  {
+    "id": 73,
+    "title": "Review and Classification of Emotion Recognition Based on EEG Brain-Computer Interface System Research: A Systematic Review",
+    "year": 2017,
+    "citations": 258,
+    "bci_keywords": [
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "machine learning",
+      "classification",
+      "wireless"
+    ],
+    "keyword_count": 7,
+    "abstract": "Recent developments and studies in brain-computer interface (BCI) technologies have facilitated emotion detection and classification. Many BCI studies have sought to investigate, detect, and recognize participants’ emotional affective states. The applied domains for these studies are varied, and include such fields as communication, education, entertainment, and medicine. To understand trends in electroencephalography (EEG)-based emotion recognition system research and to provide practitioners and researchers with insights into and future directions for emotion recognition systems, this study set out to review published articles on emotion detection, recognition, and classification. The study also reviews current and future trends and discusses how these trends may impact researchers and practitioners alike. We reviewed 285 articles, of which 160 were refereed journal articles that were published since the inception of affective computing research. The articles were classified based on a scheme consisting of two categories: research orientation and domains/applications. Our results show considerable growth of EEG-based emotion detection journal publications. This growth reflects an increased research interest in EEG-based emotion detection as a salient and legitimate research area. Such factors as the proliferation of wireless EEG devices, advances in computational intelligence techniques, and machine learning spurred this growth."
+  },
+  {
+    "id": 74,
+    "title": "Post-stroke Rehabilitation Training with a Motor-Imagery-Based Brain-Computer Interface (BCI)-Controlled Hand Exoskeleton: A Randomized Controlled Multicenter Trial",
+    "year": 2017,
+    "citations": 322,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "stroke",
+      "paralysis",
+      "classification",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 9,
+    "abstract": "Repeated use of brain-computer interfaces (BCIs) providing contingent sensory feedback of brain activity was recently proposed as a rehabilitation approach to restore motor function after stroke or spinal cord lesions. However, there are only a few clinical studies that investigate feasibility and effectiveness of such an approach. Here we report on a placebo-controlled, multicenter clinical trial that investigated whether stroke survivors with severe upper limb (UL) paralysis benefit from 10 BCI training sessions each lasting up to 40 min. A total of 74 patients participated: median time since stroke is 8 months, 25 and 75% quartiles [3.0; 13.0]; median severity of UL paralysis is 4.5 points [0.0; 30.0] as measured by the Action Research Arm Test, ARAT, and 19.5 points [11.0; 40.0] as measured by the Fugl-Meyer Motor Assessment, FMMA. Patients in the BCI group (n = 55) performed motor imagery of opening their affected hand. Motor imagery-related brain electroencephalographic activity was translated into contingent hand exoskeleton-driven opening movements of the affected hand. In a control group (n = 19), hand exoskeleton-driven opening movements of the affected hand were independent of brain electroencephalographic activity. Evaluation of the UL clinical assessments indicated that both groups improved, but only the BCI group showed an improvement in the ARAT's grasp score from 0 [0.0; 14.0] to 3.0 [0.0; 15.0] points (p < 0.01) and pinch scores from 0.0 [0.0; 7.0] to 1.0 [0.0; 12.0] points (p < 0.01). Upon training completion, 21.8% and 36.4% of the patients in the BCI group improved their ARAT and FMMA scores respectively. The corresponding numbers for the control group were 5.1% (ARAT) and 15.8% (FMMA). These results suggests that adding BCI control to exoskeleton-assisted physical therapy can improve post-stroke rehabilitation outcomes. Both maximum and mean values of the percentage of successfully decoded imagery-related EEG activity, were higher than chance level. A correlation between the classification accuracy and the improvement in the upper extremity function was found. An improvement of motor function was found for patients with different duration, severity and location of the stroke."
+  },
+  {
+    "id": 75,
+    "title": "A Survey on Unmanned Aerial Vehicle Remote Control Using Brain–Computer Interface",
+    "year": 2018,
+    "citations": 128,
+    "bci_keywords": [
+      "bci",
+      "brain",
+      "signal",
+      "attention",
+      "classification"
+    ],
+    "keyword_count": 5,
+    "abstract": "Numerous methods have been developed to gain reliable real-time remote control over pilotless flying aircraft and to perform teleoperation. Recently, state-of-the-art brain–computer interface (BCI) research has provided an avant-garde approach to reach this goal. Due to its broad range of application, BCI has been the center of attention as a promising candidate for deciphering brain signals into corresponding control commands for various systems. This paper surveys the application of BCI in designing control modules for unmanned aerial vehicles (UAVs). We first describe the basic configuration of UAVs, as well as identify the principle components of their control systems. We proceeded to describe different classes of BCI with emphasis on their applicability in controlling UAVs, and highlight the potential benefits and challenges in implementing each BCI paradigm. Details will be given on how essential strategies and key techniques regarding feature extraction, and the classification of data, as well as hybrid-modality, could be applied in this field to develop robust systems demonstrating optimal fidelity and performance. Moreover, by reviewing the primary trends in previous studies, we attempt to address the missing steps in current research and shed light on the road map for future innovation."
+  },
+  {
+    "id": 76,
+    "title": "Brain–Computer Interface–Based Communication in the Completely Locked-In State",
+    "year": 2017,
+    "citations": 219,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "cognitive",
+      "attention",
+      "paralysis",
+      "classification"
+    ],
+    "keyword_count": 9,
+    "abstract": "Despite partial success, communication has remained impossible for persons suffering from complete motor paralysis but intact cognitive and emotional processing, a state called complete locked-in state (CLIS). Based on a motor learning theoretical context and on the failure of neuroelectric brain–computer interface (BCI) communication attempts in CLIS, we here report BCI communication using functional near-infrared spectroscopy (fNIRS) and an implicit attentional processing procedure. Four patients suffering from advanced amyotrophic lateral sclerosis (ALS)—two of them in permanent CLIS and two entering the CLIS without reliable means of communication—learned to answer personal questions with known answers and open questions all requiring a “yes” or “no” thought using frontocentral oxygenation changes measured with fNIRS. Three patients completed more than 46 sessions spread over several weeks, and one patient (patient W) completed 20 sessions. Online fNIRS classification of personal questions with known answers and open questions using linear support vector machine (SVM) resulted in an above-chance-level correct response rate over 70%. Electroencephalographic oscillations and electrooculographic signals did not exceed the chance-level threshold for correct communication despite occasional differences between the physiological signals representing a “yes” or “no” response. However, electroencephalogram (EEG) changes in the theta-frequency band correlated with inferior communication performance, probably because of decreased vigilance and attention. If replicated with ALS patients in CLIS, these positive results could indicate the first step towards abolition of complete locked-in states, at least for ALS."
+  },
+  {
+    "id": 77,
+    "title": "Immediate brain plasticity after one hour of brain–computer interface (BCI)",
+    "year": 2019,
+    "citations": 67,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "motor",
+      "stroke",
+      "feedback"
+    ],
+    "keyword_count": 6,
+    "abstract": "Two groups of inexperienced brain‐computer interface users underwent a purely mental EEG‐BCI session that rapidly impacted on their brain. Modulations in structural and functional MRI were found after only 1 h of BCI training. Two different types of BCI (based on motor imagery or visually evoked potentials) were employed and analyses showed that the brain plastic changes are spatially specific for the respective neurofeedback. This spatial specificity promises tailored therapeutic interventions (e.g. for stroke patients)."
+  },
+  {
+    "id": 78,
+    "title": "Stability of a chronic implanted brain-computer interface in late-stage amyotrophic lateral sclerosis",
+    "year": 2019,
+    "citations": 80,
+    "bci_keywords": [
+      "neural",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "implant"
+    ],
+    "keyword_count": 6,
+    "abstract": "Highlights • Stability of recorded neural signals is crucial for the clinical viability of implantable brain-computer interfaces (BCIs).• A fully implantable BCI offers a long-term robust and durable control signal in a person with amyotrophic lateral sclerosis.• Increasing home use of the electrocorticography (ECoG)-BCI demonstrates user adoption of the BCI for communication."
+  },
+  {
+    "id": 79,
+    "title": "Cascade and Parallel Convolutional Recurrent Neural Networks on EEG-based Intention Recognition for Brain Computer Interface",
+    "year": 2017,
+    "citations": 205,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "deep learning"
+    ],
+    "keyword_count": 7,
+    "abstract": "\n \n Brain-Computer Interface (BCI) is a system empowering humans to communicate with or control the outside world with exclusively brain intentions. Electroencephalography (EEG) based BCIs are promising solutions due to their convenient and portable instruments. Despite the extensive research of EEG in recent years, it is still challenging to interpret EEG signals effectively due to the massive noises in EEG signals (e.g., low signal-noise ratio and incomplete EEG signals), and difficulties in capturing the inconspicuous relationships between EEG signals and certain brain activities. Most existing works either only consider EEG as chain-like sequences neglecting complex dependencies between adjacent signals or requiring pre-processing such as transforming EEG waves into images. In this paper, we introduce both cascade and parallel convolutional recurrent neural network models for precisely identifying human intended movements and instructions effectively learning the compositional spatio-temporal representations of raw EEG streams. Extensive experiments on a large scale movement intention EEG dataset (108 subjects,3,145,160 EEG records) have demonstrated that both models achieve high accuracy near 98.3% and outperform a set of baseline methods and most recent deep learning based EEG recognition models, yielding a significant accuracy increase of 18% in the cross-subject validation scenario. The developed models are further evaluated with a real-world BCI and achieve a recognition accuracy of 93% over five instruction intentions. This suggests the proposed models are able to generalize over different kinds of intentions and BCI systems.\n \n"
+  },
+  {
+    "id": 80,
+    "title": "Hybrid Brain–Computer Interface Techniques for Improved Classification Accuracy and Increased Number of Commands: A Review",
+    "year": 2017,
+    "citations": 237,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "cognitive",
+      "classification",
+      "invasive",
+      "non-invasive"
+    ],
+    "keyword_count": 9,
+    "abstract": "In this article, non-invasive hybrid brain–computer interface (hBCI) technologies for improving classification accuracy and increasing the number of commands are reviewed. Hybridization combining more than two modalities is a new trend in brain imaging and prosthesis control. Electroencephalography (EEG), due to its easy use and fast temporal resolution, is most widely utilized in combination with other brain/non-brain signal acquisition modalities, for instance, functional near infrared spectroscopy (fNIRS), electromyography (EMG), electrooculography (EOG), and eye tracker. Three main purposes of hybridization are to increase the number of control commands, improve classification accuracy and reduce the signal detection time. Currently, such combinations of EEG + fNIRS and EEG + EOG are most commonly employed. Four principal components (i.e., hardware, paradigm, classifiers, and features) relevant to accuracy improvement are discussed. In the case of brain signals, motor imagination/movement tasks are combined with cognitive tasks to increase active brain–computer interface (BCI) accuracy. Active and reactive tasks sometimes are combined: motor imagination with steady-state evoked visual potentials (SSVEP) and motor imagination with P300. In the case of reactive tasks, SSVEP is most widely combined with P300 to increase the number of commands. Passive BCIs, however, are rare. After discussing the hardware and strategies involved in the development of hBCI, the second part examines the approaches used to increase the number of control commands and to enhance classification accuracy. The future prospects and the extension of hBCI in real-time applications for daily life scenarios are provided."
+  },
+  {
+    "id": 81,
+    "title": "A Brain–Computer Interface Based on Miniature-Event-Related Potentials Induced by Very Small Lateral Visual Stimuli",
+    "year": 2018,
+    "citations": 187,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 82,
+    "title": "Intracortical recording stability in human brain–computer interface users",
+    "year": 2018,
+    "citations": 133,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 83,
+    "title": "Contralesional Brain–Computer Interface Control of a Powered Exoskeleton for Motor Recovery in Chronic Stroke Survivors",
+    "year": 2017,
+    "citations": 184,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "stroke",
+      "rehabilitation"
+    ],
+    "keyword_count": 7,
+    "abstract": "Background and Purpose— There are few effective therapies to achieve functional recovery from motor-related disabilities affecting the upper limb after stroke. This feasibility study tested whether a powered exoskeleton driven by a brain–computer interface (BCI), using neural activity from the unaffected cortical hemisphere, could affect motor recovery in chronic hemiparetic stroke survivors. This novel system was designed and configured for a home-based setting to test the feasibility of BCI-driven neurorehabilitation in outpatient environments. Methods— Ten chronic hemiparetic stroke survivors with moderate-to-severe upper-limb motor impairment (mean Action Research Arm Test=13.4) used a powered exoskeleton that opened and closed the affected hand using spectral power from electroencephalographic signals from the unaffected hemisphere associated with imagined hand movements of the paretic limb. Patients used the system at home for 12 weeks. Motor function was evaluated before, during, and after the treatment. Results— Across patients, our BCI-driven approach resulted in a statistically significant average increase of 6.2 points in the Action Research Arm Test. This behavioral improvement significantly correlated with improvements in BCI control. Secondary outcomes of grasp strength, Motricity Index, and the Canadian Occupational Performance Measure also significantly improved. Conclusions— The findings demonstrate the therapeutic potential of a BCI-driven neurorehabilitation approach using the unaffected hemisphere in this uncontrolled sample of chronic stroke survivors. They also demonstrate that BCI-driven neurorehabilitation can be effectively delivered in the home environment, thus increasing the probability of future clinical translation. Clinical Trial Registration— URL: http://www.clinicaltrials.gov. Unique identifier: NCT02552368."
+  },
+  {
+    "id": 84,
+    "title": "Correlated Component Analysis for Enhancing the Performance of SSVEP-Based Brain-Computer Interface",
+    "year": 2018,
+    "citations": 103,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 85,
+    "title": "Survey on Brain-Computer Interface",
+    "year": 2019,
+    "citations": 51,
+    "bci_keywords": [
+      "neural",
+      "electrode",
+      "eeg",
+      "ecog",
+      "meg",
+      "bci",
+      "brain",
+      "motor",
+      "cognitive",
+      "machine learning",
+      "classification",
+      "wireless",
+      "invasive",
+      "non-invasive"
+    ],
+    "keyword_count": 14,
+    "abstract": "A brain-computer interface (BCI) provides a way to develop interaction between a brain and a computer. The communication is developed as a result of neural responses generated in the brain because of motor movements or cognitive activities. The means of communication here includes muscular and non-muscular actions. These actions generate brain activities or brain waves that are directed to a hardware device to perform a specific task. BCI initially was developed as the communication device for patients suffering from neuromuscular disorders. Owing to recent advancements in BCI devices—such as passive electrodes, wireless headsets, adaptive software, and decreased costs—it is also being used for developing communication between the general public. The BCI device records brain responses using various invasive and non-invasive acquisition techniques such as electrocorticography (ECoG), electroencephalography (EEG), magnetoencephalography (MEG), and magnetic resonance imaging (MRI). In this article, a survey on these techniques has been provided. The brain response needs to be translated using machine learning and pattern recognition methods to control any application. A brief review of various existing feature extraction techniques and classification algorithms applied on data recorded from the brain has been included in this article. A significant comparative analysis of popular existing BCI techniques is presented and possible future directives are provided."
+  },
+  {
+    "id": 86,
+    "title": "Rapid calibration of an intracortical brain–computer interface for people with tetraplegia",
+    "year": 2018,
+    "citations": 136,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 87,
+    "title": "Brain-computer interface control in a virtual reality environment and applications for the internet of things",
+    "year": 2018,
+    "citations": 134,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 3,
+    "abstract": "Brain–computer interfaces (BCIs) have enabled individuals to control devices, such as spellers, robotic arms, drones, and wheelchairs, but often these BCI applications are restricted to research laboratories. With the advent of virtual reality (VR) systems and the Internet of Things (IoT) we can couple these technologies to offer real-time control of a user’s virtual and physical environment. Likewise, BCI applications are often single-use with user’s having no control outside of the restrictions placed upon the applications at the time of creation. Therefore, there is a need to create a tool that allows users the flexibility to create and modularize aspects of BCI applications for control of IoT devices and VR environments. Using a popular video game engine, Unity, and coupling it with BCI2000, we can create diverse applications that give the end-user additional autonomy during the task at hand. We demonstrate the validity of controlling a Unity-based VR environment and several commercial IoT devices via direct neural interfacing processed through BCI2000."
+  },
+  {
+    "id": 88,
+    "title": "Multimodal Fuzzy Fusion for Enhancing the Motor-Imagery-Based Brain Computer Interface",
+    "year": 2019,
+    "citations": 56,
+    "bci_keywords": [
+      "brain",
+      "signal",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 4,
+    "abstract": "Brain-computer interface technologies, such as steady-state visually evoked potential, P300, and motor imagery are methods of communication between the human brain and the external devices. Motor imagery-based brain-computer interfaces are popular because they avoid unnecessary external stimuli. Although feature extraction methods have been illustrated in several machine intelligent systems in motor imagery-based brain-computer interface studies, the performance remains unsatisfactory. There is increasing interest in the use of the fuzzy integrals, the Choquet and Sugeno integrals, that are appropriate for use in applications in which fusion of data must consider possible data interactions. To enhance the classification accuracy of brain-computer interfaces, we adopted fuzzy integrals, after employing the classification method of traditional brain-computer interfaces, to consider possible links between the data. Subsequently, we proposed a novel classification framework called the multimodal fuzzy fusion-based brain-computer interface system. Ten volunteers performed a motor imagery-based brain-computer interface experiment, and we acquired electroencephalography signals simultaneously. The multimodal fuzzy fusion-based brain-computer interface system enhanced performance compared with traditional brain-computer interface systems. Furthermore, when using the motor imagery-relevant electroencephalography frequency alpha and beta bands for the input features, the system achieved the highest accuracy, up to 78.81% and 78.45% with the Choquet and Sugeno integrals, respectively. Herein, we present a novel concept for enhancing brain-computer interface systems that adopts fuzzy integrals, especially in the fusion for classifying brain-computer interface commands."
+  },
+  {
+    "id": 89,
+    "title": "Development of a ternary hybrid fNIRS-EEG brain–computer interface based on imagined speech",
+    "year": 2019,
+    "citations": 50,
+    "bci_keywords": [
+      "eeg",
+      "bci",
+      "brain"
+    ],
+    "keyword_count": 3,
+    "abstract": "There is increasing interest in developing intuitive brain-computer interfaces (BCIs) to differentiate intuitive mental tasks such as imagined speech. Both electroencephalography (EEG) and function..."
+  },
+  {
+    "id": 90,
+    "title": "Self-Paced Operation of a Wheelchair Based on a Hybrid Brain-Computer Interface Combining Motor Imagery and P300 Potential",
+    "year": 2017,
+    "citations": 126,
+    "bci_keywords": [
+      "brain",
+      "motor"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 91,
+    "title": "Improving brain computer interface performance by data augmentation with conditional Deep Convolutional Generative Adversarial Networks",
+    "year": 2018,
+    "citations": 70,
+    "bci_keywords": [
+      "neural",
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "classification"
+    ],
+    "keyword_count": 7,
+    "abstract": "One of the big restrictions in brain computer interface field is the very limited training samples, it is difficult to build a reliable and usable system with such limited data. Inspired by generative adversarial networks, we propose a conditional Deep Convolutional Generative Adversarial (cDCGAN) Networks method to generate more artificial EEG signal automatically for data augmentation to improve the performance of convolutional neural networks in brain computer interface field and overcome the small training dataset problems. We evaluate the proposed cDCGAN method on BCI competition dataset of motor imagery. The results show that the generated artificial EEG data from Gaussian noise can learn the features from raw EEG data and has no less than the classification accuracy of raw EEG data in the testing dataset. Also by using generated artificial data can effectively improve classification accuracy at the same model with limited training data."
+  },
+  {
+    "id": 92,
+    "title": "Neurolinguistics Research Advancing Development of a Direct-Speech Brain-Computer Interface",
+    "year": 2018,
+    "citations": 80,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "signal",
+      "decoding"
+    ],
+    "keyword_count": 5,
+    "abstract": "A direct-speech brain-computer interface (DS-BCI) acquires neural signals corresponding to imagined speech, then processes and decodes these signals to produce a linguistic output in the form of phonemes, words, or sentences. Recent research has shown the potential of neurolinguistics to enhance decoding approaches to imagined speech with the inclusion of semantics and phonology in experimental procedures. As neurolinguistics research findings are beginning to be incorporated within the scope of DS-BCI research, it is our view that a thorough understanding of imagined speech, and its relationship with overt speech, must be considered an integral feature of research in this field. With a focus on imagined speech, we provide a review of the most important neurolinguistics research informing the field of DS-BCI and suggest how this research may be utilized to improve current experimental protocols and decoding techniques. Our review of the literature supports a cross-disciplinary approach to DS-BCI research, in which neurolinguistics concepts and methods are utilized to aid development of a naturalistic mode of communication."
+  },
+  {
+    "id": 93,
+    "title": "Control of a two-dimensional movement signal by a noninvasive brain-computer interface in humans.",
+    "year": 2004,
+    "citations": 1609,
+    "bci_keywords": [
+      "brain",
+      "signal",
+      "invasive"
+    ],
+    "keyword_count": 3,
+    "abstract": null
+  },
+  {
+    "id": 94,
+    "title": "Autonomy infused teleoperation with application to brain computer interface controlled manipulation",
+    "year": 2017,
+    "citations": 113,
+    "bci_keywords": [
+      "brain"
+    ],
+    "keyword_count": 1,
+    "abstract": null
+  },
+  {
+    "id": 95,
+    "title": "Brain-Computer Interface for Clinical Purposes: Cognitive Assessment and Rehabilitation",
+    "year": 2017,
+    "citations": 112,
+    "bci_keywords": [
+      "neural",
+      "bci",
+      "brain",
+      "motor",
+      "cognitive",
+      "attention",
+      "stroke",
+      "feedback",
+      "rehabilitation"
+    ],
+    "keyword_count": 9,
+    "abstract": "Alongside the best-known applications of brain-computer interface (BCI) technology for restoring communication abilities and controlling external devices, we present the state of the art of BCI use for cognitive assessment and training purposes. We first describe some preliminary attempts to develop verbal-motor free BCI-based tests for evaluating specific or multiple cognitive domains in patients with Amyotrophic Lateral Sclerosis, disorders of consciousness, and other neurological diseases. Then we present the more heterogeneous and advanced field of BCI-based cognitive training, which has its roots in the context of neurofeedback therapy and addresses patients with neurological developmental disorders (autism spectrum disorder and attention-deficit/hyperactivity disorder), stroke patients, and elderly subjects. We discuss some advantages of BCI for both assessment and training purposes, the former concerning the possibility of longitudinally and reliably evaluating cognitive functions in patients with severe motor disabilities, the latter regarding the possibility of enhancing patients' motivation and engagement for improving neural plasticity. Finally, we discuss some present and future challenges in the BCI use for the described purposes."
+  },
+  {
+    "id": 96,
+    "title": "Implementation of a Brain-Computer Interface on a Lower-Limb Exoskeleton",
+    "year": 2018,
+    "citations": 66,
+    "bci_keywords": [
+      "eeg",
+      "ecog",
+      "bci",
+      "brain",
+      "signal",
+      "motor",
+      "classification",
+      "decoding"
+    ],
+    "keyword_count": 8,
+    "abstract": "In this paper, we propose to use brain-computer interface (BCI) to control a lower-limb exoskeleton. The exoskeleton follows the wearer’s motion intention through decoding of electroencephalography (EEG) signals and multi-modal cognition. Motion patterns as standing up, sitting down, and walking forward can be performed. We implemented two types of BCIs, one based on steady-state visual evoked potentials, which used canonical correlation analysis to extract the frequency the subject focused on. The other BCI is based on motor imagery, where the common spatial patterns method was employed to extract the features from the EEG signal. Then, the features were classified by support vector machine to recognize the intention of the subject. We invited four healthy subjects to participate in the experiments, including off-line and online. The off-line experiments trained the classifier and then were used online to test the performance of the BCI controlled exoskeleton system. The results showed high accuracy rate in motion intention classification tasks for both BCIs."
+  },
+  {
+    "id": 97,
+    "title": "Wireless Brain Computer Interface for Smart Home and Medical System",
+    "year": 2018,
+    "citations": 67,
+    "bci_keywords": [
+      "brain",
+      "wireless"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  },
+  {
+    "id": 98,
+    "title": "A high-speed brain-computer interface (BCI) using dry EEG electrodes",
+    "year": 2017,
+    "citations": 93,
+    "bci_keywords": [
+      "neural",
+      "electrode",
+      "eeg",
+      "bci",
+      "brain",
+      "signal",
+      "classification",
+      "invasive",
+      "non-invasive"
+    ],
+    "keyword_count": 9,
+    "abstract": "Recently, brain-computer interfaces (BCIs) based on visual evoked potentials (VEPs) have been shown to achieve remarkable communication speeds. As they use electroencephalography (EEG) as non-invasive method for recording neural signals, the application of gel-based EEG is time-consuming and cumbersome. In order to achieve a more user-friendly system, this work explores the usability of dry EEG electrodes with a VEP-based BCI. While the results show a high variability between subjects, they also show that communication speeds of more than 100 bit/min are possible using dry EEG electrodes. To reduce performance variability and deal with the lower signal-to-noise ratio of the dry EEG electrodes, an averaging method and a dynamic stopping method were introduced to the BCI system. Those changes were shown to improve performance significantly, leading to an average classification accuracy of 76% with an average communication speed of 46 bit/min, which is equivalent to a writing speed of 8.8 error-free letters per minute. Although the BCI system works substantially better with gel-based EEG, dry EEG electrodes are more user-friendly and still allow high-speed BCI communication."
+  },
+  {
+    "id": 99,
+    "title": "Fully Implanted Brain-Computer Interface in a Locked-In Patient with ALS.",
+    "year": 2016,
+    "citations": 489,
+    "bci_keywords": [
+      "brain",
+      "implant"
+    ],
+    "keyword_count": 2,
+    "abstract": null
+  }
+]

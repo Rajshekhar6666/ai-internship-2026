@@ -1,0 +1,4042 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "title": "Effectiveness of a brain-computer interface based programme for the treatment of ADHD: a pilot study.",
+      "year": 2025,
+      "citations": 73,
+      "keywords": [
+        "brain",
+        "attention"
+      ],
+      "keyword_count": 2,
+      "abstract": "Majority of children with attention deficit hyperactivity disorder (ADHD) have significant inattentive symptoms. We developed a progressive series of activities involving brain-computer interface-based games which could train users to improve their concentration. This pilot study investigated if the",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 2
+    },
+    {
+      "id": 1,
+      "title": "BCI2000: a general-purpose brain-computer interface (BCI) system",
+      "year": 2004,
+      "citations": 3128,
+      "keywords": [
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.202,
+      "betweenness_centrality": 0.0138,
+      "combined_score": 0.1079,
+      "cluster": 0
+    },
+    {
+      "id": 2,
+      "title": "Recent applications of EEG-based brain-computer-interface in the medical field",
+      "year": 2025,
+      "citations": 85,
+      "keywords": [
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "rehabilitation"
+      ],
+      "keyword_count": 7,
+      "abstract": "Brain-computer interfaces (BCIs) represent an emerging technology that facilitates direct communication between the brain and external devices. In recent years, numerous review articles have explored various aspects of BCIs, including their fundamental principles, technical advancements, and applica",
+      "degree_centrality": 0.2929,
+      "betweenness_centrality": 0.0502,
+      "combined_score": 0.1716,
+      "cluster": 0
+    },
+    {
+      "id": 3,
+      "title": "A high-performance brain–computer interface for finger decoding and quadcopter game control in an individual with paralysis",
+      "year": 2025,
+      "citations": 56,
+      "keywords": [
+        "brain",
+        "paralysis",
+        "decoding"
+      ],
+      "keyword_count": 3,
+      "abstract": "People with paralysis express unmet needs for peer support, leisure activities and sporting activities. Many within the general population rely on social media and massively multiplayer video games to address these needs. We developed a high-performance, finger-based brain–computer-interface system ",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 4,
+      "title": "Brain Neuroplasticity Leveraging Virtual Reality and Brain–Computer Interface Technologies",
+      "year": 2024,
+      "citations": 85,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "motor",
+        "cognitive",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 7,
+      "abstract": "This study explores neuroplasticity through the use of virtual reality (VR) and brain–computer interfaces (BCIs). Neuroplasticity is the brain’s ability to reorganize itself by forming new neural connections in response to learning, experience, and injury. VR offers a controlled environment to manip",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 5,
+      "title": "Brain–computer interface: trend, challenges, and threats",
+      "year": 2023,
+      "citations": 122,
+      "keywords": [
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 2,
+      "abstract": "Brain–computer interface (BCI), an emerging technology that facilitates communication between brain and computer, has attracted a great deal of research in recent years. Researchers provide experimental results demonstrating that BCI can restore the capabilities of physically challenged people, henc",
+      "degree_centrality": 0.1414,
+      "betweenness_centrality": 0.003,
+      "combined_score": 0.0722,
+      "cluster": 0
+    },
+    {
+      "id": 6,
+      "title": "Status of deep learning for EEG-based brain–computer interface applications",
+      "year": 2023,
+      "citations": 117,
+      "keywords": [
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "motor",
+        "attention",
+        "seizure",
+        "stroke",
+        "deep learning",
+        "machine learning",
+        "classification",
+        "rehabilitation"
+      ],
+      "keyword_count": 12,
+      "abstract": "In the previous decade, breakthroughs in the central nervous system bioinformatics and computational innovation have prompted significant developments in brain–computer interface (BCI), elevating it to the forefront of applied science and research. BCI revitalization enables neurorehabilitation stra",
+      "degree_centrality": 0.0404,
+      "betweenness_centrality": 0.0013,
+      "combined_score": 0.0209,
+      "cluster": 0
+    },
+    {
+      "id": 7,
+      "title": "A comprehensive review of EEG-based brain–computer interface paradigms",
+      "year": 2019,
+      "citations": 833,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "prosthetic",
+        "motor",
+        "stroke",
+        "machine learning",
+        "classification",
+        "decoding",
+        "wireless",
+        "rehabilitation"
+      ],
+      "keyword_count": 12,
+      "abstract": "Advances in brain science and computer technology in the past decade have led to exciting developments in brain–computer interface (BCI), thereby making BCI a top research area in applied science. The renaissance of BCI opens new methods of neurorehabilitation for physically disabled people (e.g. pa",
+      "degree_centrality": 0.3232,
+      "betweenness_centrality": 0.0747,
+      "combined_score": 0.1989,
+      "cluster": 0
+    },
+    {
+      "id": 8,
+      "title": "Brain-computer interface technology: a review of the first international meeting.",
+      "year": 2000,
+      "citations": 2282,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.2323,
+      "betweenness_centrality": 0.062,
+      "combined_score": 0.1471,
+      "cluster": 0
+    },
+    {
+      "id": 9,
+      "title": "Human emotion recognition from EEG-based brain–computer interface using machine learning: a comprehensive review",
+      "year": 2022,
+      "citations": 346,
+      "keywords": [
+        "neural",
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "deep learning",
+        "machine learning",
+        "classification",
+        "invasive",
+        "non-invasive"
+      ],
+      "keyword_count": 11,
+      "abstract": "Affective computing, a subcategory of artificial intelligence, detects, processes, interprets, and mimics human emotions. Thanks to the continued advancement of portable non-invasive human sensor technologies, like brain–computer interfaces (BCI), emotion recognition has piqued the interest of acade",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0006,
+      "combined_score": 0.0154,
+      "cluster": 0
+    },
+    {
+      "id": 10,
+      "title": "Flexible Electrodes for Brain–Computer Interface System",
+      "year": 2023,
+      "citations": 95,
+      "keywords": [
+        "electrode",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 6,
+      "abstract": "Brain–computer interface (BCI) has been the subject of extensive research recently. Governments and companies have substantially invested in relevant research and applications. The restoration of communication and motor function, the treatment of psychological disorders, gaming, and other daily and ",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 3
+    },
+    {
+      "id": 11,
+      "title": "State-of-the-Art on Brain-Computer Interface Technology",
+      "year": 2023,
+      "citations": 118,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 3,
+      "abstract": "This paper provides a comprehensive overview of the state-of-the-art in brain–computer interfaces (BCI). It begins by providing an introduction to BCIs, describing their main operation principles and most widely used platforms. The paper then examines the various components of a BCI system, such as ",
+      "degree_centrality": 0.2929,
+      "betweenness_centrality": 0.0703,
+      "combined_score": 0.1816,
+      "cluster": 0
+    },
+    {
+      "id": 12,
+      "title": "A brain-computer interface that evokes tactile sensations improves robotic arm control",
+      "year": 2021,
+      "citations": 497,
+      "keywords": [
+        "neural",
+        "brain",
+        "cortex",
+        "neuron",
+        "prosthetic",
+        "motor",
+        "feedback"
+      ],
+      "keyword_count": 7,
+      "abstract": "A boost for brain–computer interfaces The finely controlled movement of our limbs requires two-way neuronal communication between the brain and the body periphery. This includes afferent information from muscles, joints, and skin, as well as visual feedback to plan, initiate, and execute motor outpu",
+      "degree_centrality": 0.0707,
+      "betweenness_centrality": 0.021,
+      "combined_score": 0.0458,
+      "cluster": 0
+    },
+    {
+      "id": 13,
+      "title": "Modulating Brain Activity with Invasive Brain–Computer Interface: A Narrative Review",
+      "year": 2023,
+      "citations": 67,
+      "keywords": [
+        "neural",
+        "electrode",
+        "bci",
+        "brain",
+        "neuron",
+        "signal",
+        "attention",
+        "decoding",
+        "invasive"
+      ],
+      "keyword_count": 9,
+      "abstract": "Brain-computer interface (BCI) can be used as a real-time bidirectional information gateway between the brain and machines. In particular, rapid progress in invasive BCI, propelled by recent developments in electrode materials, miniature and power-efficient electronics, and neural signal decoding te",
+      "degree_centrality": 0.1414,
+      "betweenness_centrality": 0.0104,
+      "combined_score": 0.0759,
+      "cluster": 0
+    },
+    {
+      "id": 14,
+      "title": "Review on brain-computer interface technologies in healthcare",
+      "year": 2023,
+      "citations": 58,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.1313,
+      "betweenness_centrality": 0.0039,
+      "combined_score": 0.0676,
+      "cluster": 0
+    },
+    {
+      "id": 15,
+      "title": "FBCNet: A Multi-view Convolutional Neural Network for Brain-Computer Interface",
+      "year": 2021,
+      "citations": 226,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "stroke",
+        "classification",
+        "decoding"
+      ],
+      "keyword_count": 8,
+      "abstract": "Lack of adequate training samples and noisy high-dimensional features are key challenges faced by Motor Imagery (MI) decoding algorithms for electroencephalogram (EEG) based Brain-Computer Interface (BCI). To address these challenges, inspired from neuro-physiological signatures of MI, this paper pr",
+      "degree_centrality": 0.0404,
+      "betweenness_centrality": 0.0027,
+      "combined_score": 0.0216,
+      "cluster": 0
+    },
+    {
+      "id": 16,
+      "title": "Review of Machine Learning Techniques for EEG Based Brain Computer Interface",
+      "year": 2022,
+      "citations": 231,
+      "keywords": [
+        "eeg",
+        "brain",
+        "machine learning"
+      ],
+      "keyword_count": 3,
+      "abstract": "",
+      "degree_centrality": 0.0505,
+      "betweenness_centrality": 0.0002,
+      "combined_score": 0.0254,
+      "cluster": 0
+    },
+    {
+      "id": 17,
+      "title": "Brain-Computer Interface: Applications to Speech Decoding and Synthesis to Augment Communication",
+      "year": 2022,
+      "citations": 96,
+      "keywords": [
+        "brain",
+        "decoding"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.0707,
+      "betweenness_centrality": 0.0179,
+      "combined_score": 0.0443,
+      "cluster": 0
+    },
+    {
+      "id": 18,
+      "title": "LGGNet: Learning From Local-Global-Graph Representations for Brain–Computer Interface",
+      "year": 2021,
+      "citations": 166,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "cognitive",
+        "attention",
+        "classification"
+      ],
+      "keyword_count": 7,
+      "abstract": "Neuropsychological studies suggest that co-operative activities among different brain functional areas drive high-level cognitive processes. To learn the brain activities within and among different functional areas of the brain, we propose local-global-graph network (LGGNet), a novel neurologically ",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 19,
+      "title": "Current Status, Challenges, and Possible Solutions of EEG-Based Brain-Computer Interface: A Comprehensive Review",
+      "year": 2020,
+      "citations": 415,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "attention",
+        "classification"
+      ],
+      "keyword_count": 6,
+      "abstract": "Brain-Computer Interface (BCI), in essence, aims at controlling different assistive devices through the utilization of brain waves. It is worth noting that the application of BCI is not limited to medical applications, and hence, the research in this field has gained due attention. Moreover, the sig",
+      "degree_centrality": 0.2323,
+      "betweenness_centrality": 0.041,
+      "combined_score": 0.1366,
+      "cluster": 0
+    },
+    {
+      "id": 20,
+      "title": "fMRI Brain Decoding and Its Applications in Brain–Computer Interface: A Survey",
+      "year": 2022,
+      "citations": 71,
+      "keywords": [
+        "neural",
+        "ecog",
+        "fmri",
+        "bci",
+        "brain",
+        "attention",
+        "deep learning",
+        "machine learning",
+        "decoding"
+      ],
+      "keyword_count": 9,
+      "abstract": "Brain neural activity decoding is an important branch of neuroscience research and a key technology for the brain–computer interface (BCI). Researchers initially developed simple linear models and machine learning algorithms to classify and recognize brain activities. With the great success of deep ",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0177,
+      "combined_score": 0.024,
+      "cluster": 0
+    },
+    {
+      "id": 21,
+      "title": "Brain-Computer Interface: Advancement and Challenges",
+      "year": 2021,
+      "citations": 209,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 3,
+      "abstract": "Brain-Computer Interface (BCI) is an advanced and multidisciplinary active research domain based on neuroscience, signal processing, biomedical sensors, hardware, etc. Since the last decades, several groundbreaking research has been conducted in this domain. Still, no comprehensive review that cover",
+      "degree_centrality": 0.2323,
+      "betweenness_centrality": 0.0305,
+      "combined_score": 0.1314,
+      "cluster": 0
+    },
+    {
+      "id": 22,
+      "title": "Brain–Computer Interface-Controlled Exoskeletons in Clinical Neurorehabilitation: Ready or Not?",
+      "year": 2022,
+      "citations": 64,
+      "keywords": [
+        "neural",
+        "brain",
+        "signal",
+        "motor",
+        "stroke",
+        "paralysis",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 8,
+      "abstract": "The development of brain–computer interface-controlled exoskeletons promises new treatment strategies for neurorehabilitation after stroke or spinal cord injury. By converting brain/neural activity into control signals of wearable actuators, brain/neural exoskeletons (B/NEs) enable the execution of ",
+      "degree_centrality": 0.0909,
+      "betweenness_centrality": 0.0015,
+      "combined_score": 0.0462,
+      "cluster": 0
+    },
+    {
+      "id": 23,
+      "title": "A Comprehensive Review on Critical Issues and Possible Solutions of Motor Imagery Based Electroencephalography Brain-Computer Interface",
+      "year": 2021,
+      "citations": 162,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 6,
+      "abstract": "Motor imagery (MI) based brain–computer interface (BCI) aims to provide a means of communication through the utilization of neural activity generated due to kinesthetic imagination of limbs. Every year, a significant number of publications that are related to new improvements, challenges, and breakt",
+      "degree_centrality": 0.2323,
+      "betweenness_centrality": 0.0546,
+      "combined_score": 0.1435,
+      "cluster": 0
+    },
+    {
+      "id": 24,
+      "title": "Brain-computer interface for hands-free teleoperation of construction robots",
+      "year": 2021,
+      "citations": 141,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 3,
+      "abstract": "Abstract Recently, the use of collaborative robots has started to emerge at construction sites. Such incorporation into these human-dominated environments can raise safety concerns as most robots are not fully automated and require some sort of control mechanism. Conventional control systems may fal",
+      "degree_centrality": 0.0202,
+      "betweenness_centrality": 0.0177,
+      "combined_score": 0.019,
+      "cluster": 0
+    },
+    {
+      "id": 25,
+      "title": "2020 International brain–computer interface competition: A review",
+      "year": 2022,
+      "citations": 55,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "classification",
+        "decoding"
+      ],
+      "keyword_count": 5,
+      "abstract": "The brain-computer interface (BCI) has been investigated as a form of communication tool between the brain and external devices. BCIs have been extended beyond communication and control over the years. The 2020 international BCI competition aimed to provide high-quality neuroscientific data for open",
+      "degree_centrality": 0.1717,
+      "betweenness_centrality": 0.0079,
+      "combined_score": 0.0898,
+      "cluster": 0
+    },
+    {
+      "id": 26,
+      "title": "Learning Temporal Information for Brain-Computer Interface Using Convolutional Neural Networks",
+      "year": 2018,
+      "citations": 543,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "deep learning",
+        "classification"
+      ],
+      "keyword_count": 7,
+      "abstract": "Deep learning (DL) methods and architectures have been the state-of-the-art classification algorithms for computer vision and natural language processing problems. However, the successful application of these methods in motor imagery (MI) brain–computer interfaces (BCIs), in order to boost classific",
+      "degree_centrality": 0.0606,
+      "betweenness_centrality": 0.0216,
+      "combined_score": 0.0411,
+      "cluster": 0
+    },
+    {
+      "id": 27,
+      "title": "A systematic review on hybrid EEG/fNIRS in brain-computer interface",
+      "year": 2021,
+      "citations": 129,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 4,
+      "abstract": "Abstract As a relatively new field of neurology and computer science, brain computer interface (BCI) has many established and burgeoning applications across scientific disciplines. Many neural monitoring technologies have been developed for BCI studies. Combining multiple monitoring technologies pro",
+      "degree_centrality": 0.0404,
+      "betweenness_centrality": 0.0179,
+      "combined_score": 0.0292,
+      "cluster": 0
+    },
+    {
+      "id": 28,
+      "title": "Home Use of a Percutaneous Wireless Intracortical Brain-Computer Interface by Individuals With Tetraplegia",
+      "year": 2021,
+      "citations": 116,
+      "keywords": [
+        "neural",
+        "electrode",
+        "bci",
+        "brain",
+        "signal",
+        "implant",
+        "motor",
+        "stroke",
+        "paralysis",
+        "decoding",
+        "wireless"
+      ],
+      "keyword_count": 11,
+      "abstract": "Objective. Individuals with neurological disease or injury such as amyotrophic lateral sclerosis, spinal cord injury or stroke may become tetraplegic, unable to speak or even locked-in. For people with these conditions, current assistive technologies are often ineffective. Brain-computer interfaces ",
+      "degree_centrality": 0.1616,
+      "betweenness_centrality": 0.0317,
+      "combined_score": 0.0966,
+      "cluster": 0
+    },
+    {
+      "id": 29,
+      "title": "Review of brain encoding and decoding mechanisms for EEG-based brain–computer interface",
+      "year": 2021,
+      "citations": 82,
+      "keywords": [
+        "eeg",
+        "brain",
+        "decoding"
+      ],
+      "keyword_count": 3,
+      "abstract": "",
+      "degree_centrality": 0.0808,
+      "betweenness_centrality": 0.0018,
+      "combined_score": 0.0413,
+      "cluster": 0
+    },
+    {
+      "id": 30,
+      "title": "High-speed spelling with a noninvasive brain–computer interface",
+      "year": 2015,
+      "citations": 867,
+      "keywords": [
+        "brain",
+        "invasive"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 31,
+      "title": "Stabilization of a brain-computer interface via the alignment of low-dimensional spaces of neural activity",
+      "year": 2020,
+      "citations": 212,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "neuron"
+      ],
+      "keyword_count": 4,
+      "abstract": "The instability of neural recordings can render clinical brain–computer interfaces (BCIs) uncontrollable. Here, we show that the alignment of low-dimensional neural manifolds (low-dimensional spaces that describe specific correlation patterns between neurons) can be used to stabilize neural activity",
+      "degree_centrality": 0.0202,
+      "betweenness_centrality": 0.0177,
+      "combined_score": 0.019,
+      "cluster": 0
+    },
+    {
+      "id": 32,
+      "title": "Generative Adversarial Networks-Based Data Augmentation for Brain–Computer Interface",
+      "year": 2020,
+      "citations": 192,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "attention",
+        "classification"
+      ],
+      "keyword_count": 7,
+      "abstract": "The performance of a classifier in a brain–computer interface (BCI) system is highly dependent on the quality and quantity of training data. Typically, the training data are collected in a laboratory where the users perform tasks in a controlled environment. However, users’ attention may be diverted",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0204,
+      "combined_score": 0.0254,
+      "cluster": 0
+    },
+    {
+      "id": 33,
+      "title": "Brain-Computer Interface-Based Soft Robotic Glove Rehabilitation for Stroke",
+      "year": 2020,
+      "citations": 130,
+      "keywords": [
+        "bci",
+        "brain",
+        "motor",
+        "stroke",
+        "rehabilitation"
+      ],
+      "keyword_count": 5,
+      "abstract": "Objective: This randomized controlled feasibility study investigates the ability for clinical application of the Brain-Computer Interface-based Soft Robotic Glove (BCI-SRG) incorporating activities of daily living (ADL)-oriented tasks for stroke rehabilitation. Methods: Eleven recruited chronic stro",
+      "degree_centrality": 0.0707,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0354,
+      "cluster": 0
+    },
+    {
+      "id": 34,
+      "title": "Intra- and Inter-subject Variability in EEG-Based Sensorimotor Brain Computer Interface: A Review",
+      "year": 2020,
+      "citations": 274,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "machine learning",
+        "rehabilitation"
+      ],
+      "keyword_count": 6,
+      "abstract": "Brain computer interfaces (BCI) for the rehabilitation of motor impairments exploit sensorimotor rhythms (SMR) in the electroencephalogram (EEG). However, the neurophysiological processes underpinning the SMR often vary over time and across subjects. Inherent intra- and inter-subject variability cau",
+      "degree_centrality": 0.0707,
+      "betweenness_centrality": 0.0103,
+      "combined_score": 0.0405,
+      "cluster": 0
+    },
+    {
+      "id": 35,
+      "title": "Theta–gamma coupling as a cortical biomarker of brain–computer interface-mediated motor recovery in chronic stroke",
+      "year": 2022,
+      "citations": 29,
+      "keywords": [
+        "eeg",
+        "brain",
+        "cortex",
+        "signal",
+        "motor",
+        "stroke",
+        "rehabilitation"
+      ],
+      "keyword_count": 7,
+      "abstract": "Abstract Chronic stroke patients with upper-limb motor disabilities are now beginning to see treatment options that were not previously available. To date, the two options recently approved by the United States Food and Drug Administration include vagus nerve stimulation and brain–computer interface",
+      "degree_centrality": 0.0707,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0354,
+      "cluster": 0
+    },
+    {
+      "id": 36,
+      "title": "Progress in Brain Computer Interface: Challenges and Opportunities",
+      "year": 2019,
+      "citations": 325,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal",
+        "classification",
+        "rehabilitation"
+      ],
+      "keyword_count": 5,
+      "abstract": "Brain computer interfaces (BCI) provide a direct communication link between the brain and a computer or other external devices. They offer an extended degree of freedom either by strengthening or by substituting human peripheral working capacity and have potential applications in various fields such",
+      "degree_centrality": 0.2525,
+      "betweenness_centrality": 0.0189,
+      "combined_score": 0.1357,
+      "cluster": 0
+    },
+    {
+      "id": 37,
+      "title": "A memristor-based adaptive neuromorphic decoder for brain–computer interfaces",
+      "year": 2025,
+      "citations": 72,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 4
+    },
+    {
+      "id": 38,
+      "title": "Brain computer interface advancement in neurosciences: Applications and issues",
+      "year": 2020,
+      "citations": 117,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 3,
+      "abstract": "Abstract Neurosciences and Neuro-technology are continuously advancing and so individuals, society and healthcare professionals have to up date themselves with advancement. Brain computer Interface (BCI) is one such emerging technology in Neurosciences. In a nutshell, BCI technology provides a direc",
+      "degree_centrality": 0.3333,
+      "betweenness_centrality": 0.0738,
+      "combined_score": 0.2035,
+      "cluster": 0
+    },
+    {
+      "id": 39,
+      "title": "Plug-and-play control of a brain–computer interface through neural map stabilization",
+      "year": 2020,
+      "citations": 112,
+      "keywords": [
+        "neural",
+        "brain"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 40,
+      "title": "Signal processing techniques for motor imagery brain computer interface: A review",
+      "year": 2019,
+      "citations": 203,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "neuron",
+        "signal",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 7,
+      "abstract": "Abstract Motor Imagery Brain Computer Interface (MI-BCI) provides a non-muscular channel for communication to those who are suffering from neuronal disorders. The designing of an accurate and reliable MI-BCI system requires the extraction of informative and discriminative features. Common Spatial Pa",
+      "degree_centrality": 0.0909,
+      "betweenness_centrality": 0.0229,
+      "combined_score": 0.0569,
+      "cluster": 0
+    },
+    {
+      "id": 41,
+      "title": "Combination of Augmented Reality Based Brain- Computer Interface and Computer Vision for High-Level Control of a Robotic Arm",
+      "year": 2020,
+      "citations": 92,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "attention",
+        "classification"
+      ],
+      "keyword_count": 6,
+      "abstract": "Recent advances in robotics, neuroscience, and signal processing make it possible to operate a robot through electroencephalography (EEG)-based brain-computer interface (BCI). Although some successful attempts have been made in recent years, the practicality of the entire system still has much room ",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0177,
+      "combined_score": 0.024,
+      "cluster": 0
+    },
+    {
+      "id": 42,
+      "title": "Prognosis for patients with cognitive motor dissociation identified by brain-computer interface",
+      "year": 2020,
+      "citations": 128,
+      "keywords": [
+        "brain",
+        "motor",
+        "cognitive"
+      ],
+      "keyword_count": 3,
+      "abstract": "See Owen (doi:10.1093/brain/awaa056) for a scientific commentary on this article. Pan et al. report that in patients with disorders of consciousness who show no detectable command-following behaviours, about 80% of those identified via a brain-computer interface as having cognitive motor dissociatio",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 5
+    },
+    {
+      "id": 43,
+      "title": "Filter bank canonical correlation analysis for implementing a high-speed SSVEP-based brain–computer interface",
+      "year": 2015,
+      "citations": 721,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 1
+    },
+    {
+      "id": 44,
+      "title": "Challenges and Opportunities for the Future of Brain-Computer Interface in Neurorehabilitation",
+      "year": 2021,
+      "citations": 45,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 7,
+      "abstract": "Brain-computer interfaces (BCIs) provide a unique technological solution to circumvent the damaged motor system. For neurorehabilitation, the BCI can be used to translate neural signals associated with movement intentions into tangible feedback for the patient, when they are unable to generate funct",
+      "degree_centrality": 0.2323,
+      "betweenness_centrality": 0.0671,
+      "combined_score": 0.1497,
+      "cluster": 0
+    },
+    {
+      "id": 45,
+      "title": "uBrain: a unary brain computer interface",
+      "year": 2022,
+      "citations": 25,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 5,
+      "abstract": "Brain computer interfaces (BCIs) have been widely adopted to enhance human perception via brain signals with abundant spatial-temporal dynamics, such as electroencephalogram (EEG). In recent years, BCI algorithms are moving from classical feature engineering to emerging deep neural networks (DNNs), ",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 6
+    },
+    {
+      "id": 46,
+      "title": "Developing a Novel Tactile P300 Brain-Computer Interface With a Cheeks-Stim Paradigm",
+      "year": 2020,
+      "citations": 89,
+      "keywords": [
+        "bci",
+        "brain",
+        "classification",
+        "feedback"
+      ],
+      "keyword_count": 4,
+      "abstract": "Objective: Tactile brain-computer interface (BCI) systems can provide new communication and control options for patients with impairments of eye movements or vision. One of the most common modalities used in these BCIs is the P300 potential. Until now, tactile P300 BCIs have been successfully constr",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 7
+    },
+    {
+      "id": 47,
+      "title": "Weighted Transfer Learning for Improving Motor Imagery-Based Brain–Computer Interface",
+      "year": 2019,
+      "citations": 153,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 5,
+      "abstract": "One of the major limitations of motor imagery (MI)-based brain–computer interface (BCI) is its long calibration time. Due to between sessions/subjects variations in the properties of brain signals, typically, a large amount of training data needs to be collected at the beginning of each session to c",
+      "degree_centrality": 0.0202,
+      "betweenness_centrality": 0.0003,
+      "combined_score": 0.0102,
+      "cluster": 0
+    },
+    {
+      "id": 48,
+      "title": "State-of-the-art non-invasive brain–computer interface for neural rehabilitation: A review",
+      "year": 2020,
+      "citations": 81,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "cognitive",
+        "attention",
+        "stroke",
+        "invasive",
+        "non-invasive",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 13,
+      "abstract": "Brain–computer interface (BCI) is a novel communication method between brain and machine. It enables signals from the human brain to influence or control external devices. Currently, much research interest is focused on the BCI-based neural rehabilitation of patients with motor and cognitive disease",
+      "degree_centrality": 0.1919,
+      "betweenness_centrality": 0.0181,
+      "combined_score": 0.105,
+      "cluster": 0
+    },
+    {
+      "id": 49,
+      "title": "Brain–computer interface robotics for hand rehabilitation after stroke: a systematic review",
+      "year": 2019,
+      "citations": 187,
+      "keywords": [
+        "bci",
+        "brain",
+        "motor",
+        "stroke",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 6,
+      "abstract": "Background Hand rehabilitation is core to helping stroke survivors regain activities of daily living. Recent studies have suggested that the use of electroencephalography-based brain-computer interfaces (BCI) can promote this process. Here, we report the first systematic examination of the literatur",
+      "degree_centrality": 0.1414,
+      "betweenness_centrality": 0.0146,
+      "combined_score": 0.078,
+      "cluster": 0
+    },
+    {
+      "id": 50,
+      "title": "Artificial Intelligence based Human Attention Detection through Brain Computer Interface for Health Care Monitoring",
+      "year": 2021,
+      "citations": 36,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "attention",
+        "decoding"
+      ],
+      "keyword_count": 5,
+      "abstract": "Attention as a key aspect of brain activity is one of the most usable area of brain study. It has a significant impact on the brain activities such as learning process and critical activities like driving vehicles. As real-time bidirectional linkages between living brains and actuators, brain-comput",
+      "degree_centrality": 0.0505,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0253,
+      "cluster": 0
+    },
+    {
+      "id": 51,
+      "title": "Brain–Computer Interface Games Based on Consumer-Grade EEG Devices: A Systematic Literature Review",
+      "year": 2019,
+      "citations": 142,
+      "keywords": [
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "attention"
+      ],
+      "keyword_count": 7,
+      "abstract": "ABSTRACT Brain–Computer Interfaces (BCIs) are specialized systems that allow users to control computer applications using their brain waves. With the advent of consumer-grade electroencephalography (EEG) devices, brain-controlled systems started to find applications outside of the medical field, ope",
+      "degree_centrality": 0.0606,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0303,
+      "cluster": 0
+    },
+    {
+      "id": 52,
+      "title": "A Survey on Deep Learning based Brain Computer Interface: Recent Advances and New Frontiers",
+      "year": 2019,
+      "citations": 147,
+      "keywords": [
+        "neural",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "deep learning",
+        "decoding"
+      ],
+      "keyword_count": 7,
+      "abstract": "Brain-Computer Interface (BCI) bridges the human's neural world and the outer physical world by decoding individuals' brain signals into commands recognizable by computer devices. Deep learning has lifted the performance of brain-computer interface systems significantly in recent years. In this arti",
+      "degree_centrality": 0.0909,
+      "betweenness_centrality": 0.0506,
+      "combined_score": 0.0708,
+      "cluster": 0
+    },
+    {
+      "id": 53,
+      "title": "Wearable Brain–Computer Interface Instrumentation for Robot-Based Rehabilitation by Augmented Reality",
+      "year": 2020,
+      "citations": 79,
+      "keywords": [
+        "bci",
+        "brain",
+        "attention",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 5,
+      "abstract": "An instrument for remote control of the robot by wearable brain–computer interface (BCI) is proposed for rehabilitating children with attention-deficit/hyperactivity disorder (ADHD). Augmented reality (AR) glasses generate flickering stimuli, and a single-channel electroencephalographic BCI detects ",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 54,
+      "title": "Brain–Computer Interface Spellers: A Review",
+      "year": 2018,
+      "citations": 354,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor"
+      ],
+      "keyword_count": 5,
+      "abstract": "A Brain–Computer Interface (BCI) provides a novel non-muscular communication method via brain signals. A BCI-speller can be considered as one of the first published BCI applications and has opened the gate for many advances in the field. Although many BCI-spellers have been developed during the last",
+      "degree_centrality": 0.1111,
+      "betweenness_centrality": 0.0353,
+      "combined_score": 0.0732,
+      "cluster": 0
+    },
+    {
+      "id": 55,
+      "title": "The Potential for a Speech Brain–Computer Interface Using Chronic Electrocorticography",
+      "year": 2019,
+      "citations": 98,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 56,
+      "title": "Brain computer interface: control signals review",
+      "year": 2017,
+      "citations": 470,
+      "keywords": [
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.101,
+      "betweenness_centrality": 0.0201,
+      "combined_score": 0.0606,
+      "cluster": 0
+    },
+    {
+      "id": 57,
+      "title": "A Novel Multimodal Approach for Hybrid Brain–Computer Interface",
+      "year": 2020,
+      "citations": 61,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "classification",
+        "invasive",
+        "non-invasive"
+      ],
+      "keyword_count": 9,
+      "abstract": "Brain-computer interface (BCI) technologies have been widely used in many areas. In particular, non-invasive technologies such as electroencephalography (EEG) or near-infrared spectroscopy (NIRS) have been used to detect motor imagery, disease, or mental state. It has been already shown in literatur",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0006,
+      "combined_score": 0.0155,
+      "cluster": 0
+    },
+    {
+      "id": 58,
+      "title": "Brain-Computer Interface-Based Humanoid Control: A Review",
+      "year": 2020,
+      "citations": 72,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "machine learning"
+      ],
+      "keyword_count": 6,
+      "abstract": "A Brain-Computer Interface (BCI) acts as a communication mechanism using brain signals to control external devices. The generation of such signals is sometimes independent of the nervous system, such as in Passive BCI. This is majorly beneficial for those who have severe motor disabilities. Traditio",
+      "degree_centrality": 0.0505,
+      "betweenness_centrality": 0.038,
+      "combined_score": 0.0442,
+      "cluster": 0
+    },
+    {
+      "id": 59,
+      "title": "Implementation of a Brain-Computer Interface for Robotic Arm Control",
+      "year": 2021,
+      "citations": 29,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor"
+      ],
+      "keyword_count": 6,
+      "abstract": "Brain-Computer Interfaces (BCI) or Neural Control Interface (NCI), is a distinct and global technology that has revolutionized the world of control and signal processing. This technology has helped link humans and computers to achieve goals that are difficult to achieve for certain patients or peopl",
+      "degree_centrality": 0.101,
+      "betweenness_centrality": 0.0516,
+      "combined_score": 0.0763,
+      "cluster": 0
+    },
+    {
+      "id": 60,
+      "title": "EEG datasets for motor imagery brain–computer interface",
+      "year": 2017,
+      "citations": 320,
+      "keywords": [
+        "electrode",
+        "eeg",
+        "bci",
+        "brain",
+        "cortex",
+        "neuron",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 8,
+      "abstract": "Abstract Background: Most investigators of brain–computer interface (BCI) research believe that BCI can be achieved through induced neuronal activity from the cortex, but not by evoked neuronal activity. Motor imagery (MI)–based BCI is one of the standard concepts of BCI, in that the user can genera",
+      "degree_centrality": 0.0707,
+      "betweenness_centrality": 0.0026,
+      "combined_score": 0.0366,
+      "cluster": 0
+    },
+    {
+      "id": 61,
+      "title": "High performance communication by people with paralysis using an intracortical brain-computer interface",
+      "year": 2017,
+      "citations": 482,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "paralysis"
+      ],
+      "keyword_count": 6,
+      "abstract": "Brain-computer interfaces (BCIs) have the potential to restore communication for people with tetraplegia and anarthria by translating neural activity into control signals for assistive communication devices. While previous pre-clinical and clinical studies have demonstrated promising proofs-of-conce",
+      "degree_centrality": 0.0606,
+      "betweenness_centrality": 0.002,
+      "combined_score": 0.0313,
+      "cluster": 0
+    },
+    {
+      "id": 62,
+      "title": "Shared control of a robotic arm using non-invasive brain-computer interface and computer vision guidance",
+      "year": 2019,
+      "citations": 92,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "invasive",
+        "non-invasive"
+      ],
+      "keyword_count": 6,
+      "abstract": "Abstract Control of a robotic arm using a brain–computer interface (BCI) for reach and grasp activities is one of the most fascinating applications for some severely disabled people, which is especially challenging for the non-invasive BCIs based on electroencephalography (EEG). In this paper, share",
+      "degree_centrality": 0.0404,
+      "betweenness_centrality": 0.0038,
+      "combined_score": 0.0221,
+      "cluster": 0
+    },
+    {
+      "id": 63,
+      "title": "Filter Bank Common Spatial Pattern (FBCSP) in Brain-Computer Interface",
+      "year": 2008,
+      "citations": 1447,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 8
+    },
+    {
+      "id": 64,
+      "title": "A closed-loop, music-based brain-computer interface for emotion mediation",
+      "year": 2019,
+      "citations": 82,
+      "keywords": [
+        "bci",
+        "brain",
+        "invasive",
+        "non-invasive",
+        "feedback"
+      ],
+      "keyword_count": 5,
+      "abstract": "Emotions play a critical role in rational and intelligent behavior; a better fundamental knowledge of them is indispensable for understanding higher order brain function. We propose a non-invasive brain-computer interface (BCI) system to feedback a person’s affective state such that a closed-loop in",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 9
+    },
+    {
+      "id": 65,
+      "title": "Interface, interaction, and intelligence in generalized brain-computer interfaces.",
+      "year": 2021,
+      "citations": 261,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 3,
+      "abstract": "A brain-computer interface (BCI) establishes a direct communication channel between a brain and an external device. With recent advances in neurotechnology and artificial intelligence (AI), the brain signals in BCI communication have been advanced from sensation and perception to higher-level cognit",
+      "degree_centrality": 0.1515,
+      "betweenness_centrality": 0.0044,
+      "combined_score": 0.0779,
+      "cluster": 0
+    },
+    {
+      "id": 66,
+      "title": "Neuropsychological and neurophysiological aspects of brain‐computer‐interface (BCI) control in paralysis",
+      "year": 2020,
+      "citations": 65,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "neuron",
+        "motor",
+        "paralysis",
+        "invasive"
+      ],
+      "keyword_count": 7,
+      "abstract": "Brain‐computer interfaces (BCIs) aim to help paralysed patients to interact with their environment by controlling external devices using brain activity, thereby bypassing the dysfunctional motor system. Some neuronal disorders, such as amyotrophic lateral sclerosis (ALS), severely impair the communi",
+      "degree_centrality": 0.1414,
+      "betweenness_centrality": 0.0149,
+      "combined_score": 0.0782,
+      "cluster": 0
+    },
+    {
+      "id": 67,
+      "title": "A P300-Based Brain-Computer Interface for Improving Attention",
+      "year": 2019,
+      "citations": 70,
+      "keywords": [
+        "bci",
+        "brain",
+        "cognitive",
+        "attention",
+        "feedback"
+      ],
+      "keyword_count": 5,
+      "abstract": "A Brain-computer Interface (BCI) can be used as a neurofeedback training tool to improve cognitive performance. BCIs aim to improve the effectiveness and efficiency of the conventional neurofeedback methods by focusing on the self-regulation of individualized neuromarkers rather than generic ones in",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 68,
+      "title": "A Review on Electroencephalogram Based Brain Computer Interface for Elderly Disabled",
+      "year": 2019,
+      "citations": 86,
+      "keywords": [
+        "electrode",
+        "eeg",
+        "bci",
+        "brain",
+        "signal"
+      ],
+      "keyword_count": 5,
+      "abstract": "Lack of communication causes problems for patients with neurodegenerative diseases, so the need for alternative methods is required to convey their thoughts with caretakers, friends, and family members. Brain–computer interface (BCI) is a device to control external devices by using mental thoughts w",
+      "degree_centrality": 0.202,
+      "betweenness_centrality": 0.0212,
+      "combined_score": 0.1116,
+      "cluster": 0
+    },
+    {
+      "id": 69,
+      "title": "Sensor Modalities for Brain-Computer Interface Technology: A Comprehensive Literature Review.",
+      "year": 2019,
+      "citations": 84,
+      "keywords": [
+        "electrode",
+        "ecog",
+        "bci",
+        "brain",
+        "deep learning",
+        "classification",
+        "invasive",
+        "feedback"
+      ],
+      "keyword_count": 8,
+      "abstract": "Brain-computer interface (BCI) technology is rapidly developing and changing the paradigm of neurorestoration by linking cortical activity with control of an external effector to provide patients with tangible improvements in their ability to interact with the environment. The sensor component of a ",
+      "degree_centrality": 0.2222,
+      "betweenness_centrality": 0.0771,
+      "combined_score": 0.1497,
+      "cluster": 0
+    },
+    {
+      "id": 70,
+      "title": "Brain–Computer Interface Software: A Review and Discussion",
+      "year": 2020,
+      "citations": 53,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal",
+        "feedback"
+      ],
+      "keyword_count": 4,
+      "abstract": "Software is a critical component of brain–computer interfaces (BCIs). While BCI hardware enables the retrieval of brain signals, BCI software is required to analyze these signals, produce output, and provide feedback. Users from multiple research areas have adopted BCI software platforms to investig",
+      "degree_centrality": 0.1919,
+      "betweenness_centrality": 0.0071,
+      "combined_score": 0.0995,
+      "cluster": 0
+    },
+    {
+      "id": 71,
+      "title": "Deep learning for hybrid EEG-fNIRS brain–computer interface: application to motor imagery classification",
+      "year": 2018,
+      "citations": 183,
+      "keywords": [
+        "eeg",
+        "brain",
+        "motor",
+        "deep learning",
+        "classification"
+      ],
+      "keyword_count": 5,
+      "abstract": "",
+      "degree_centrality": 0.0202,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0101,
+      "cluster": 0
+    },
+    {
+      "id": 72,
+      "title": "Independent home use of a brain-computer interface by people with amyotrophic lateral sclerosis",
+      "year": 2018,
+      "citations": 130,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 3,
+      "abstract": "Objective To assess the reliability and usefulness of an EEG-based brain-computer interface (BCI) for patients with advanced amyotrophic lateral sclerosis (ALS) who used it independently at home for up to 18 months. Methods Of 42 patients consented, 39 (93%) met the study criteria, and 37 (88%) were",
+      "degree_centrality": 0.0606,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0303,
+      "cluster": 0
+    },
+    {
+      "id": 73,
+      "title": "Review and Classification of Emotion Recognition Based on EEG Brain-Computer Interface System Research: A Systematic Review",
+      "year": 2017,
+      "citations": 258,
+      "keywords": [
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "machine learning",
+        "classification",
+        "wireless"
+      ],
+      "keyword_count": 7,
+      "abstract": "Recent developments and studies in brain-computer interface (BCI) technologies have facilitated emotion detection and classification. Many BCI studies have sought to investigate, detect, and recognize participants’ emotional affective states. The applied domains for these studies are varied, and inc",
+      "degree_centrality": 0.0202,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0101,
+      "cluster": 0
+    },
+    {
+      "id": 74,
+      "title": "Post-stroke Rehabilitation Training with a Motor-Imagery-Based Brain-Computer Interface (BCI)-Controlled Hand Exoskeleton: A Randomized Controlled Multicenter Trial",
+      "year": 2017,
+      "citations": 322,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "stroke",
+        "paralysis",
+        "classification",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 9,
+      "abstract": "Repeated use of brain-computer interfaces (BCIs) providing contingent sensory feedback of brain activity was recently proposed as a rehabilitation approach to restore motor function after stroke or spinal cord lesions. However, there are only a few clinical studies that investigate feasibility and e",
+      "degree_centrality": 0.1515,
+      "betweenness_centrality": 0.0099,
+      "combined_score": 0.0807,
+      "cluster": 0
+    },
+    {
+      "id": 75,
+      "title": "A Survey on Unmanned Aerial Vehicle Remote Control Using Brain–Computer Interface",
+      "year": 2018,
+      "citations": 128,
+      "keywords": [
+        "bci",
+        "brain",
+        "signal",
+        "attention",
+        "classification"
+      ],
+      "keyword_count": 5,
+      "abstract": "Numerous methods have been developed to gain reliable real-time remote control over pilotless flying aircraft and to perform teleoperation. Recently, state-of-the-art brain–computer interface (BCI) research has provided an avant-garde approach to reach this goal. Due to its broad range of applicatio",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 10
+    },
+    {
+      "id": 76,
+      "title": "Brain–Computer Interface–Based Communication in the Completely Locked-In State",
+      "year": 2017,
+      "citations": 219,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "cognitive",
+        "attention",
+        "paralysis",
+        "classification"
+      ],
+      "keyword_count": 9,
+      "abstract": "Despite partial success, communication has remained impossible for persons suffering from complete motor paralysis but intact cognitive and emotional processing, a state called complete locked-in state (CLIS). Based on a motor learning theoretical context and on the failure of neuroelectric brain–co",
+      "degree_centrality": 0.0606,
+      "betweenness_centrality": 0.0179,
+      "combined_score": 0.0393,
+      "cluster": 0
+    },
+    {
+      "id": 77,
+      "title": "Immediate brain plasticity after one hour of brain–computer interface (BCI)",
+      "year": 2019,
+      "citations": 67,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "motor",
+        "stroke",
+        "feedback"
+      ],
+      "keyword_count": 6,
+      "abstract": "Two groups of inexperienced brain‐computer interface users underwent a purely mental EEG‐BCI session that rapidly impacted on their brain. Modulations in structural and functional MRI were found after only 1 h of BCI training. Two different types of BCI (based on motor imagery or visually evoked pot",
+      "degree_centrality": 0.0505,
+      "betweenness_centrality": 0.0022,
+      "combined_score": 0.0263,
+      "cluster": 0
+    },
+    {
+      "id": 78,
+      "title": "Stability of a chronic implanted brain-computer interface in late-stage amyotrophic lateral sclerosis",
+      "year": 2019,
+      "citations": 80,
+      "keywords": [
+        "neural",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "implant"
+      ],
+      "keyword_count": 6,
+      "abstract": "Highlights • Stability of recorded neural signals is crucial for the clinical viability of implantable brain-computer interfaces (BCIs).• A fully implantable BCI offers a long-term robust and durable control signal in a person with amyotrophic lateral sclerosis.• Increasing home use of the electroco",
+      "degree_centrality": 0.1111,
+      "betweenness_centrality": 0.0041,
+      "combined_score": 0.0576,
+      "cluster": 0
+    },
+    {
+      "id": 79,
+      "title": "Cascade and Parallel Convolutional Recurrent Neural Networks on EEG-based Intention Recognition for Brain Computer Interface",
+      "year": 2017,
+      "citations": 205,
+      "keywords": [
+        "neural",
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "deep learning"
+      ],
+      "keyword_count": 7,
+      "abstract": "\n \n Brain-Computer Interface (BCI) is a system empowering humans to communicate with or control the outside world with exclusively brain intentions. Electroencephalography (EEG) based BCIs are promising solutions due to their convenient and portable instruments. Despite the extensive research of EEG",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 80,
+      "title": "Hybrid Brain–Computer Interface Techniques for Improved Classification Accuracy and Increased Number of Commands: A Review",
+      "year": 2017,
+      "citations": 237,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "cognitive",
+        "classification",
+        "invasive",
+        "non-invasive"
+      ],
+      "keyword_count": 9,
+      "abstract": "In this article, non-invasive hybrid brain–computer interface (hBCI) technologies for improving classification accuracy and increasing the number of commands are reviewed. Hybridization combining more than two modalities is a new trend in brain imaging and prosthesis control. Electroencephalography ",
+      "degree_centrality": 0.0909,
+      "betweenness_centrality": 0.0486,
+      "combined_score": 0.0698,
+      "cluster": 0
+    },
+    {
+      "id": 81,
+      "title": "A Brain–Computer Interface Based on Miniature-Event-Related Potentials Induced by Very Small Lateral Visual Stimuli",
+      "year": 2018,
+      "citations": 187,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 82,
+      "title": "Intracortical recording stability in human brain–computer interface users",
+      "year": 2018,
+      "citations": 133,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 83,
+      "title": "Contralesional Brain–Computer Interface Control of a Powered Exoskeleton for Motor Recovery in Chronic Stroke Survivors",
+      "year": 2017,
+      "citations": 184,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "stroke",
+        "rehabilitation"
+      ],
+      "keyword_count": 7,
+      "abstract": "Background and Purpose— There are few effective therapies to achieve functional recovery from motor-related disabilities affecting the upper limb after stroke. This feasibility study tested whether a powered exoskeleton driven by a brain–computer interface (BCI), using neural activity from the unaff",
+      "degree_centrality": 0.1111,
+      "betweenness_centrality": 0.0011,
+      "combined_score": 0.0561,
+      "cluster": 0
+    },
+    {
+      "id": 84,
+      "title": "Correlated Component Analysis for Enhancing the Performance of SSVEP-Based Brain-Computer Interface",
+      "year": 2018,
+      "citations": 103,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 1
+    },
+    {
+      "id": 85,
+      "title": "Survey on Brain-Computer Interface",
+      "year": 2019,
+      "citations": 51,
+      "keywords": [
+        "neural",
+        "electrode",
+        "eeg",
+        "ecog",
+        "meg",
+        "bci",
+        "brain",
+        "motor",
+        "cognitive",
+        "machine learning",
+        "classification",
+        "wireless",
+        "invasive",
+        "non-invasive"
+      ],
+      "keyword_count": 14,
+      "abstract": "A brain-computer interface (BCI) provides a way to develop interaction between a brain and a computer. The communication is developed as a result of neural responses generated in the brain because of motor movements or cognitive activities. The means of communication here includes muscular and non-m",
+      "degree_centrality": 0.2323,
+      "betweenness_centrality": 0.0522,
+      "combined_score": 0.1422,
+      "cluster": 0
+    },
+    {
+      "id": 86,
+      "title": "Rapid calibration of an intracortical brain–computer interface for people with tetraplegia",
+      "year": 2018,
+      "citations": 136,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 87,
+      "title": "Brain-computer interface control in a virtual reality environment and applications for the internet of things",
+      "year": 2018,
+      "citations": 134,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 3,
+      "abstract": "Brain–computer interfaces (BCIs) have enabled individuals to control devices, such as spellers, robotic arms, drones, and wheelchairs, but often these BCI applications are restricted to research laboratories. With the advent of virtual reality (VR) systems and the Internet of Things (IoT) we can cou",
+      "degree_centrality": 0.0909,
+      "betweenness_centrality": 0.0191,
+      "combined_score": 0.055,
+      "cluster": 0
+    },
+    {
+      "id": 88,
+      "title": "Multimodal Fuzzy Fusion for Enhancing the Motor-Imagery-Based Brain Computer Interface",
+      "year": 2019,
+      "citations": 56,
+      "keywords": [
+        "brain",
+        "signal",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 4,
+      "abstract": "Brain-computer interface technologies, such as steady-state visually evoked potential, P300, and motor imagery are methods of communication between the human brain and the external devices. Motor imagery-based brain-computer interfaces are popular because they avoid unnecessary external stimuli. Alt",
+      "degree_centrality": 0.0404,
+      "betweenness_centrality": 0.0033,
+      "combined_score": 0.0219,
+      "cluster": 0
+    },
+    {
+      "id": 89,
+      "title": "Development of a ternary hybrid fNIRS-EEG brain–computer interface based on imagined speech",
+      "year": 2019,
+      "citations": 50,
+      "keywords": [
+        "eeg",
+        "bci",
+        "brain"
+      ],
+      "keyword_count": 3,
+      "abstract": "There is increasing interest in developing intuitive brain-computer interfaces (BCIs) to differentiate intuitive mental tasks such as imagined speech. Both electroencephalography (EEG) and function...",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0059,
+      "combined_score": 0.0181,
+      "cluster": 0
+    },
+    {
+      "id": 90,
+      "title": "Self-Paced Operation of a Wheelchair Based on a Hybrid Brain-Computer Interface Combining Motor Imagery and P300 Potential",
+      "year": 2017,
+      "citations": 126,
+      "keywords": [
+        "brain",
+        "motor"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.0,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0,
+      "cluster": 11
+    },
+    {
+      "id": 91,
+      "title": "Improving brain computer interface performance by data augmentation with conditional Deep Convolutional Generative Adversarial Networks",
+      "year": 2018,
+      "citations": 70,
+      "keywords": [
+        "neural",
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "classification"
+      ],
+      "keyword_count": 7,
+      "abstract": "One of the big restrictions in brain computer interface field is the very limited training samples, it is difficult to build a reliable and usable system with such limited data. Inspired by generative adversarial networks, we propose a conditional Deep Convolutional Generative Adversarial (cDCGAN) N",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 92,
+      "title": "Neurolinguistics Research Advancing Development of a Direct-Speech Brain-Computer Interface",
+      "year": 2018,
+      "citations": 80,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "signal",
+        "decoding"
+      ],
+      "keyword_count": 5,
+      "abstract": "A direct-speech brain-computer interface (DS-BCI) acquires neural signals corresponding to imagined speech, then processes and decodes these signals to produce a linguistic output in the form of phonemes, words, or sentences. Recent research has shown the potential of neurolinguistics to enhance dec",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 93,
+      "title": "Control of a two-dimensional movement signal by a noninvasive brain-computer interface in humans.",
+      "year": 2004,
+      "citations": 1609,
+      "keywords": [
+        "brain",
+        "signal",
+        "invasive"
+      ],
+      "keyword_count": 3,
+      "abstract": "",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0152,
+      "cluster": 0
+    },
+    {
+      "id": 94,
+      "title": "Autonomy infused teleoperation with application to brain computer interface controlled manipulation",
+      "year": 2017,
+      "citations": 113,
+      "keywords": [
+        "brain"
+      ],
+      "keyword_count": 1,
+      "abstract": "",
+      "degree_centrality": 0.0101,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0051,
+      "cluster": 0
+    },
+    {
+      "id": 95,
+      "title": "Brain-Computer Interface for Clinical Purposes: Cognitive Assessment and Rehabilitation",
+      "year": 2017,
+      "citations": 112,
+      "keywords": [
+        "neural",
+        "bci",
+        "brain",
+        "motor",
+        "cognitive",
+        "attention",
+        "stroke",
+        "feedback",
+        "rehabilitation"
+      ],
+      "keyword_count": 9,
+      "abstract": "Alongside the best-known applications of brain-computer interface (BCI) technology for restoring communication abilities and controlling external devices, we present the state of the art of BCI use for cognitive assessment and training purposes. We first describe some preliminary attempts to develop",
+      "degree_centrality": 0.202,
+      "betweenness_centrality": 0.0267,
+      "combined_score": 0.1144,
+      "cluster": 0
+    },
+    {
+      "id": 96,
+      "title": "Implementation of a Brain-Computer Interface on a Lower-Limb Exoskeleton",
+      "year": 2018,
+      "citations": 66,
+      "keywords": [
+        "eeg",
+        "ecog",
+        "bci",
+        "brain",
+        "signal",
+        "motor",
+        "classification",
+        "decoding"
+      ],
+      "keyword_count": 8,
+      "abstract": "In this paper, we propose to use brain-computer interface (BCI) to control a lower-limb exoskeleton. The exoskeleton follows the wearer’s motion intention through decoding of electroencephalography (EEG) signals and multi-modal cognition. Motion patterns as standing up, sitting down, and walking for",
+      "degree_centrality": 0.0909,
+      "betweenness_centrality": 0.0053,
+      "combined_score": 0.0481,
+      "cluster": 0
+    },
+    {
+      "id": 97,
+      "title": "Wireless Brain Computer Interface for Smart Home and Medical System",
+      "year": 2018,
+      "citations": 67,
+      "keywords": [
+        "brain",
+        "wireless"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.0505,
+      "betweenness_centrality": 0.0,
+      "combined_score": 0.0253,
+      "cluster": 0
+    },
+    {
+      "id": 98,
+      "title": "A high-speed brain-computer interface (BCI) using dry EEG electrodes",
+      "year": 2017,
+      "citations": 93,
+      "keywords": [
+        "neural",
+        "electrode",
+        "eeg",
+        "bci",
+        "brain",
+        "signal",
+        "classification",
+        "invasive",
+        "non-invasive"
+      ],
+      "keyword_count": 9,
+      "abstract": "Recently, brain-computer interfaces (BCIs) based on visual evoked potentials (VEPs) have been shown to achieve remarkable communication speeds. As they use electroencephalography (EEG) as non-invasive method for recording neural signals, the application of gel-based EEG is time-consuming and cumbers",
+      "degree_centrality": 0.1515,
+      "betweenness_centrality": 0.004,
+      "combined_score": 0.0778,
+      "cluster": 0
+    },
+    {
+      "id": 99,
+      "title": "Fully Implanted Brain-Computer Interface in a Locked-In Patient with ALS.",
+      "year": 2016,
+      "citations": 489,
+      "keywords": [
+        "brain",
+        "implant"
+      ],
+      "keyword_count": 2,
+      "abstract": "",
+      "degree_centrality": 0.0303,
+      "betweenness_centrality": 0.0002,
+      "combined_score": 0.0153,
+      "cluster": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "weight": 0.6889
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "weight": 0.6615
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "weight": 0.6666
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "weight": 0.7296
+    },
+    {
+      "source": 1,
+      "target": 11,
+      "weight": 0.7735
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "weight": 0.6844
+    },
+    {
+      "source": 1,
+      "target": 17,
+      "weight": 0.6531
+    },
+    {
+      "source": 1,
+      "target": 19,
+      "weight": 0.7268
+    },
+    {
+      "source": 1,
+      "target": 21,
+      "weight": 0.7687
+    },
+    {
+      "source": 1,
+      "target": 25,
+      "weight": 0.6579
+    },
+    {
+      "source": 1,
+      "target": 29,
+      "weight": 0.6619
+    },
+    {
+      "source": 1,
+      "target": 36,
+      "weight": 0.6908
+    },
+    {
+      "source": 1,
+      "target": 38,
+      "weight": 0.7257
+    },
+    {
+      "source": 1,
+      "target": 50,
+      "weight": 0.6538
+    },
+    {
+      "source": 1,
+      "target": 56,
+      "weight": 0.7034
+    },
+    {
+      "source": 1,
+      "target": 65,
+      "weight": 0.7156
+    },
+    {
+      "source": 1,
+      "target": 69,
+      "weight": 0.7098
+    },
+    {
+      "source": 1,
+      "target": 70,
+      "weight": 0.7112
+    },
+    {
+      "source": 1,
+      "target": 85,
+      "weight": 0.6636
+    },
+    {
+      "source": 1,
+      "target": 97,
+      "weight": 0.6619
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "weight": 0.7565
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "weight": 0.6581
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "weight": 0.7955
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "weight": 0.6726
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "weight": 0.681
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "weight": 0.7724
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "weight": 0.7529
+    },
+    {
+      "source": 2,
+      "target": 14,
+      "weight": 0.6784
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "weight": 0.7673
+    },
+    {
+      "source": 2,
+      "target": 21,
+      "weight": 0.72
+    },
+    {
+      "source": 2,
+      "target": 23,
+      "weight": 0.733
+    },
+    {
+      "source": 2,
+      "target": 25,
+      "weight": 0.7011
+    },
+    {
+      "source": 2,
+      "target": 28,
+      "weight": 0.6737
+    },
+    {
+      "source": 2,
+      "target": 36,
+      "weight": 0.7419
+    },
+    {
+      "source": 2,
+      "target": 38,
+      "weight": 0.8037
+    },
+    {
+      "source": 2,
+      "target": 44,
+      "weight": 0.7057
+    },
+    {
+      "source": 2,
+      "target": 48,
+      "weight": 0.7379
+    },
+    {
+      "source": 2,
+      "target": 65,
+      "weight": 0.6701
+    },
+    {
+      "source": 2,
+      "target": 66,
+      "weight": 0.6908
+    },
+    {
+      "source": 2,
+      "target": 68,
+      "weight": 0.7818
+    },
+    {
+      "source": 2,
+      "target": 69,
+      "weight": 0.682
+    },
+    {
+      "source": 2,
+      "target": 70,
+      "weight": 0.7414
+    },
+    {
+      "source": 2,
+      "target": 73,
+      "weight": 0.6656
+    },
+    {
+      "source": 2,
+      "target": 78,
+      "weight": 0.7075
+    },
+    {
+      "source": 2,
+      "target": 85,
+      "weight": 0.7369
+    },
+    {
+      "source": 2,
+      "target": 87,
+      "weight": 0.6564
+    },
+    {
+      "source": 2,
+      "target": 95,
+      "weight": 0.6973
+    },
+    {
+      "source": 2,
+      "target": 98,
+      "weight": 0.6818
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "weight": 0.6667
+    },
+    {
+      "source": 4,
+      "target": 87,
+      "weight": 0.6645
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "weight": 0.7126
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "weight": 0.719
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "weight": 0.6746
+    },
+    {
+      "source": 5,
+      "target": 21,
+      "weight": 0.6519
+    },
+    {
+      "source": 5,
+      "target": 25,
+      "weight": 0.7353
+    },
+    {
+      "source": 5,
+      "target": 36,
+      "weight": 0.7152
+    },
+    {
+      "source": 5,
+      "target": 38,
+      "weight": 0.8153
+    },
+    {
+      "source": 5,
+      "target": 44,
+      "weight": 0.6503
+    },
+    {
+      "source": 5,
+      "target": 51,
+      "weight": 0.7064
+    },
+    {
+      "source": 5,
+      "target": 65,
+      "weight": 0.6647
+    },
+    {
+      "source": 5,
+      "target": 70,
+      "weight": 0.6904
+    },
+    {
+      "source": 5,
+      "target": 87,
+      "weight": 0.6644
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "weight": 0.7139
+    },
+    {
+      "source": 6,
+      "target": 52,
+      "weight": 0.7081
+    },
+    {
+      "source": 6,
+      "target": 69,
+      "weight": 0.6943
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "weight": 0.7185
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "weight": 0.6679
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "weight": 0.7431
+    },
+    {
+      "source": 7,
+      "target": 21,
+      "weight": 0.7182
+    },
+    {
+      "source": 7,
+      "target": 22,
+      "weight": 0.6659
+    },
+    {
+      "source": 7,
+      "target": 23,
+      "weight": 0.7495
+    },
+    {
+      "source": 7,
+      "target": 25,
+      "weight": 0.6836
+    },
+    {
+      "source": 7,
+      "target": 28,
+      "weight": 0.6827
+    },
+    {
+      "source": 7,
+      "target": 33,
+      "weight": 0.6548
+    },
+    {
+      "source": 7,
+      "target": 34,
+      "weight": 0.6927
+    },
+    {
+      "source": 7,
+      "target": 35,
+      "weight": 0.6542
+    },
+    {
+      "source": 7,
+      "target": 36,
+      "weight": 0.6823
+    },
+    {
+      "source": 7,
+      "target": 38,
+      "weight": 0.7126
+    },
+    {
+      "source": 7,
+      "target": 44,
+      "weight": 0.8292
+    },
+    {
+      "source": 7,
+      "target": 48,
+      "weight": 0.7887
+    },
+    {
+      "source": 7,
+      "target": 49,
+      "weight": 0.7101
+    },
+    {
+      "source": 7,
+      "target": 54,
+      "weight": 0.6631
+    },
+    {
+      "source": 7,
+      "target": 60,
+      "weight": 0.6833
+    },
+    {
+      "source": 7,
+      "target": 66,
+      "weight": 0.7091
+    },
+    {
+      "source": 7,
+      "target": 68,
+      "weight": 0.7431
+    },
+    {
+      "source": 7,
+      "target": 69,
+      "weight": 0.713
+    },
+    {
+      "source": 7,
+      "target": 70,
+      "weight": 0.6624
+    },
+    {
+      "source": 7,
+      "target": 74,
+      "weight": 0.713
+    },
+    {
+      "source": 7,
+      "target": 80,
+      "weight": 0.6841
+    },
+    {
+      "source": 7,
+      "target": 83,
+      "weight": 0.7628
+    },
+    {
+      "source": 7,
+      "target": 85,
+      "weight": 0.7296
+    },
+    {
+      "source": 7,
+      "target": 95,
+      "weight": 0.7368
+    },
+    {
+      "source": 7,
+      "target": 96,
+      "weight": 0.7025
+    },
+    {
+      "source": 7,
+      "target": 98,
+      "weight": 0.6643
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "weight": 0.7619
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "weight": 0.6709
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "weight": 0.8421
+    },
+    {
+      "source": 8,
+      "target": 17,
+      "weight": 0.6719
+    },
+    {
+      "source": 8,
+      "target": 25,
+      "weight": 0.6534
+    },
+    {
+      "source": 8,
+      "target": 28,
+      "weight": 0.6506
+    },
+    {
+      "source": 8,
+      "target": 29,
+      "weight": 0.6548
+    },
+    {
+      "source": 8,
+      "target": 36,
+      "weight": 0.7066
+    },
+    {
+      "source": 8,
+      "target": 38,
+      "weight": 0.7591
+    },
+    {
+      "source": 8,
+      "target": 55,
+      "weight": 0.6544
+    },
+    {
+      "source": 8,
+      "target": 56,
+      "weight": 0.7643
+    },
+    {
+      "source": 8,
+      "target": 65,
+      "weight": 0.6827
+    },
+    {
+      "source": 8,
+      "target": 68,
+      "weight": 0.6957
+    },
+    {
+      "source": 8,
+      "target": 70,
+      "weight": 0.6563
+    },
+    {
+      "source": 8,
+      "target": 77,
+      "weight": 0.6546
+    },
+    {
+      "source": 8,
+      "target": 78,
+      "weight": 0.6536
+    },
+    {
+      "source": 8,
+      "target": 81,
+      "weight": 0.6629
+    },
+    {
+      "source": 8,
+      "target": 93,
+      "weight": 0.6785
+    },
+    {
+      "source": 8,
+      "target": 97,
+      "weight": 0.7018
+    },
+    {
+      "source": 8,
+      "target": 99,
+      "weight": 0.6924
+    },
+    {
+      "source": 9,
+      "target": 19,
+      "weight": 0.6712
+    },
+    {
+      "source": 9,
+      "target": 73,
+      "weight": 0.7887
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "weight": 0.6961
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "weight": 0.7474
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "weight": 0.6593
+    },
+    {
+      "source": 11,
+      "target": 19,
+      "weight": 0.8316
+    },
+    {
+      "source": 11,
+      "target": 21,
+      "weight": 0.8664
+    },
+    {
+      "source": 11,
+      "target": 23,
+      "weight": 0.7235
+    },
+    {
+      "source": 11,
+      "target": 25,
+      "weight": 0.7111
+    },
+    {
+      "source": 11,
+      "target": 36,
+      "weight": 0.7653
+    },
+    {
+      "source": 11,
+      "target": 38,
+      "weight": 0.8333
+    },
+    {
+      "source": 11,
+      "target": 44,
+      "weight": 0.6628
+    },
+    {
+      "source": 11,
+      "target": 50,
+      "weight": 0.675
+    },
+    {
+      "source": 11,
+      "target": 51,
+      "weight": 0.6805
+    },
+    {
+      "source": 11,
+      "target": 52,
+      "weight": 0.672
+    },
+    {
+      "source": 11,
+      "target": 54,
+      "weight": 0.678
+    },
+    {
+      "source": 11,
+      "target": 56,
+      "weight": 0.6948
+    },
+    {
+      "source": 11,
+      "target": 59,
+      "weight": 0.662
+    },
+    {
+      "source": 11,
+      "target": 65,
+      "weight": 0.7718
+    },
+    {
+      "source": 11,
+      "target": 68,
+      "weight": 0.6946
+    },
+    {
+      "source": 11,
+      "target": 69,
+      "weight": 0.7339
+    },
+    {
+      "source": 11,
+      "target": 70,
+      "weight": 0.8693
+    },
+    {
+      "source": 11,
+      "target": 85,
+      "weight": 0.7277
+    },
+    {
+      "source": 11,
+      "target": 87,
+      "weight": 0.6844
+    },
+    {
+      "source": 11,
+      "target": 97,
+      "weight": 0.679
+    },
+    {
+      "source": 11,
+      "target": 98,
+      "weight": 0.7156
+    },
+    {
+      "source": 12,
+      "target": 22,
+      "weight": 0.6616
+    },
+    {
+      "source": 12,
+      "target": 28,
+      "weight": 0.7366
+    },
+    {
+      "source": 12,
+      "target": 44,
+      "weight": 0.6508
+    },
+    {
+      "source": 12,
+      "target": 59,
+      "weight": 0.6859
+    },
+    {
+      "source": 12,
+      "target": 61,
+      "weight": 0.6519
+    },
+    {
+      "source": 12,
+      "target": 74,
+      "weight": 0.6745
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "weight": 0.6523
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "weight": 0.6643
+    },
+    {
+      "source": 13,
+      "target": 28,
+      "weight": 0.7089
+    },
+    {
+      "source": 13,
+      "target": 29,
+      "weight": 0.6557
+    },
+    {
+      "source": 13,
+      "target": 36,
+      "weight": 0.7174
+    },
+    {
+      "source": 13,
+      "target": 38,
+      "weight": 0.7554
+    },
+    {
+      "source": 13,
+      "target": 44,
+      "weight": 0.6854
+    },
+    {
+      "source": 13,
+      "target": 68,
+      "weight": 0.6684
+    },
+    {
+      "source": 13,
+      "target": 69,
+      "weight": 0.6562
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "weight": 0.6643
+    },
+    {
+      "source": 14,
+      "target": 19,
+      "weight": 0.671
+    },
+    {
+      "source": 14,
+      "target": 21,
+      "weight": 0.652
+    },
+    {
+      "source": 14,
+      "target": 29,
+      "weight": 0.6663
+    },
+    {
+      "source": 14,
+      "target": 36,
+      "weight": 0.6577
+    },
+    {
+      "source": 14,
+      "target": 38,
+      "weight": 0.7292
+    },
+    {
+      "source": 14,
+      "target": 56,
+      "weight": 0.7286
+    },
+    {
+      "source": 14,
+      "target": 97,
+      "weight": 0.7346
+    },
+    {
+      "source": 15,
+      "target": 23,
+      "weight": 0.6815
+    },
+    {
+      "source": 15,
+      "target": 26,
+      "weight": 0.813
+    },
+    {
+      "source": 15,
+      "target": 40,
+      "weight": 0.6948
+    },
+    {
+      "source": 15,
+      "target": 52,
+      "weight": 0.6711
+    },
+    {
+      "source": 16,
+      "target": 19,
+      "weight": 0.7035
+    },
+    {
+      "source": 16,
+      "target": 21,
+      "weight": 0.6651
+    },
+    {
+      "source": 16,
+      "target": 29,
+      "weight": 0.6854
+    },
+    {
+      "source": 16,
+      "target": 56,
+      "weight": 0.6647
+    },
+    {
+      "source": 17,
+      "target": 29,
+      "weight": 0.6582
+    },
+    {
+      "source": 17,
+      "target": 65,
+      "weight": 0.6658
+    },
+    {
+      "source": 17,
+      "target": 92,
+      "weight": 0.6882
+    },
+    {
+      "source": 18,
+      "target": 20,
+      "weight": 0.7031
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "weight": 0.8503
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "weight": 0.7535
+    },
+    {
+      "source": 19,
+      "target": 29,
+      "weight": 0.6647
+    },
+    {
+      "source": 19,
+      "target": 36,
+      "weight": 0.7091
+    },
+    {
+      "source": 19,
+      "target": 38,
+      "weight": 0.7016
+    },
+    {
+      "source": 19,
+      "target": 50,
+      "weight": 0.6795
+    },
+    {
+      "source": 19,
+      "target": 52,
+      "weight": 0.6899
+    },
+    {
+      "source": 19,
+      "target": 54,
+      "weight": 0.662
+    },
+    {
+      "source": 19,
+      "target": 56,
+      "weight": 0.6577
+    },
+    {
+      "source": 19,
+      "target": 65,
+      "weight": 0.6871
+    },
+    {
+      "source": 19,
+      "target": 68,
+      "weight": 0.6687
+    },
+    {
+      "source": 19,
+      "target": 69,
+      "weight": 0.7118
+    },
+    {
+      "source": 19,
+      "target": 70,
+      "weight": 0.7658
+    },
+    {
+      "source": 19,
+      "target": 80,
+      "weight": 0.6586
+    },
+    {
+      "source": 19,
+      "target": 85,
+      "weight": 0.7405
+    },
+    {
+      "source": 19,
+      "target": 98,
+      "weight": 0.7186
+    },
+    {
+      "source": 20,
+      "target": 26,
+      "weight": 0.6526
+    },
+    {
+      "source": 20,
+      "target": 52,
+      "weight": 0.6883
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "weight": 0.7493
+    },
+    {
+      "source": 21,
+      "target": 25,
+      "weight": 0.691
+    },
+    {
+      "source": 21,
+      "target": 36,
+      "weight": 0.7321
+    },
+    {
+      "source": 21,
+      "target": 38,
+      "weight": 0.759
+    },
+    {
+      "source": 21,
+      "target": 40,
+      "weight": 0.7173
+    },
+    {
+      "source": 21,
+      "target": 50,
+      "weight": 0.6908
+    },
+    {
+      "source": 21,
+      "target": 52,
+      "weight": 0.7066
+    },
+    {
+      "source": 21,
+      "target": 54,
+      "weight": 0.6582
+    },
+    {
+      "source": 21,
+      "target": 65,
+      "weight": 0.7255
+    },
+    {
+      "source": 21,
+      "target": 69,
+      "weight": 0.7392
+    },
+    {
+      "source": 21,
+      "target": 70,
+      "weight": 0.7789
+    },
+    {
+      "source": 21,
+      "target": 80,
+      "weight": 0.6502
+    },
+    {
+      "source": 21,
+      "target": 85,
+      "weight": 0.7705
+    },
+    {
+      "source": 21,
+      "target": 96,
+      "weight": 0.6762
+    },
+    {
+      "source": 21,
+      "target": 98,
+      "weight": 0.6889
+    },
+    {
+      "source": 22,
+      "target": 28,
+      "weight": 0.6557
+    },
+    {
+      "source": 22,
+      "target": 33,
+      "weight": 0.6901
+    },
+    {
+      "source": 22,
+      "target": 44,
+      "weight": 0.7721
+    },
+    {
+      "source": 22,
+      "target": 48,
+      "weight": 0.6997
+    },
+    {
+      "source": 22,
+      "target": 49,
+      "weight": 0.696
+    },
+    {
+      "source": 22,
+      "target": 74,
+      "weight": 0.7306
+    },
+    {
+      "source": 22,
+      "target": 83,
+      "weight": 0.7622
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "weight": 0.6882
+    },
+    {
+      "source": 23,
+      "target": 34,
+      "weight": 0.6509
+    },
+    {
+      "source": 23,
+      "target": 36,
+      "weight": 0.7012
+    },
+    {
+      "source": 23,
+      "target": 38,
+      "weight": 0.6816
+    },
+    {
+      "source": 23,
+      "target": 40,
+      "weight": 0.7681
+    },
+    {
+      "source": 23,
+      "target": 44,
+      "weight": 0.6708
+    },
+    {
+      "source": 23,
+      "target": 54,
+      "weight": 0.6553
+    },
+    {
+      "source": 23,
+      "target": 59,
+      "weight": 0.6518
+    },
+    {
+      "source": 23,
+      "target": 60,
+      "weight": 0.6861
+    },
+    {
+      "source": 23,
+      "target": 68,
+      "weight": 0.6767
+    },
+    {
+      "source": 23,
+      "target": 69,
+      "weight": 0.6598
+    },
+    {
+      "source": 23,
+      "target": 70,
+      "weight": 0.6794
+    },
+    {
+      "source": 23,
+      "target": 80,
+      "weight": 0.6573
+    },
+    {
+      "source": 23,
+      "target": 85,
+      "weight": 0.7473
+    },
+    {
+      "source": 23,
+      "target": 88,
+      "weight": 0.6554
+    },
+    {
+      "source": 23,
+      "target": 96,
+      "weight": 0.7001
+    },
+    {
+      "source": 23,
+      "target": 98,
+      "weight": 0.6633
+    },
+    {
+      "source": 24,
+      "target": 58,
+      "weight": 0.6565
+    },
+    {
+      "source": 24,
+      "target": 94,
+      "weight": 0.6526
+    },
+    {
+      "source": 25,
+      "target": 34,
+      "weight": 0.6774
+    },
+    {
+      "source": 25,
+      "target": 36,
+      "weight": 0.7237
+    },
+    {
+      "source": 25,
+      "target": 38,
+      "weight": 0.692
+    },
+    {
+      "source": 25,
+      "target": 51,
+      "weight": 0.655
+    },
+    {
+      "source": 25,
+      "target": 60,
+      "weight": 0.6789
+    },
+    {
+      "source": 25,
+      "target": 65,
+      "weight": 0.6669
+    },
+    {
+      "source": 25,
+      "target": 69,
+      "weight": 0.6747
+    },
+    {
+      "source": 25,
+      "target": 70,
+      "weight": 0.6812
+    },
+    {
+      "source": 25,
+      "target": 98,
+      "weight": 0.6758
+    },
+    {
+      "source": 26,
+      "target": 32,
+      "weight": 0.6606
+    },
+    {
+      "source": 26,
+      "target": 40,
+      "weight": 0.723
+    },
+    {
+      "source": 26,
+      "target": 52,
+      "weight": 0.6976
+    },
+    {
+      "source": 26,
+      "target": 79,
+      "weight": 0.6841
+    },
+    {
+      "source": 27,
+      "target": 57,
+      "weight": 0.7473
+    },
+    {
+      "source": 27,
+      "target": 71,
+      "weight": 0.7153
+    },
+    {
+      "source": 27,
+      "target": 80,
+      "weight": 0.7819
+    },
+    {
+      "source": 27,
+      "target": 89,
+      "weight": 0.7024
+    },
+    {
+      "source": 28,
+      "target": 36,
+      "weight": 0.6501
+    },
+    {
+      "source": 28,
+      "target": 38,
+      "weight": 0.7111
+    },
+    {
+      "source": 28,
+      "target": 44,
+      "weight": 0.7012
+    },
+    {
+      "source": 28,
+      "target": 48,
+      "weight": 0.6571
+    },
+    {
+      "source": 28,
+      "target": 61,
+      "weight": 0.7008
+    },
+    {
+      "source": 28,
+      "target": 68,
+      "weight": 0.6963
+    },
+    {
+      "source": 28,
+      "target": 74,
+      "weight": 0.6505
+    },
+    {
+      "source": 28,
+      "target": 78,
+      "weight": 0.6788
+    },
+    {
+      "source": 28,
+      "target": 86,
+      "weight": 0.6746
+    },
+    {
+      "source": 28,
+      "target": 95,
+      "weight": 0.6712
+    },
+    {
+      "source": 29,
+      "target": 56,
+      "weight": 0.6924
+    },
+    {
+      "source": 30,
+      "target": 54,
+      "weight": 0.6754
+    },
+    {
+      "source": 31,
+      "target": 44,
+      "weight": 0.6643
+    },
+    {
+      "source": 31,
+      "target": 82,
+      "weight": 0.6906
+    },
+    {
+      "source": 32,
+      "target": 69,
+      "weight": 0.6568
+    },
+    {
+      "source": 32,
+      "target": 91,
+      "weight": 0.8519
+    },
+    {
+      "source": 33,
+      "target": 48,
+      "weight": 0.6951
+    },
+    {
+      "source": 33,
+      "target": 49,
+      "weight": 0.8035
+    },
+    {
+      "source": 33,
+      "target": 74,
+      "weight": 0.8028
+    },
+    {
+      "source": 33,
+      "target": 83,
+      "weight": 0.7231
+    },
+    {
+      "source": 33,
+      "target": 95,
+      "weight": 0.6574
+    },
+    {
+      "source": 34,
+      "target": 36,
+      "weight": 0.6986
+    },
+    {
+      "source": 34,
+      "target": 44,
+      "weight": 0.6588
+    },
+    {
+      "source": 34,
+      "target": 47,
+      "weight": 0.6723
+    },
+    {
+      "source": 34,
+      "target": 60,
+      "weight": 0.7091
+    },
+    {
+      "source": 35,
+      "target": 44,
+      "weight": 0.6809
+    },
+    {
+      "source": 35,
+      "target": 48,
+      "weight": 0.696
+    },
+    {
+      "source": 35,
+      "target": 49,
+      "weight": 0.668
+    },
+    {
+      "source": 35,
+      "target": 74,
+      "weight": 0.6983
+    },
+    {
+      "source": 35,
+      "target": 83,
+      "weight": 0.7244
+    },
+    {
+      "source": 35,
+      "target": 95,
+      "weight": 0.7077
+    },
+    {
+      "source": 36,
+      "target": 38,
+      "weight": 0.739
+    },
+    {
+      "source": 36,
+      "target": 44,
+      "weight": 0.681
+    },
+    {
+      "source": 36,
+      "target": 51,
+      "weight": 0.6501
+    },
+    {
+      "source": 36,
+      "target": 65,
+      "weight": 0.701
+    },
+    {
+      "source": 36,
+      "target": 68,
+      "weight": 0.655
+    },
+    {
+      "source": 36,
+      "target": 69,
+      "weight": 0.6878
+    },
+    {
+      "source": 36,
+      "target": 70,
+      "weight": 0.7251
+    },
+    {
+      "source": 36,
+      "target": 85,
+      "weight": 0.6865
+    },
+    {
+      "source": 36,
+      "target": 87,
+      "weight": 0.6532
+    },
+    {
+      "source": 36,
+      "target": 95,
+      "weight": 0.6523
+    },
+    {
+      "source": 36,
+      "target": 98,
+      "weight": 0.6581
+    },
+    {
+      "source": 38,
+      "target": 44,
+      "weight": 0.6976
+    },
+    {
+      "source": 38,
+      "target": 48,
+      "weight": 0.6809
+    },
+    {
+      "source": 38,
+      "target": 51,
+      "weight": 0.722
+    },
+    {
+      "source": 38,
+      "target": 54,
+      "weight": 0.6817
+    },
+    {
+      "source": 38,
+      "target": 56,
+      "weight": 0.6512
+    },
+    {
+      "source": 38,
+      "target": 59,
+      "weight": 0.6536
+    },
+    {
+      "source": 38,
+      "target": 65,
+      "weight": 0.7543
+    },
+    {
+      "source": 38,
+      "target": 66,
+      "weight": 0.6957
+    },
+    {
+      "source": 38,
+      "target": 68,
+      "weight": 0.7468
+    },
+    {
+      "source": 38,
+      "target": 69,
+      "weight": 0.7039
+    },
+    {
+      "source": 38,
+      "target": 70,
+      "weight": 0.7733
+    },
+    {
+      "source": 38,
+      "target": 72,
+      "weight": 0.662
+    },
+    {
+      "source": 38,
+      "target": 78,
+      "weight": 0.6879
+    },
+    {
+      "source": 38,
+      "target": 85,
+      "weight": 0.7648
+    },
+    {
+      "source": 38,
+      "target": 87,
+      "weight": 0.6922
+    },
+    {
+      "source": 38,
+      "target": 93,
+      "weight": 0.663
+    },
+    {
+      "source": 38,
+      "target": 95,
+      "weight": 0.693
+    },
+    {
+      "source": 38,
+      "target": 97,
+      "weight": 0.6527
+    },
+    {
+      "source": 38,
+      "target": 98,
+      "weight": 0.6778
+    },
+    {
+      "source": 39,
+      "target": 56,
+      "weight": 0.6532
+    },
+    {
+      "source": 40,
+      "target": 47,
+      "weight": 0.6883
+    },
+    {
+      "source": 40,
+      "target": 52,
+      "weight": 0.6607
+    },
+    {
+      "source": 40,
+      "target": 85,
+      "weight": 0.7498
+    },
+    {
+      "source": 40,
+      "target": 88,
+      "weight": 0.6654
+    },
+    {
+      "source": 40,
+      "target": 96,
+      "weight": 0.6862
+    },
+    {
+      "source": 41,
+      "target": 53,
+      "weight": 0.6713
+    },
+    {
+      "source": 41,
+      "target": 59,
+      "weight": 0.6652
+    },
+    {
+      "source": 41,
+      "target": 62,
+      "weight": 0.6581
+    },
+    {
+      "source": 43,
+      "target": 84,
+      "weight": 0.8536
+    },
+    {
+      "source": 44,
+      "target": 48,
+      "weight": 0.7818
+    },
+    {
+      "source": 44,
+      "target": 49,
+      "weight": 0.7198
+    },
+    {
+      "source": 44,
+      "target": 66,
+      "weight": 0.6504
+    },
+    {
+      "source": 44,
+      "target": 69,
+      "weight": 0.708
+    },
+    {
+      "source": 44,
+      "target": 74,
+      "weight": 0.719
+    },
+    {
+      "source": 44,
+      "target": 83,
+      "weight": 0.742
+    },
+    {
+      "source": 44,
+      "target": 85,
+      "weight": 0.6682
+    },
+    {
+      "source": 44,
+      "target": 95,
+      "weight": 0.7608
+    },
+    {
+      "source": 44,
+      "target": 96,
+      "weight": 0.672
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "weight": 0.7693
+    },
+    {
+      "source": 48,
+      "target": 66,
+      "weight": 0.7395
+    },
+    {
+      "source": 48,
+      "target": 68,
+      "weight": 0.7002
+    },
+    {
+      "source": 48,
+      "target": 72,
+      "weight": 0.6924
+    },
+    {
+      "source": 48,
+      "target": 74,
+      "weight": 0.7829
+    },
+    {
+      "source": 48,
+      "target": 76,
+      "weight": 0.678
+    },
+    {
+      "source": 48,
+      "target": 77,
+      "weight": 0.6534
+    },
+    {
+      "source": 48,
+      "target": 78,
+      "weight": 0.7543
+    },
+    {
+      "source": 48,
+      "target": 83,
+      "weight": 0.7965
+    },
+    {
+      "source": 48,
+      "target": 85,
+      "weight": 0.6757
+    },
+    {
+      "source": 48,
+      "target": 95,
+      "weight": 0.8287
+    },
+    {
+      "source": 49,
+      "target": 59,
+      "weight": 0.7068
+    },
+    {
+      "source": 49,
+      "target": 62,
+      "weight": 0.6887
+    },
+    {
+      "source": 49,
+      "target": 66,
+      "weight": 0.662
+    },
+    {
+      "source": 49,
+      "target": 68,
+      "weight": 0.6505
+    },
+    {
+      "source": 49,
+      "target": 74,
+      "weight": 0.8063
+    },
+    {
+      "source": 49,
+      "target": 83,
+      "weight": 0.8131
+    },
+    {
+      "source": 49,
+      "target": 95,
+      "weight": 0.718
+    },
+    {
+      "source": 49,
+      "target": 96,
+      "weight": 0.6668
+    },
+    {
+      "source": 50,
+      "target": 85,
+      "weight": 0.6744
+    },
+    {
+      "source": 51,
+      "target": 70,
+      "weight": 0.6719
+    },
+    {
+      "source": 52,
+      "target": 69,
+      "weight": 0.73
+    },
+    {
+      "source": 54,
+      "target": 67,
+      "weight": 0.694
+    },
+    {
+      "source": 54,
+      "target": 70,
+      "weight": 0.6537
+    },
+    {
+      "source": 54,
+      "target": 85,
+      "weight": 0.6543
+    },
+    {
+      "source": 54,
+      "target": 98,
+      "weight": 0.6552
+    },
+    {
+      "source": 56,
+      "target": 93,
+      "weight": 0.741
+    },
+    {
+      "source": 57,
+      "target": 80,
+      "weight": 0.7166
+    },
+    {
+      "source": 57,
+      "target": 88,
+      "weight": 0.7282
+    },
+    {
+      "source": 58,
+      "target": 59,
+      "weight": 0.7183
+    },
+    {
+      "source": 58,
+      "target": 62,
+      "weight": 0.6823
+    },
+    {
+      "source": 58,
+      "target": 69,
+      "weight": 0.6783
+    },
+    {
+      "source": 58,
+      "target": 85,
+      "weight": 0.6704
+    },
+    {
+      "source": 59,
+      "target": 62,
+      "weight": 0.7111
+    },
+    {
+      "source": 59,
+      "target": 85,
+      "weight": 0.658
+    },
+    {
+      "source": 59,
+      "target": 87,
+      "weight": 0.6738
+    },
+    {
+      "source": 60,
+      "target": 77,
+      "weight": 0.6501
+    },
+    {
+      "source": 60,
+      "target": 96,
+      "weight": 0.6592
+    },
+    {
+      "source": 60,
+      "target": 98,
+      "weight": 0.6557
+    },
+    {
+      "source": 61,
+      "target": 66,
+      "weight": 0.6843
+    },
+    {
+      "source": 61,
+      "target": 68,
+      "weight": 0.658
+    },
+    {
+      "source": 61,
+      "target": 74,
+      "weight": 0.6699
+    },
+    {
+      "source": 61,
+      "target": 76,
+      "weight": 0.6647
+    },
+    {
+      "source": 65,
+      "target": 69,
+      "weight": 0.7382
+    },
+    {
+      "source": 65,
+      "target": 70,
+      "weight": 0.6876
+    },
+    {
+      "source": 65,
+      "target": 85,
+      "weight": 0.6529
+    },
+    {
+      "source": 65,
+      "target": 98,
+      "weight": 0.66
+    },
+    {
+      "source": 66,
+      "target": 68,
+      "weight": 0.7322
+    },
+    {
+      "source": 66,
+      "target": 72,
+      "weight": 0.7004
+    },
+    {
+      "source": 66,
+      "target": 74,
+      "weight": 0.6706
+    },
+    {
+      "source": 66,
+      "target": 76,
+      "weight": 0.7584
+    },
+    {
+      "source": 66,
+      "target": 78,
+      "weight": 0.7138
+    },
+    {
+      "source": 66,
+      "target": 95,
+      "weight": 0.7099
+    },
+    {
+      "source": 66,
+      "target": 99,
+      "weight": 0.652
+    },
+    {
+      "source": 68,
+      "target": 72,
+      "weight": 0.6501
+    },
+    {
+      "source": 68,
+      "target": 78,
+      "weight": 0.6685
+    },
+    {
+      "source": 68,
+      "target": 83,
+      "weight": 0.6556
+    },
+    {
+      "source": 68,
+      "target": 85,
+      "weight": 0.6906
+    },
+    {
+      "source": 68,
+      "target": 95,
+      "weight": 0.6952
+    },
+    {
+      "source": 68,
+      "target": 98,
+      "weight": 0.6885
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "weight": 0.6543
+    },
+    {
+      "source": 69,
+      "target": 80,
+      "weight": 0.6751
+    },
+    {
+      "source": 69,
+      "target": 85,
+      "weight": 0.7093
+    },
+    {
+      "source": 69,
+      "target": 87,
+      "weight": 0.6607
+    },
+    {
+      "source": 69,
+      "target": 95,
+      "weight": 0.6674
+    },
+    {
+      "source": 70,
+      "target": 85,
+      "weight": 0.6758
+    },
+    {
+      "source": 70,
+      "target": 87,
+      "weight": 0.6714
+    },
+    {
+      "source": 70,
+      "target": 98,
+      "weight": 0.6542
+    },
+    {
+      "source": 71,
+      "target": 89,
+      "weight": 0.7055
+    },
+    {
+      "source": 72,
+      "target": 78,
+      "weight": 0.7776
+    },
+    {
+      "source": 72,
+      "target": 95,
+      "weight": 0.7024
+    },
+    {
+      "source": 74,
+      "target": 76,
+      "weight": 0.6566
+    },
+    {
+      "source": 74,
+      "target": 77,
+      "weight": 0.6648
+    },
+    {
+      "source": 74,
+      "target": 83,
+      "weight": 0.8393
+    },
+    {
+      "source": 74,
+      "target": 95,
+      "weight": 0.7279
+    },
+    {
+      "source": 76,
+      "target": 89,
+      "weight": 0.6697
+    },
+    {
+      "source": 76,
+      "target": 95,
+      "weight": 0.6978
+    },
+    {
+      "source": 77,
+      "target": 95,
+      "weight": 0.6778
+    },
+    {
+      "source": 78,
+      "target": 95,
+      "weight": 0.7229
+    },
+    {
+      "source": 78,
+      "target": 98,
+      "weight": 0.6505
+    },
+    {
+      "source": 78,
+      "target": 99,
+      "weight": 0.6778
+    },
+    {
+      "source": 80,
+      "target": 85,
+      "weight": 0.6827
+    },
+    {
+      "source": 80,
+      "target": 88,
+      "weight": 0.6929
+    },
+    {
+      "source": 83,
+      "target": 95,
+      "weight": 0.7179
+    },
+    {
+      "source": 83,
+      "target": 96,
+      "weight": 0.6761
+    },
+    {
+      "source": 85,
+      "target": 95,
+      "weight": 0.6651
+    },
+    {
+      "source": 85,
+      "target": 96,
+      "weight": 0.6955
+    }
+  ],
+  "num_nodes": 100,
+  "num_edges": 418,
+  "num_clusters": 12,
+  "cluster_sizes": [
+    88,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ]
+}
