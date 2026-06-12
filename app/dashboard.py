@@ -69,7 +69,8 @@ st.markdown("---")
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB LAYOUT
 # ══════════════════════════════════════════════════════════════════════════════
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "🔍 Live Query",
     "🌐 Knowledge Graph",
     "📊 Innovation Scores",
     "💡 Research Gaps",
@@ -80,6 +81,91 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 1 — KNOWLEDGE GRAPH
 # ─────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 0 — LIVE QUERY
+# ─────────────────────────────────────────────────────────────────────────────
+with tab0:
+    st.subheader("🔍 Live Innovation Discovery")
+    st.caption("Type any research topic. The full pipeline runs in real time.")
+
+    import sys
+    sys.path.append("src")
+    from pipeline import run_pipeline
+
+    query_input = st.text_input(
+        "Enter a research domain or topic:",
+        placeholder="e.g. quantum computing, neuromorphic chips, gene editing...",
+        key="live_query"
+    )
+
+    col_btn1, col_btn2 = st.columns([1, 4])
+    run_button = col_btn1.button("🚀 Run Analysis", type="primary")
+
+    if run_button and query_input.strip():
+        st.markdown("---")
+        status_box  = st.empty()
+        progress_bar = st.progress(0)
+
+        steps     = []
+        step_count = [0]
+
+        def update_status(msg):
+            steps.append(msg)
+            step_count[0] += 1
+            status_box.markdown(
+                "\n\n".join([f"{'✅' if '✅' in s else '⏳'} {s}" for s in steps[-6:]])
+            )
+            progress = min(step_count[0] / 12, 1.0)
+            progress_bar.progress(progress)
+
+        with st.spinner("Running full NIIE pipeline..."):
+            result, error = run_pipeline(query_input.strip(), update_status)
+
+        progress_bar.progress(1.0)
+
+        if error:
+            st.error(f"Pipeline failed: {error}")
+        else:
+            st.success(f"✅ Analysis complete for: **{query_input}**")
+            st.markdown("---")
+
+            # KPI row
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Papers Fetched",    result["papers"])
+            c2.metric("Graph Connections", result["graph"]["num_edges"])
+            c3.metric("Clusters Found",    result["graph"]["num_clusters"])
+            c4.metric("Gaps Detected",     result["scores"]["total_gaps"])
+
+            st.markdown("---")
+
+            # Top opportunities
+            st.markdown("### 🏆 Top Innovation Opportunities")
+            top = result["scores"]["top_opportunities"][:5]
+            for i, p in enumerate(top, 1):
+                score = p["scores"]["innovation_opportunity_score"]
+                st.markdown(f"""
+                <div style='border:1px solid #222; border-radius:8px;
+                            padding:10px 14px; margin-bottom:8px; background:#0e1117'>
+                    <span style='color:#00D4FF; font-weight:bold'>#{i} — {score:.4f}</span>
+                    <span style='color:#fff; margin-left:10px'>{p['title']}</span><br>
+                    <span style='color:#888; font-size:0.8rem'>
+                        📅 {p['year']} &nbsp;|&nbsp; 📚 {p['citations']} citations
+                    </span>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Innovation proposals
+            if result["innovations"]:
+                st.markdown("### 🤖 AI-Generated Innovation Proposals")
+                for i, inv in enumerate(result["innovations"], 1):
+                    with st.expander(
+                        f"💡 Proposal #{i} — Score: {inv['gap_score']:.4f} — {inv['gap_title'][:50]}..."
+                    ):
+                        st.markdown(inv["proposal"]["raw"])
+
+    elif run_button:
+        st.warning("Please enter a topic first.")
+        
 with tab1:
     st.subheader("BCI Research Knowledge Graph")
     st.caption("Each node is a paper. Edges connect similar papers. Clusters emerge automatically.")
@@ -404,7 +490,7 @@ with tab5:
                 st.markdown(
                     f"🏷️ Keywords: `{'` `'.join(inv.get('gap_keywords', []))}`"
                 )
-                
+
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("---")
 st.markdown("""
