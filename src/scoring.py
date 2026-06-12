@@ -8,12 +8,22 @@ GRAPH_FILE    = "data/processed/bci_graph.json"
 METADATA_FILE = "data/processed/bci_metadata.json"
 SCORES_FILE   = "data/processed/bci_scores.json"
 
+# BCI domain keywords
+BCI_KEYWORDS = [
+    "neural", "electrode", "eeg", "ecog", "meg", "fmri", "bci",
+    "brain", "cortex", "neuron", "signal", "implant", "prosthetic",
+    "motor", "cognitive", "attention", "seizure", "stroke", "paralysis",
+    "deep learning", "machine learning", "classification", "decoding",
+    "wireless", "invasive", "non-invasive", "feedback", "rehabilitation"
+]
+
 # Weights for each signal (must add to 1.0)
 WEIGHTS = {
-    "research_momentum" : 0.30,
-    "citation_density"  : 0.25,
-    "keyword_novelty"   : 0.25,
-    "isolation_score"   : 0.20
+    "research_momentum" : 0.25,
+    "citation_density"  : 0.20,
+    "keyword_novelty"   : 0.20,
+    "isolation_score"   : 0.20,
+    "patent_gap_score"  : 0.15
 }
 
 # Keywords that are saturated (too many papers = low novelty)
@@ -106,49 +116,93 @@ def compute_isolation_score(graph):
 
     return scores
 
-def compute_final_scores(metadata, graph, momentum, citations, novelty, isolation):
+def compute_patent_gap_score(metadata, patent_file="data/raw/patents/bci_patents.json"):
+    """
+    Score each paper based on how much white space exists in the patent
+    landscape around its keywords.
+    Low patent coverage around a topic = high opportunity.
+    """
+    import os
+
+    # Load patents if available
+    patent_keywords = []
+    if os.path.exists(patent_file):
+        with open(patent_file, "r", encoding="utf-8") as f:
+            patents = json.load(f)
+        for pat in patents:
+            title    = (pat.get("title", "") or "").lower()
+            abstract = (pat.get("abstract", "") or "").lower()
+            text     = f"{title} {abstract}"
+            for kw in BCI_KEYWORDS:
+                if kw in text:
+                    patent_keywords.append(kw)
+
+    from collections import Counter
+    patent_kw_counts = Counter(patent_keywords)
+    max_count        = max(patent_kw_counts.values()) if patent_kw_counts else 1
+
+    scores = {}
+    for p in metadata:
+        paper_kws = p.get("bci_keywords", [])
+        if not paper_kws:
+            scores[p["id"]] = 0.5
+            continue
+
+        # How saturated is the patent space for this paper's keywords?
+        patent_coverage = sum(
+            patent_kw_counts.get(kw, 0) for kw in paper_kws
+        ) / (len(paper_kws) * max_count)
+
+        # Low coverage = high gap score (opportunity)
+        scores[p["id"]] = round(1.0 - patent_coverage, 4)
+
+    return scores
+
+
+def compute_final_scores(metadata, graph, momentum, citations,
+                          novelty, isolation, patent_gap):
     """Combine all signals into one Innovation Opportunity Score."""
     results = []
 
     for p in metadata:
         pid = p["id"]
 
-        m = momentum.get(pid, 0)
-        c = citations.get(pid, 0)
-        n = novelty.get(pid, 0)
-        i = isolation.get(pid, 0)
+        m  = momentum.get(pid, 0)
+        c  = citations.get(pid, 0)
+        n  = novelty.get(pid, 0)
+        i  = isolation.get(pid, 0)
+        pg = patent_gap.get(pid, 0)
 
         final_score = (
-            WEIGHTS["research_momentum"] * m +
-            WEIGHTS["citation_density"]  * c +
-            WEIGHTS["keyword_novelty"]   * n +
-            WEIGHTS["isolation_score"]   * i
+            WEIGHTS["research_momentum"] * m  +
+            WEIGHTS["citation_density"]  * c  +
+            WEIGHTS["keyword_novelty"]   * n  +
+            WEIGHTS["isolation_score"]   * i  +
+            WEIGHTS["patent_gap_score"]  * pg
         )
 
         results.append({
-            "id"               : pid,
-            "title"            : p["title"],
-            "year"             : p["year"],
-            "citations"        : p["citations"],
-            "bci_keywords"     : p["bci_keywords"],
-            "abstract"         : p["abstract"],
+            "id"           : pid,
+            "title"        : p["title"],
+            "year"         : p["year"],
+            "citations"    : p["citations"],
+            "bci_keywords" : p["bci_keywords"],
+            "abstract"     : p["abstract"],
             "scores": {
-                "research_momentum": m,
-                "citation_density" : c,
-                "keyword_novelty"  : n,
-                "isolation_score"  : i,
+                "research_momentum"           : m,
+                "citation_density"            : c,
+                "keyword_novelty"             : n,
+                "isolation_score"             : i,
+                "patent_gap_score"            : pg,
                 "innovation_opportunity_score": round(final_score, 4)
             }
         })
 
-    # Sort by innovation opportunity score descending
-    results = sorted(
+    return sorted(
         results,
         key=lambda x: x["scores"]["innovation_opportunity_score"],
         reverse=True
     )
-
-    return results
 
 def identify_gaps(results):
     """
@@ -218,9 +272,13 @@ def main():
     print("  keyword_novelty   : done")
     print("  isolation_score   : done")
 
+    print("\nComputing patent gap scores...")
+    patent_gap = compute_patent_gap_score(metadata)
+    print("  patent_gap_score  : done")
+
     print("\nComputing final Innovation Opportunity Scores...")
     results = compute_final_scores(
-        metadata, graph, momentum, citations, novelty, isolation
+        metadata, graph, momentum, citations, novelty, isolation, patent_gap
     )
 
     print("\nIdentifying research gaps...")

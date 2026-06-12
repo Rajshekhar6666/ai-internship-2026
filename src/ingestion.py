@@ -59,6 +59,60 @@ def save_papers(papers, output_file):
 
     print(f"Saved {len(papers)} papers to {output_file}")
 
+def fetch_patents(query, output_file="data/raw/patents/bci_patents.json"):
+    """Fetch patent data from Google Patents via SerpAPI free alternative."""
+    print(f"\nFetching patents for: '{query}'")
+
+    # Using patents.google.com public search via requests
+    url = "https://api.semanticscholar.org/graph/v1/paper/search"
+
+    # We use Semantic Scholar with patent-specific terms as proxy
+    # This is the free approach — no patent API key needed
+    patent_queries = [
+        f"{query} patent system method",
+        f"{query} apparatus device invention",
+        f"{query} neural interface patent"
+    ]
+
+    all_patents = []
+
+    headers = {"x-api-key": os.getenv("SEMANTIC_SCHOLAR_API_KEY")}
+
+    for pq in patent_queries:
+        params = {
+            "query" : pq,
+            "limit" : 20,
+            "fields": "title,abstract,year,authors,citationCount,externalIds"
+        }
+        for attempt in range(1, 4):
+            response = requests.get(url, headers=headers, params=params)
+            if response.status_code == 200:
+                data = response.json().get("data", [])
+                all_patents.extend(data)
+                print(f"  Got {len(data)} results for: '{pq[:40]}'")
+                time.sleep(2)
+                break
+            elif response.status_code == 429:
+                print(f"  Rate limited, waiting {15 * attempt}s...")
+                time.sleep(15 * attempt)
+
+    # Deduplicate by title
+    seen   = set()
+    unique = []
+    for p in all_patents:
+        t = p.get("title", "")
+        if t and t not in seen:
+            seen.add(t)
+            unique.append(p)
+
+    print(f"Total unique patent-adjacent papers: {len(unique)}")
+
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(unique, f, indent=2, ensure_ascii=False)
+
+    print(f"Saved to {output_file}")
+    return unique
 def main():
     if not API_KEY:
         print("ERROR: API key not found. Check your .env file.")
@@ -85,3 +139,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("\n--- Now fetching patent data ---")
+    fetch_patents("brain-computer interface")
+    
