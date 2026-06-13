@@ -10,8 +10,58 @@ import html
 import sys
 import unicodedata
 # No iframe-based JS — keep UI fixes CSS-only to work inside Streamlit's page
+from datetime import datetime
+import pickle
+import hashlib
+from pathlib import Path
 
 sys.path.append("src")
+HISTORY_DIR = Path("data/history")
+HISTORY_DIR.mkdir(parents=True, exist_ok=True)
+
+# ── HISTORY HELPERS ───────────────────────────────────────────────────────────
+def save_to_history(query, result):
+    """Save a pipeline result to disk."""
+    key      = hashlib.md5(query.lower().strip().encode()).hexdigest()[:10]
+    ts       = datetime.now().strftime("%Y-%m-%d %H:%M")
+    filename = HISTORY_DIR / f"{key}.pkl"
+    payload  = {
+        "query"    : query,
+        "timestamp": ts,
+        "papers"   : result["papers"],
+        "graph"    : {
+            "num_nodes"   : result["graph"]["num_nodes"],
+            "num_edges"   : result["graph"]["num_edges"],
+            "num_clusters": result["graph"]["num_clusters"],
+        },
+        "total_gaps"       : result["scores"]["total_gaps"],
+        "top_opportunities": result["scores"]["top_opportunities"][:5],
+        "research_gaps"    : result["scores"]["research_gaps"][:5],
+        "all_scores"       : result["scores"]["all_scores"],
+        "innovations"      : result["innovations"],
+    }
+    with open(filename, "wb") as f:
+        pickle.dump(payload, f)
+    return ts
+
+def load_history():
+    """Load all saved history entries sorted by newest first."""
+    entries = []
+    for file in HISTORY_DIR.glob("*.pkl"):
+        try:
+            with open(file, "rb") as f:
+                data = pickle.load(f)
+            data["_file"] = file
+            entries.append(data)
+        except Exception:
+            continue
+    return sorted(entries, key=lambda x: x["timestamp"], reverse=True)
+
+def delete_history_entry(file_path):
+    try:
+        Path(file_path).unlink()
+    except Exception:
+        pass
 
 st.set_page_config(
     page_title="NIIE — National Innovation Intelligence Engine",
@@ -467,9 +517,10 @@ k4.metric("Gaps Detected",     scores_data["total_gaps"])
 st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
 
 # ── TABS ──────────────────────────────────────────────────────────────────────
-tab0, tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "🔍  Live Query",
     "⚔️  Compare Domains",
+    "📂  History",
     "🌐  Knowledge Graph",
     "📊  Scores",
     "💡  Research Gaps",
@@ -582,6 +633,9 @@ with tab0:
             result, err = run_pipeline(query_input.strip(), upd)
         prog.progress(1.0)
 
+        if not err and result:
+            save_to_history(query_input.strip(), result)
+
         if err:
             st.error(err)
         else:
@@ -637,6 +691,238 @@ with tab0:
 
     elif run_btn:
         st.warning("Please enter a topic.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 2 — HISTORY
+# ─────────────────────────────────────────────────────────────────────────────
+with tab2:
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            📂 Query History
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Every analysis you run is saved here automatically.
+            Revisit results without re-running the pipeline.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    history = load_history()
+
+    if not history:
+        st.markdown(f"""
+        <div style='background:{T['surface']}; border:1px solid {T['border']};
+                    border-radius:10px; padding:32px; text-align:center;'>
+            <p style='color:{T['muted']}; font-size:0.9rem; margin:0;'>
+                No history yet. Run a Live Query to get started.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown(f"""
+        <div style='background:{T['success']}12; border:1px solid {T['success']}33;
+                    border-radius:8px; padding:10px 16px; margin-bottom:16px;
+                    display:inline-block;'>
+            <span style='color:{T['success']}; font-weight:700; font-size:0.88rem;'>
+                {len(history)} saved {"analysis" if len(history)==1 else "analyses"}
+            </span>
+        </div>
+        """, unsafe_allow_html=True)
+
+        for entry in history:
+            inn_scores = [
+                p["scores"]["innovation_opportunity_score"]
+                for p in entry["all_scores"]
+            ]
+            avg_score = round(
+                sum(inn_scores)/len(inn_scores), 4
+            ) if inn_scores else 0
+            top_score = round(max(inn_scores), 4) if inn_scores else 0
+
+            with st.expander(
+                f"🔍  {entry['query'].title()}  ·  {entry['timestamp']}",
+                expanded=False
+            ):
+                # KPI row
+                h1,h2,h3,h4 = st.columns(4)
+                h1.metric("Papers",    entry["papers"])
+                h2.metric("Edges",     entry["graph"]["num_edges"])
+                h3.metric("Gaps",      entry["total_gaps"])
+                h4.metric("Top Score", top_score)
+
+                st.markdown("<div style='height:8px'></div>",
+                            unsafe_allow_html=True)
+
+                left, right = st.columns([3,2])
+
+                with left:
+                    st.markdown(f"""
+                    <p style='color:{T['muted']}; font-size:0.72rem;
+                              text-transform:uppercase; letter-spacing:1px;
+                              margin:0 0 8px 0; font-weight:600;'>
+                        Top Opportunities
+                    </p>
+                    """, unsafe_allow_html=True)
+
+                    for i, p in enumerate(
+                        entry["top_opportunities"][:5], 1
+                    ):
+                        sc = p["scores"]["innovation_opportunity_score"]
+                        st.markdown(f"""
+                        <div style='background:{T['surface2']};
+                                    border-left:2px solid {T['accent']};
+                                    border-radius:0 6px 6px 0;
+                                    padding:8px 12px; margin-bottom:5px;'>
+                            <span style='color:{T['accent']};
+                                         font-weight:700; font-size:0.8rem;'>
+                                #{i} {sc:.4f}
+                            </span><br>
+                            <span style='color:{T['text']}; font-size:0.78rem;'>
+                                {p['title'][:60]}...
+                            </span><br>
+                            <span style='color:{T['muted']}; font-size:0.72rem;'>
+                                {p['year']} · {p['citations']} citations
+                            </span>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                with right:
+                    # Mini score distribution
+                    if inn_scores:
+                        fig_h = go.Figure(go.Histogram(
+                            x=inn_scores, nbinsx=15,
+                            marker_color=T['accent'],
+                            name="Score dist"
+                        ))
+                        fig_h.update_layout(
+                            paper_bgcolor=T['surface2'],
+                            plot_bgcolor=T['surface2'],
+                            height=180,
+                            margin=dict(l=10,r=10,t=10,b=10),
+                            showlegend=False,
+                            xaxis=dict(
+                                color=T['muted'],
+                                gridcolor=T['border']
+                            ),
+                            yaxis=dict(
+                                color=T['muted'],
+                                gridcolor=T['border']
+                            ),
+                            font_color=T['muted']
+                        )
+                        fig_h.update_traces(marker_line_width=0)
+                        st.plotly_chart(fig_h, use_container_width=True)
+
+                    st.markdown(f"""
+                    <div style='background:{T['surface2']};
+                                border:1px solid {T['border']};
+                                border-radius:8px; padding:10px 14px;'>
+                        <div style='display:flex; justify-content:space-between;
+                                    margin-bottom:6px;'>
+                            <span style='color:{T['muted']}; font-size:0.75rem;'>
+                                Avg Score
+                            </span>
+                            <span style='color:{T['accent']};
+                                         font-weight:700;'>
+                                {avg_score:.4f}
+                            </span>
+                        </div>
+                        <div style='display:flex; justify-content:space-between;
+                                    margin-bottom:6px;'>
+                            <span style='color:{T['muted']}; font-size:0.75rem;'>
+                                Top Score
+                            </span>
+                            <span style='color:{T['accent']};
+                                         font-weight:700;'>
+                                {top_score:.4f}
+                            </span>
+                        </div>
+                        <div style='display:flex; justify-content:space-between;'>
+                            <span style='color:{T['muted']}; font-size:0.75rem;'>
+                                Clusters
+                            </span>
+                            <span style='color:{T['accent']};
+                                         font-weight:700;'>
+                                {entry['graph']['num_clusters']}
+                            </span>
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+                # Research gaps
+                if entry.get("research_gaps"):
+                    st.markdown(f"""
+                    <p style='color:{T['muted']}; font-size:0.72rem;
+                              text-transform:uppercase; letter-spacing:1px;
+                              margin:12px 0 6px 0; font-weight:600;'>
+                        Research Gaps
+                    </p>
+                    """, unsafe_allow_html=True)
+                    for gap in entry["research_gaps"][:3]:
+                        sc = gap["scores"]["innovation_opportunity_score"]
+                        kws = " ".join([
+                            accent_tag(kw)
+                            for kw in gap["bci_keywords"][:3]
+                        ])
+                        st.markdown(f"""
+                        <div style='background:{T['surface']};
+                                    border:1px solid {T['border']};
+                                    border-radius:6px; padding:8px 12px;
+                                    margin-bottom:5px;'>
+                            <span style='color:{T['accent']};
+                                         font-weight:700; font-size:0.8rem;'>
+                                {sc:.4f}
+                            </span>
+                            <span style='color:{T['text']}; font-size:0.8rem;
+                                         margin-left:8px;'>
+                                {gap['title'][:55]}...
+                            </span><br>
+                            <div style='margin-top:4px;'>{kws}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                # AI innovations
+                if entry.get("innovations"):
+                    st.markdown(f"""
+                    <p style='color:{T['muted']}; font-size:0.72rem;
+                              text-transform:uppercase; letter-spacing:1px;
+                              margin:12px 0 6px 0; font-weight:600;'>
+                        AI Proposals
+                    </p>
+                    """, unsafe_allow_html=True)
+                    for inv in entry["innovations"][:2]:
+                        title = (
+                            inv["proposal"].get(
+                                "innovation_title","Untitled"
+                            ) or "Untitled"
+                        )
+                        st.markdown(f"""
+                        <div style='background:{T['accent']}08;
+                                    border:1px solid {T['accent']}22;
+                                    border-radius:6px; padding:8px 12px;
+                                    margin-bottom:5px;'>
+                            <span style='color:{T['accent']};
+                                         font-weight:700; font-size:0.8rem;'>
+                                💡 {title[:60]}
+                            </span><br>
+                            <span style='color:{T['muted']};
+                                         font-size:0.75rem;'>
+                                Gap score: {inv['gap_score']:.4f}
+                                · {inv.get('gap_year','N/A')}
+                            </span>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                # Delete button
+                st.markdown("<div style='height:8px'></div>",
+                            unsafe_allow_html=True)
+                if st.button(
+                    "🗑️ Delete this entry",
+                    key=f"del_{entry['_file'].stem}"
+                ):
+                    delete_history_entry(entry["_file"])
+                    st.rerun()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 1 — DOMAIN COMPARISON
