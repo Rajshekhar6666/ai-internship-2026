@@ -4,23 +4,417 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
+import os
+import re
+import html
+import sys
+import unicodedata
+# No iframe-based JS — keep UI fixes CSS-only to work inside Streamlit's page
 
-# ── Page config ──────────────────────────────────────────────────────────────
+sys.path.append("src")
+
 st.set_page_config(
-    page_title = "NIIE — National Innovation Intelligence Engine",
-    page_icon  = "🧠",
-    layout     = "wide"
+    page_title="NIIE — National Innovation Intelligence Engine",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-# ── Load data ─────────────────────────────────────────────────────────────────
+# ── THEME DEFINITIONS ─────────────────────────────────────────────────────────
+THEMES = {
+    "Midnight Pro": {
+        "bg"         : "#0a0a0f",
+        "surface"    : "#13131a",
+        "surface2"   : "#1a1a25",
+        "border"     : "#2a2a3a",
+        "accent"     : "#6366f1",
+        "accent2"    : "#8b5cf6",
+        "text"       : "#e2e8f0",
+        "muted"      : "#64748b",
+        "success"    : "#10b981",
+        "chart_seq"  : ["#6366f1","#8b5cf6","#a78bfa","#c4b5fd","#ddd6fe"],
+        "gradient"   : "linear-gradient(135deg, #6366f1, #8b5cf6)",
+    },
+    "Arctic Light": {
+        "bg"         : "#f8fafc",
+        "surface"    : "#ffffff",
+        "surface2"   : "#f1f5f9",
+        "border"     : "#e2e8f0",
+        "accent"     : "#0ea5e9",
+        "accent2"    : "#38bdf8",
+        "text"       : "#0f172a",
+        "muted"      : "#94a3b8",
+        "success"    : "#059669",
+        "chart_seq"  : ["#0ea5e9","#38bdf8","#7dd3fc","#bae6fd","#e0f2fe"],
+        "gradient"   : "linear-gradient(135deg, #0ea5e9, #38bdf8)",
+    },
+    "Forest Deep": {
+        "bg"         : "#0d1117",
+        "surface"    : "#161b22",
+        "surface2"   : "#21262d",
+        "border"     : "#30363d",
+        "accent"     : "#2ea043",
+        "accent2"    : "#3fb950",
+        "text"       : "#c9d1d9",
+        "muted"      : "#6e7681",
+        "success"    : "#2ea043",
+        "chart_seq"  : ["#2ea043","#3fb950","#56d364","#7ee787","#b5efb5"],
+        "gradient"   : "linear-gradient(135deg, #2ea043, #3fb950)",
+    },
+    "Amber Dusk": {
+        "bg"         : "#0c0a00",
+        "surface"    : "#1a1600",
+        "surface2"   : "#252000",
+        "border"     : "#3d3500",
+        "accent"     : "#f59e0b",
+        "accent2"    : "#fbbf24",
+        "text"       : "#fef3c7",
+        "muted"      : "#92400e",
+        "success"    : "#10b981",
+        "chart_seq"  : ["#f59e0b","#fbbf24","#fcd34d","#fde68a","#fef3c7"],
+        "gradient"   : "linear-gradient(135deg, #f59e0b, #fbbf24)",
+    },
+    "Rose Gold": {
+        "bg"         : "#0f0608",
+        "surface"    : "#1a0d10",
+        "surface2"   : "#251318",
+        "border"     : "#3d1e24",
+        "accent"     : "#f43f5e",
+        "accent2"    : "#fb7185",
+        "text"       : "#fce7f0",
+        "muted"      : "#9f1239",
+        "success"    : "#10b981",
+        "chart_seq"  : ["#f43f5e","#fb7185","#fda4af","#fecdd3","#fff1f2"],
+        "gradient"   : "linear-gradient(135deg, #f43f5e, #fb7185)",
+    },
+}
+
+# ── SIDEBAR THEME PICKER ──────────────────────────────────────────────────────
+with st.sidebar:
+    st.markdown("### 🎨 Theme")
+    selected_theme = st.radio(
+        "", list(THEMES.keys()), index=0, label_visibility="collapsed"
+    )
+    T = THEMES[selected_theme]
+
+    st.markdown("---")
+    st.markdown("### 📥 Export Report")
+
+    if st.button("Generate PDF Report", type="primary"):
+        with st.spinner("Building report..."):
+            try:
+                import sys
+                sys.path.append("src")
+                from export_report import generate_report
+
+                with open("data/processed/bci_scores.json","r",encoding="utf-8") as f:
+                    _scores = json.load(f)
+                with open("data/processed/bci_graph.json","r",encoding="utf-8") as f:
+                    _graph = json.load(f)
+
+                _innovations = []
+                if os.path.exists("data/processed/bci_innovations.json"):
+                    with open("data/processed/bci_innovations.json","r",encoding="utf-8") as f:
+                        _innovations = json.load(f)
+
+                pdf_path = generate_report(
+                    _scores, _graph, _innovations,
+                    domain="Brain-Computer Interfaces",
+                    output_path="reports/NIIE_Innovation_Report.pdf"
+                )
+
+                with open(pdf_path, "rb") as f:
+                    pdf_bytes = f.read()
+
+                st.download_button(
+                    label="⬇️ Download PDF",
+                    data=pdf_bytes,
+                    file_name="NIIE_Innovation_Report.pdf",
+                    mime="application/pdf"
+                )
+                st.success("Ready!")
+
+            except Exception as e:
+                st.error(f"Error: {e}")
+
+    st.markdown("---")
+    st.markdown("### ℹ️ About")
+    st.markdown(
+        f"<span style='color:{T['muted']}; font-size:0.8rem;'>"
+        "NIIE v1.0 · Built with Python, Streamlit, NetworkX, "
+        "Sentence-Transformers, Plotly, Groq LLaMA 3.3"
+        "</span>",
+        unsafe_allow_html=True
+    )
+
+# ── INJECT CSS ────────────────────────────────────────────────────────────────
+st.markdown(f"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+*, *::before, *::after {{
+    transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease !important;
+}}
+
+html, body,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"], .main, .block-container {{
+    font-family: 'Inter', sans-serif !important;
+    background-color: {T['bg']} !important;
+    color: {T['text']} !important;
+}}
+
+[data-testid="stIconMaterial"] {{
+    font-family: 'Material Icons', 'Material Symbols Outlined', sans-serif !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    word-wrap: normal !important;
+    white-space: nowrap !important;
+    direction: ltr !important;
+    font-feature-settings: 'liga' !important;
+}}
+
+/* Force material icon font onto common button/icon spans so ligature names render as glyphs */
+button [data-testid="stIconMaterial"],
+button span[translate="no"],
+.stButton button [data-testid="stIconMaterial"],
+.stButton button span[translate="no"],
+[data-testid="stExpander"] summary [data-testid="stIconMaterial"],
+[data-testid="stExpander"] summary span[translate="no"] {{
+    font-family: 'Material Icons', 'Material Symbols Outlined', sans-serif !important;
+    font-size: 1.1em !important;
+    color: {T['text']} !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    width: 1.1em !important;
+    min-width: 1.1em !important;
+    text-indent: 0 !important;
+}}
+
+[data-testid="stHeader"] {{
+    background-color: {T['bg']} !important;
+    border-bottom: 1px solid {T['border']} !important;
+}}
+
+[data-testid="stSidebar"] {{
+    background-color: {T['surface']} !important;
+    border-right: 1px solid {T['border']} !important;
+}}
+
+[data-testid="stSidebar"] * {{
+    color: {T['text']} !important;
+}}
+
+.block-container {{
+    padding-top: 2rem !important;
+    max-width: 1300px !important;
+}}
+
+/* Tabs */
+[data-testid="stTabs"] button {{
+    color: {T['muted']} !important;
+    font-weight: 500 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.3px !important;
+    border-radius: 0 !important;
+    padding: 10px 16px !important;
+    transition: all 0.2s ease !important;
+}}
+[data-testid="stTabs"] button:hover {{
+    color: {T['text']} !important;
+    background: {T['surface2']} !important;
+}}
+[data-testid="stTabs"] button[aria-selected="true"] {{
+    color: {T['accent']} !important;
+    border-bottom: 2px solid {T['accent']} !important;
+    background: transparent !important;
+    font-weight: 600 !important;
+}}
+[data-testid="stTabs"] [role="tablist"] {{
+    border-bottom: 1px solid {T['border']} !important;
+    gap: 0 !important;
+}}
+
+/* Metric cards */
+[data-testid="stMetric"] {{
+    background: {T['surface']} !important;
+    border: 1px solid {T['border']} !important;
+    border-radius: 10px !important;
+    padding: 18px 22px !important;
+    transition: all 0.3s ease !important;
+}}
+[data-testid="stMetric"]:hover {{
+    border-color: {T['accent']} !important;
+    transform: translateY(-1px) !important;
+}}
+[data-testid="stMetricLabel"] p {{
+    color: {T['muted']} !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}}
+[data-testid="stMetricValue"] {{
+    color: {T['accent']} !important;
+    font-size: 1.9rem !important;
+    font-weight: 700 !important;
+}}
+
+/* Expander */
+[data-testid="stExpander"] {{
+    background: {T['surface']} !important;
+    border: 1px solid {T['border']} !important;
+    border-radius: 8px !important;
+    margin-bottom: 6px !important;
+    transition: all 0.2s ease !important;
+}}
+[data-testid="stExpander"]:hover {{
+    border-color: {T['accent']} !important;
+}}
+[data-testid="stExpander"] summary p {{
+    color: {T['text']} !important;
+    font-weight: 500 !important;
+    font-size: 0.88rem !important;
+}}
+
+/* Ensure the expander summary aligns icon and text and avoids overlap */
+[data-testid="stExpander"] summary {{
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 8px 12px !important;
+}}
+[data-testid="stExpander"] summary p {{
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}}
+
+[data-testid="stExpander"] summary [data-testid="stIconMaterial"],
+[data-testid="stExpander"] summary span[translate="no"] {{
+    position: relative !important;
+    display: inline-block !important;
+    width: 1.1em !important;
+    min-width: 1.1em !important;
+    height: 1.1em !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    overflow: hidden !important;
+}}
+
+[data-testid="stExpander"] details[open] summary [data-testid="stIconMaterial"]::after,
+[data-testid="stExpander"] details[open] summary span[translate="no"]::after {{
+    content: '▾' !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: {T['text']} !important;
+    font-size: 1.1em !important;
+    line-height: 1 !important;
+}}
+
+[data-testid="stExpander"] details:not([open]) summary [data-testid="stIconMaterial"]::after,
+[data-testid="stExpander"] details:not([open]) summary span[translate="no"]::after {{
+    content: '▸' !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: {T['text']} !important;
+    font-size: 1.1em !important;
+    line-height: 1 !important;
+}}
+
+/* Text input */
+[data-testid="stTextInput"] input {{
+    background: {T['surface']} !important;
+    border: 1px solid {T['border']} !important;
+    border-radius: 8px !important;
+    color: {T['text']} !important;
+    font-size: 0.95rem !important;
+    padding: 12px 16px !important;
+    transition: all 0.2s ease !important;
+}}
+[data-testid="stTextInput"] input:focus {{
+    border-color: {T['accent']} !important;
+    box-shadow: 0 0 0 3px {T['accent']}22 !important;
+}}
+
+/* Primary button */
+[data-testid="stButton"] button[kind="primary"] {{
+    background: {T['gradient']} !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 24px !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.3px !important;
+    transition: all 0.2s ease !important;
+}}
+[data-testid="stButton"] button[kind="primary"]:hover {{
+    opacity: 0.9 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 15px {T['accent']}44 !important;
+}}
+
+/* Dataframe */
+[data-testid="stDataFrame"] {{
+    border: 1px solid {T['border']} !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}}
+
+/* Radio */
+[data-testid="stRadio"] label {{
+    color: {T['text']} !important;
+}}
+
+/* Progress bar */
+[data-testid="stProgressBar"] > div > div {{
+    background: {T['gradient']} !important;
+}}
+
+/* Alerts */
+[data-testid="stAlert"] {{
+    border-radius: 8px !important;
+    border: 1px solid {T['border']} !important;
+}}
+
+/* Scrollbar */
+::-webkit-scrollbar {{ width: 5px; height: 5px; }}
+::-webkit-scrollbar-track {{ background: {T['bg']}; }}
+::-webkit-scrollbar-thumb {{
+    background: {T['border']};
+    border-radius: 3px;
+}}
+::-webkit-scrollbar-thumb:hover {{ background: {T['accent']}; }}
+
+hr {{ border-color: {T['border']} !important; margin: 20px 0 !important; }}
+</style>
+""", unsafe_allow_html=True)
+
+# Note: iframe JS removed - use CSS to enforce Material Icons font and hide
+# raw ligature text where possible. This avoids cross-frame security/sandboxing issues.
+
+# ── LOAD DATA ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_scores():
-    with open("data/processed/bci_scores.json", "r", encoding="utf-8") as f:
+    with open("data/processed/bci_scores.json","r",encoding="utf-8") as f:
         return json.load(f)
 
 @st.cache_data
 def load_graph():
-    with open("data/processed/bci_graph.json", "r", encoding="utf-8") as f:
+    with open("data/processed/bci_graph.json","r",encoding="utf-8") as f:
         return json.load(f)
 
 @st.cache_data
@@ -30,472 +424,698 @@ def load_embeddings():
 scores_data = load_scores()
 graph_data  = load_graph()
 embeddings  = load_embeddings()
+all_scores  = scores_data["all_scores"]
+gaps        = scores_data["research_gaps"]
+nodes       = graph_data["nodes"]
+edges       = graph_data["edges"]
 
-all_scores = scores_data["all_scores"]
-gaps       = scores_data["research_gaps"]
-nodes      = graph_data["nodes"]
-edges      = graph_data["edges"]
-
-# ── Header ────────────────────────────────────────────────────────────────────
-st.markdown("""
-<h1 style='text-align:center; color:#00D4FF; font-size:2.4rem; margin-bottom:0'>
-    🧠 NIIE — National Innovation Intelligence Engine
-</h1>
-<p style='text-align:center; color:#888; font-size:1rem; margin-top:4px'>
-    AI-Powered Research Gap & Innovation Opportunity Discovery System
-</p>
-<hr style='border-color:#222; margin: 12px 0 24px 0'>
-""", unsafe_allow_html=True)
-
-# ── Domain badge ──────────────────────────────────────────────────────────────
-st.markdown("""
-<div style='text-align:center; margin-bottom:24px'>
-    <span style='background:#1a1a2e; border:1px solid #00D4FF; color:#00D4FF;
-                 padding:6px 20px; border-radius:20px; font-size:0.9rem'>
-        🔬 Domain: Brain-Computer Interfaces (BCI)
-    </span>
+# ── HEADER ────────────────────────────────────────────────────────────────────
+st.markdown(f"""
+<div style='padding: 1.5rem 0 1rem 0; border-bottom: 1px solid {T['border']}; margin-bottom: 1.5rem;'>
+    <div style='display:flex; align-items:center; gap:14px;'>
+        <div style='width:42px; height:42px; background:{T['gradient']};
+                    border-radius:10px; display:flex; align-items:center;
+                    justify-content:center; font-size:1.4rem; flex-shrink:0;'>🧠</div>
+        <div>
+            <h1 style='margin:0; font-size:1.5rem; font-weight:800;
+                       color:{T['text']}; letter-spacing:-0.5px;'>
+                NIIE
+                <span style='font-weight:300; color:{T['muted']}; font-size:1rem;
+                             margin-left:8px;'>
+                    National Innovation Intelligence Engine
+                </span>
+            </h1>
+            <p style='margin:2px 0 0 0; color:{T['muted']}; font-size:0.78rem;'>
+                AI-Powered Research Gap & Innovation Opportunity Discovery System
+                &nbsp;·&nbsp;
+                <span style='color:{T['accent']}; font-weight:600;'>
+                    Brain-Computer Interfaces
+                </span>
+            </p>
+        </div>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
-# ── Top KPI metrics ───────────────────────────────────────────────────────────
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("📄 Papers Analysed",   graph_data["num_nodes"])
-col2.metric("🔗 Graph Connections", graph_data["num_edges"])
-col3.metric("🗂️ Research Clusters", graph_data["num_clusters"])
-col4.metric("💡 Gaps Detected",     scores_data["total_gaps"])
+# ── KPI ROW ───────────────────────────────────────────────────────────────────
+k1, k2, k3, k4 = st.columns(4)
+k1.metric("Papers Analysed",   graph_data["num_nodes"])
+k2.metric("Graph Connections", graph_data["num_edges"])
+k3.metric("Research Clusters", graph_data["num_clusters"])
+k4.metric("Gaps Detected",     scores_data["total_gaps"])
 
-st.markdown("---")
+st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
 
-# ══════════════════════════════════════════════════════════════════════════════
-# TAB LAYOUT
-# ══════════════════════════════════════════════════════════════════════════════
+# ── TABS ──────────────────────────────────────────────────────────────────────
 tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "🔍 Live Query",
-    "🌐 Knowledge Graph",
-    "📊 Innovation Scores",
-    "💡 Research Gaps",
-    "🏆 Top Opportunities",
-    "🤖 AI Innovation Generator"
+    "🔍  Live Query",
+    "🌐  Knowledge Graph",
+    "📊  Scores",
+    "💡  Research Gaps",
+    "🏆  Opportunities",
+    "🤖  AI Proposals",
 ])
 
-# ─────────────────────────────────────────────────────────────────────────────
-# TAB 1 — KNOWLEDGE GRAPH
-# ─────────────────────────────────────────────────────────────────────────────
+def card(content, padding="16px 20px"):
+    return f"""<div style='background:{T['surface']}; border:1px solid {T['border']};
+    border-radius:10px; padding:{padding}; margin-bottom:10px;'>{content}</div>"""
+
+def accent_tag(text):
+    return (f"<span style='background:{T['accent']}18; color:{T['accent']}; "
+            f"border:1px solid {T['accent']}33; padding:2px 9px; "
+            f"border-radius:20px; font-size:0.72rem; font-weight:600; "
+            f"margin-right:4px;'>{text}</span>")
+
+
+def hex_to_rgba(hex_color, alpha=0.14):
+    hex_color = hex_color.lstrip('#')
+    if len(hex_color) != 6:
+        raise ValueError(f"Invalid hex color: {hex_color}")
+    r = int(hex_color[0:2], 16)
+    g = int(hex_color[2:4], 16)
+    b = int(hex_color[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
+
+def clean_text(value, max_len=None):
+    if value is None:
+        return ""
+    if not isinstance(value, str):
+        value = str(value)
+    value = unicodedata.normalize('NFKC', value)
+    value = ''.join(
+        c for c in value
+        if not unicodedata.category(c).startswith(('C', 'M'))
+    )
+    # Strip leading punctuation/symbols that may be artifacts from generation
+    value = re.sub(r'^[^\w\d\s]+', '', value)
+    # Collapse repeated whitespace
+    value = re.sub(r'\s+', ' ', value).strip()
+    value = html.escape(value)
+    return value[:max_len] if max_len is not None else value
+
+
+def plot_cfg(fig, height=320):
+    fig.update_layout(
+        paper_bgcolor=T['surface'],
+        plot_bgcolor=T['surface2'],
+        font_color=T['muted'],
+        height=height,
+        margin=dict(l=16,r=16,t=36,b=16),
+    )
+    fig.update_xaxes(gridcolor=T['border'], zerolinecolor=T['border'])
+    fig.update_yaxes(gridcolor=T['border'], zerolinecolor=T['border'])
+    return fig
+
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 0 — LIVE QUERY
 # ─────────────────────────────────────────────────────────────────────────────
 with tab0:
-    st.subheader("🔍 Live Innovation Discovery")
-    st.caption("Type any research topic. The full pipeline runs in real time.")
-
-    import sys
-    sys.path.append("src")
-    from pipeline import run_pipeline
+    st.markdown(f"""
+    {card(f'''
+    <h3 style="margin:0 0 4px 0; color:{T['text']}; font-size:1.05rem; font-weight:700;">
+        Live Innovation Discovery
+    </h3>
+    <p style="margin:0; color:{T['muted']}; font-size:0.85rem; line-height:1.6;">
+        Enter any research domain. NIIE fetches real papers, builds a knowledge graph,
+        scores innovation opportunities, and generates AI-powered proposals — in real time.
+    </p>
+    ''', "20px 24px")}
+    """, unsafe_allow_html=True)
 
     query_input = st.text_input(
-        "Enter a research domain or topic:",
-        placeholder="e.g. quantum computing, neuromorphic chips, gene editing...",
-        key="live_query"
+        "", placeholder="e.g.  quantum computing  ·  gene editing  ·  neuromorphic chips",
+        key="live_query", label_visibility="collapsed"
     )
+    run_btn = st.button("Run Analysis →", type="primary")
 
-    col_btn1, col_btn2 = st.columns([1, 4])
-    run_button = col_btn1.button("🚀 Run Analysis", type="primary")
+    if run_btn and query_input.strip():
+        try:
+            from pipeline import run_pipeline
+        except Exception as e:
+            st.error(f"Could not import pipeline or required dependencies: {e}")
+            st.stop()
+        st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
 
-    if run_button and query_input.strip():
-        st.markdown("---")
-        status_box  = st.empty()
-        progress_bar = st.progress(0)
+        log   = st.empty()
+        prog  = st.progress(0)
+        steps = []
+        cnt   = [0]
 
-        steps     = []
-        step_count = [0]
-
-        def update_status(msg):
+        def upd(msg):
             steps.append(msg)
-            step_count[0] += 1
-            status_box.markdown(
-                "\n\n".join([f"{'✅' if '✅' in s else '⏳'} {s}" for s in steps[-6:]])
+            cnt[0] += 1
+            html = "".join([
+                f"<div style='padding:3px 0; color:"
+                f"{'#10b981' if '✅' in s else T['muted']}; font-size:0.82rem;'>{s}</div>"
+                for s in steps[-7:]
+            ])
+            log.markdown(
+                f"<div style='background:{T['surface']}; border:1px solid {T['border']}; "
+                f"border-radius:8px; padding:14px 18px;'>{html}</div>",
+                unsafe_allow_html=True
             )
-            progress = min(step_count[0] / 12, 1.0)
-            progress_bar.progress(progress)
+            prog.progress(min(cnt[0]/12, 1.0))
 
-        with st.spinner("Running full NIIE pipeline..."):
-            result, error = run_pipeline(query_input.strip(), update_status)
+        with st.spinner(""):
+            result, err = run_pipeline(query_input.strip(), upd)
+        prog.progress(1.0)
 
-        progress_bar.progress(1.0)
-
-        if error:
-            st.error(f"Pipeline failed: {error}")
+        if err:
+            st.error(err)
         else:
-            st.success(f"✅ Analysis complete for: **{query_input}**")
-            st.markdown("---")
+            st.markdown(f"""
+            <div style='background:{T['success']}18; border:1px solid {T['success']}44;
+                        border-radius:8px; padding:12px 18px; margin:12px 0;'>
+                <span style='color:{T['success']}; font-weight:700;'>✓ Complete</span>
+                <span style='color:{T['muted']}; margin-left:8px; font-size:0.88rem;'>
+                    Analysis for <strong style='color:{T['text']}'>{query_input}</strong>
+                </span>
+            </div>
+            """, unsafe_allow_html=True)
 
-            # KPI row
-            c1, c2, c3, c4 = st.columns(4)
-            c1.metric("Papers Fetched",    result["papers"])
-            c2.metric("Graph Connections", result["graph"]["num_edges"])
-            c3.metric("Clusters Found",    result["graph"]["num_clusters"])
-            c4.metric("Gaps Detected",     result["scores"]["total_gaps"])
+            r1,r2,r3,r4 = st.columns(4)
+            r1.metric("Papers",   result["papers"])
+            r2.metric("Edges",    result["graph"]["num_edges"])
+            r3.metric("Clusters", result["graph"]["num_clusters"])
+            r4.metric("Gaps",     result["scores"]["total_gaps"])
 
-            st.markdown("---")
+            st.markdown(f"<p style='color:{T['muted']}; font-size:0.8rem; "
+                        f"text-transform:uppercase; letter-spacing:1px; "
+                        f"margin:16px 0 8px 0; font-weight:600;'>Top Opportunities</p>",
+                        unsafe_allow_html=True)
 
-            # Top opportunities
-            st.markdown("### 🏆 Top Innovation Opportunities")
-            top = result["scores"]["top_opportunities"][:5]
-            for i, p in enumerate(top, 1):
-                score = p["scores"]["innovation_opportunity_score"]
+            for i, p in enumerate(result["scores"]["top_opportunities"][:5], 1):
+                sc = p["scores"]["innovation_opportunity_score"]
+                bc = T['accent'] if i <= 3 else T['border']
                 st.markdown(f"""
-                <div style='border:1px solid #222; border-radius:8px;
-                            padding:10px 14px; margin-bottom:8px; background:#0e1117'>
-                    <span style='color:#00D4FF; font-weight:bold'>#{i} — {score:.4f}</span>
-                    <span style='color:#fff; margin-left:10px'>{p['title']}</span><br>
-                    <span style='color:#888; font-size:0.8rem'>
-                        📅 {p['year']} &nbsp;|&nbsp; 📚 {p['citations']} citations
+                <div style='background:{T['surface']}; border:1px solid {T['border']};
+                            border-left:3px solid {bc}; border-radius:8px;
+                            padding:12px 18px; margin-bottom:6px;'>
+                    <span style='color:{T['accent']}; font-weight:700; font-size:0.9rem;'>
+                        #{i} &nbsp; {sc:.4f}
+                    </span>
+                    <span style='color:{T['text']}; margin-left:10px; font-size:0.88rem;'>
+                        {p['title']}
+                    </span>
+                    <br>
+                    <span style='color:{T['muted']}; font-size:0.76rem;'>
+                        {p['year']} · {p['citations']} citations
                     </span>
                 </div>
                 """, unsafe_allow_html=True)
 
-            # Innovation proposals
             if result["innovations"]:
-                st.markdown("### 🤖 AI-Generated Innovation Proposals")
+                st.markdown(f"<p style='color:{T['muted']}; font-size:0.8rem; "
+                            f"text-transform:uppercase; letter-spacing:1px; "
+                            f"margin:16px 0 8px 0; font-weight:600;'>AI Proposals</p>",
+                            unsafe_allow_html=True)
                 for i, inv in enumerate(result["innovations"], 1):
-                    with st.expander(
-                        f"💡 Proposal #{i} — Score: {inv['gap_score']:.4f} — {inv['gap_title'][:50]}..."
-                    ):
+                    with st.expander(f"Proposal #{i} — {inv['gap_title'][:55]}..."):
                         st.markdown(inv["proposal"]["raw"])
 
-    elif run_button:
-        st.warning("Please enter a topic first.")
-        
-with tab1:
-    st.subheader("BCI Research Knowledge Graph")
-    st.caption("Each node is a paper. Edges connect similar papers. Clusters emerge automatically.")
+    elif run_btn:
+        st.warning("Please enter a topic.")
 
-    # Build node positions using embeddings (2D projection via PCA)
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 1 — KNOWLEDGE GRAPH
+# ─────────────────────────────────────────────────────────────────────────────
+with tab1:
     from sklearn.decomposition import PCA
+
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            Knowledge Graph
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Each node is a paper · Edges connect semantically similar papers ·
+            Node size = centrality · Colour = research cluster
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
     pca    = PCA(n_components=2)
     coords = pca.fit_transform(embeddings)
 
-    # Node colours by cluster
-    cluster_colors = [
-        "#00D4FF","#FF6B6B","#4ECDC4","#FFE66D","#A8E6CF",
-        "#FF8B94","#B4F8C8","#FBE7C6","#A0C4FF","#BDB2FF",
-        "#FFC6FF","#FFADAD"
+    COLORS = [
+        T['accent'], T['accent2'],
+        "#f43f5e","#f59e0b","#10b981",
+        "#06b6d4","#8b5cf6","#ec4899",
+        "#14b8a6","#f97316","#6366f1","#84cc16"
     ]
 
-    node_x, node_y, node_text, node_color, node_size = [], [], [], [], []
-
+    nx_arr, ny_arr, nt_arr, nc_arr, ns_arr = [], [], [], [], []
     for node in nodes:
         idx = node["id"]
-        node_x.append(float(coords[idx, 0]))
-        node_y.append(float(coords[idx, 1]))
-        cluster = node.get("cluster", 0)
-        color   = cluster_colors[cluster % len(cluster_colors)]
-        node_color.append(color)
-        # Size by combined centrality score
-        size = 8 + node.get("combined_score", 0) * 60
-        node_size.append(size)
-        node_text.append(
-            f"<b>{node['title'][:50]}...</b><br>"
-            f"Year: {node.get('year','N/A')} | "
-            f"Citations: {node.get('citations',0)}<br>"
-            f"Cluster: {cluster} | "
-            f"Keywords: {', '.join(node.get('keywords',[])[:3])}"
+        nx_arr.append(float(coords[idx,0]))
+        ny_arr.append(float(coords[idx,1]))
+        cl = node.get("cluster",0)
+        nc_arr.append(COLORS[cl % len(COLORS)])
+        ns_arr.append(9 + node.get("combined_score",0) * 70)
+        nt_arr.append(
+            f"<b>{node['title'][:52]}...</b><br>"
+            f"Year: {node.get('year','N/A')} · Citations: {node.get('citations',0)}<br>"
+            f"Cluster {cl} · {', '.join(node.get('keywords',[])[:3])}"
         )
 
-    # Build edge traces (only draw a sample to keep it fast)
-    edge_x, edge_y = [], []
-    sampled_edges  = edges[:300]          # cap at 300 for performance
-    node_pos       = {n["id"]: (float(coords[n["id"],0]),
-                                float(coords[n["id"],1])) for n in nodes}
+    ex, ey = [], []
+    npos = {n["id"]:(float(coords[n["id"],0]),float(coords[n["id"],1])) for n in nodes}
+    for e in edges[:380]:
+        x0,y0 = npos[e["source"]]; x1,y1 = npos[e["target"]]
+        ex += [x0,x1,None]; ey += [y0,y1,None]
 
-    for edge in sampled_edges:
-        x0, y0 = node_pos[edge["source"]]
-        x1, y1 = node_pos[edge["target"]]
-        edge_x += [x0, x1, None]
-        edge_y += [y0, y1, None]
-
-    edge_trace = go.Scatter(
-        x=edge_x, y=edge_y,
-        mode="lines",
-        line=dict(width=0.4, color="#333"),
-        hoverinfo="none",
-        name="Connections"
+    fig_g = go.Figure([
+        go.Scatter(x=ex, y=ey, mode="lines",
+                   line=dict(width=0.6, color=T['border']),
+                   hoverinfo="none"),
+        go.Scatter(x=nx_arr, y=ny_arr, mode="markers",
+                   hoverinfo="text", text=nt_arr,
+                   marker=dict(size=ns_arr, color=nc_arr,
+                               line=dict(width=0.5,
+                                         color=T['surface']),
+                               opacity=0.88))
+    ])
+    fig_g.update_layout(
+        showlegend=False, hovermode="closest",
+        height=560,
+        paper_bgcolor=T['surface'],
+        plot_bgcolor=T['surface'],
+        xaxis=dict(showgrid=False,zeroline=False,showticklabels=False,showline=False),
+        yaxis=dict(showgrid=False,zeroline=False,showticklabels=False,showline=False),
+        margin=dict(l=0,r=0,t=0,b=0)
     )
+    st.plotly_chart(fig_g, use_container_width=True)
 
-    node_trace = go.Scatter(
-        x=node_x, y=node_y,
-        mode="markers",
-        hoverinfo="text",
-        text=node_text,
-        marker=dict(
-            size=node_size,
-            color=node_color,
-            line=dict(width=0.5, color="#fff")
-        ),
-        name="Papers"
-    )
-
-    fig_graph = go.Figure(
-        data=[edge_trace, node_trace],
-        layout=go.Layout(
-            showlegend   = False,
-            hovermode    = "closest",
-            height       = 580,
-            paper_bgcolor= "#0e1117",
-            plot_bgcolor = "#0e1117",
-            xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-            yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-            margin=dict(l=0, r=0, t=0, b=0)
+    # Cluster legend
+    sizes = graph_data["cluster_sizes"]
+    cols  = st.columns(min(len(sizes), 6))
+    for i, sz in enumerate(sizes[:6]):
+        c = COLORS[i % len(COLORS)]
+        cols[i].markdown(
+            f"<div style='background:{c}12; border:1px solid {c}33; "
+            f"border-radius:6px; padding:7px 10px; text-align:center;'>"
+            f"<span style='color:{c}; font-weight:700; font-size:0.82rem;'>"
+            f"Cluster {i+1}</span><br>"
+            f"<span style='color:{T['muted']}; font-size:0.75rem;'>{sz} papers</span>"
+            f"</div>",
+            unsafe_allow_html=True
         )
-    )
-
-    st.plotly_chart(fig_graph, use_container_width=True)
-    st.caption("💡 Hover over any node to see paper details. Colour = research cluster.")
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TAB 2 — INNOVATION SCORES
+# TAB 2 — SCORES
 # ─────────────────────────────────────────────────────────────────────────────
 with tab2:
-    st.subheader("Innovation Opportunity Scores — All Papers")
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            Innovation Opportunity Scores
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            5-signal model: Research Momentum · Citation Density ·
+            Keyword Novelty · Isolation · Patent Gap
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
     df = pd.DataFrame([{
-        "Title"              : p["title"][:60] + "...",
-        "Year"               : p["year"],
-        "Citations"          : p["citations"],
-        "Momentum"           : p["scores"]["research_momentum"],
-        "Citation Density"   : p["scores"]["citation_density"],
-        "Keyword Novelty"    : p["scores"]["keyword_novelty"],
-        "Isolation Score"    : p["scores"]["isolation_score"],
-        "Innovation Score"   : p["scores"]["innovation_opportunity_score"],
-        "Keywords"           : ", ".join(p["bci_keywords"][:4])
+        "Title"          : p["title"][:55]+"...",
+        "Year"           : p["year"],
+        "Citations"      : p["citations"],
+        "Momentum"       : p["scores"]["research_momentum"],
+        "Cit. Density"   : p["scores"]["citation_density"],
+        "Novelty"        : p["scores"]["keyword_novelty"],
+        "Isolation"      : p["scores"]["isolation_score"],
+        "Patent Gap"     : p["scores"].get("patent_gap_score",0),
+        "Score"          : p["scores"]["innovation_opportunity_score"],
     } for p in all_scores])
 
-    # Score distribution chart
-    fig_dist = px.histogram(
-        df, x="Innovation Score", nbins=20,
-        title="Distribution of Innovation Opportunity Scores",
-        color_discrete_sequence=["#00D4FF"],
-        template="plotly_dark"
-    )
-    fig_dist.update_layout(
-        paper_bgcolor="#0e1117",
-        plot_bgcolor ="#0e1117",
-        height=300
-    )
-    st.plotly_chart(fig_dist, use_container_width=True)
+    ca, cb = st.columns(2)
+    with ca:
+        fig_h = px.histogram(df, x="Score", nbins=20, title="Score Distribution",
+                             color_discrete_sequence=[T['accent']])
+        plot_cfg(fig_h, 280)
+        fig_h.update_traces(marker_line_width=0)
+        fig_h.update_layout(title_font_color=T['text'])
+        st.plotly_chart(fig_h, use_container_width=True)
+    with cb:
+        fig_p = go.Figure(go.Pie(
+            labels=["Momentum","Cit. Density","Novelty","Isolation","Patent Gap"],
+            values=[0.25,0.20,0.20,0.20,0.15],
+            hole=0.6,
+            marker_colors=T['chart_seq'],
+            textinfo="label+percent",
+            textfont_size=10,
+        ))
+        fig_p.update_layout(
+            title="Signal Weights",
+            title_font_color=T['text'],
+            paper_bgcolor=T['surface'],
+            height=280,
+            margin=dict(l=10,r=10,t=36,b=10),
+            font_color=T['muted'],
+            showlegend=False
+        )
+        st.plotly_chart(fig_p, use_container_width=True)
 
-    # Full table
     st.dataframe(
-        df.style.background_gradient(subset=["Innovation Score"], cmap="Blues"),
-        use_container_width=True,
-        height=400
+        df.style.background_gradient(subset=["Score"], cmap="Blues")
+          .format({"Momentum":"{:.3f}","Cit. Density":"{:.3f}",
+                   "Novelty":"{:.3f}","Isolation":"{:.3f}",
+                   "Patent Gap":"{:.3f}","Score":"{:.4f}"}),
+        use_container_width=True, height=370
     )
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 3 — RESEARCH GAPS
 # ─────────────────────────────────────────────────────────────────────────────
 with tab3:
-    st.subheader(f"💡 {len(gaps)} Research Gaps Detected")
-    st.caption("These are underexplored areas: high novelty, low citations, isolated in the graph.")
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            {len(gaps)} Research Gaps Detected
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            High novelty · Low citations · Graph-isolated · Low patent coverage
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    if gaps:
-        for i, gap in enumerate(gaps[:10], 1):
-            score = gap["scores"]["innovation_opportunity_score"]
-            with st.expander(f"Gap #{i} — Score: {score:.4f} — {gap['title'][:60]}..."):
-                col_a, col_b = st.columns([2, 1])
-                with col_a:
-                    st.markdown(f"**Title:** {gap['title']}")
-                    st.markdown(f"**Year:** {gap['year']} | **Citations:** {gap['citations']}")
-                    abstract = gap.get("abstract", "") or "No abstract available."
-                    st.markdown(f"**Abstract:** {abstract[:400]}...")
-                with col_b:
-                    st.markdown("**Signal Scores:**")
-                    signal_df = pd.DataFrame({
-                        "Signal": [
-                            "Research Momentum",
-                            "Citation Density",
-                            "Keyword Novelty",
-                            "Isolation Score"
-                        ],
-                        "Score": [
-                            gap["scores"]["research_momentum"],
-                            gap["scores"]["citation_density"],
-                            gap["scores"]["keyword_novelty"],
-                            gap["scores"]["isolation_score"]
-                        ]
-                    })
-                    fig_bar = px.bar(
-                        signal_df, x="Score", y="Signal",
-                        orientation="h",
-                        color="Score",
-                        color_continuous_scale="Blues",
-                        template="plotly_dark",
-                        height=200
-                    )
-                    fig_bar.update_layout(
-                        paper_bgcolor="#0e1117",
-                        plot_bgcolor ="#0e1117",
-                        showlegend=False,
-                        margin=dict(l=0, r=0, t=0, b=0)
-                    )
-                    st.plotly_chart(fig_bar, use_container_width=True)
-                st.markdown(f"**BCI Keywords:** {', '.join(gap['bci_keywords'])}")
-    else:
-        st.info("No gaps detected with current thresholds.")
+    for i, gap in enumerate(gaps[:10], 1):
+        sc  = gap["scores"]["innovation_opportunity_score"]
+        bc  = T['accent'] if i <= 3 else T['border']
+        with st.expander(
+            f"Gap #{i}  ·  {sc:.4f}  ·  {gap['title'][:58]}...",
+            expanded=(i==1)
+        ):
+            left, right = st.columns([3,2])
+            with left:
+                abstract = gap.get("abstract","") or "No abstract."
+                st.markdown(f"""
+                <p style='color:{T['text']}; font-weight:600; margin:0 0 6px 0;'>
+                    {gap['title']}
+                </p>
+                <div style='display:flex; gap:20px; margin-bottom:10px;'>
+                    <div>
+                        <span style='color:{T['muted']}; font-size:0.72rem;
+                                     text-transform:uppercase; letter-spacing:1px;'>
+                            Year
+                        </span><br>
+                        <span style='color:{T['accent']}; font-weight:700;'>
+                            {gap['year']}
+                        </span>
+                    </div>
+                    <div>
+                        <span style='color:{T['muted']}; font-size:0.72rem;
+                                     text-transform:uppercase; letter-spacing:1px;'>
+                            Citations
+                        </span><br>
+                        <span style='color:{T['accent']}; font-weight:700;'>
+                            {gap['citations']}
+                        </span>
+                    </div>
+                    <div>
+                        <span style='color:{T['muted']}; font-size:0.72rem;
+                                     text-transform:uppercase; letter-spacing:1px;'>
+                            Score
+                        </span><br>
+                        <span style='color:{T['accent']}; font-weight:700;'>
+                            {sc:.4f}
+                        </span>
+                    </div>
+                </div>
+                <p style='color:{T['muted']}; font-size:0.84rem;
+                           line-height:1.6; margin:0 0 10px 0;'>
+                    {abstract[:320]}...
+                </p>
+                <div>
+                    {''.join([accent_tag(kw) for kw in gap['bci_keywords']])}
+                </div>
+                """, unsafe_allow_html=True)
+            with right:
+                s = gap["scores"]
+                snames = ["Momentum","Cit. Density","Novelty","Isolation","Patent Gap"]
+                svals  = [s["research_momentum"],s["citation_density"],
+                          s["keyword_novelty"],s["isolation_score"],
+                          s.get("patent_gap_score",0)]
+                fig_b = go.Figure(go.Bar(
+                    x=svals, y=snames, orientation="h",
+                    marker_color=T['chart_seq'],
+                    text=[f"{v:.3f}" for v in svals],
+                    textposition="outside",
+                    textfont=dict(color=T['muted'], size=11)
+                ))
+                fig_b.update_layout(
+                    paper_bgcolor=T['surface2'],
+                    plot_bgcolor=T['surface2'],
+                    height=200,
+                    margin=dict(l=0,r=40,t=8,b=8),
+                    xaxis=dict(range=[0,1.1],showgrid=False,
+                               zeroline=False,color=T['muted']),
+                    yaxis=dict(color=T['muted'],tickfont_size=11),
+                    font_color=T['muted']
+                )
+                st.plotly_chart(fig_b, use_container_width=True)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 4 — TOP OPPORTUNITIES
 # ─────────────────────────────────────────────────────────────────────────────
 with tab4:
-    st.subheader("🏆 Top 10 Innovation Opportunities")
-    st.caption("Highest scoring papers across all four signals combined.")
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            Top 10 Innovation Opportunities
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Highest combined score across all 5 signals
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    top10 = all_scores[:10]
+    for rank, paper in enumerate(all_scores[:10], 1):
+        sc     = paper["scores"]["innovation_opportunity_score"]
+        medal  = "🥇" if rank==1 else "🥈" if rank==2 else "🥉" if rank==3 else f"#{rank}"
+        border = T['accent'] if rank<=3 else T['border']
+        bg     = T['surface2'] if rank<=3 else T['surface']
 
-    for rank, paper in enumerate(top10, 1):
-        score = paper["scores"]["innovation_opportunity_score"]
-        color = "#00D4FF" if rank <= 3 else "#888"
         st.markdown(f"""
-        <div style='border:1px solid #222; border-radius:8px;
-                    padding:12px 16px; margin-bottom:10px;
-                    background:#0e1117'>
-            <span style='color:{color}; font-size:1.1rem; font-weight:bold'>
-                #{rank} — {score:.4f}
+        <div style='background:{bg}; border:1px solid {border};
+                    border-left:3px solid {border};
+                    border-radius:8px; padding:13px 18px; margin-bottom:7px;
+                    transition: all 0.2s ease;'>
+            <div style='display:flex; justify-content:space-between;
+                        align-items:baseline;'>
+                <div>
+                    <span style='font-size:1rem;'>{medal}</span>
+                    <span style='color:{T['accent']}; font-weight:700;
+                                 margin-left:8px;'>{sc:.4f}</span>
+                    <span style='color:{T['text']}; margin-left:10px;
+                                 font-size:0.9rem;'>{paper['title']}</span>
+                </div>
+            </div>
+            <div style='margin-top:5px;'>
+                <span style='color:{T['muted']}; font-size:0.76rem;'>
+                    {paper['year']} &nbsp;·&nbsp; {paper['citations']} citations
+                    &nbsp;·&nbsp; {', '.join(paper['bci_keywords'][:4])}
+                </span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown(f"""
+    <p style='color:{T['muted']}; font-size:0.8rem; text-transform:uppercase;
+              letter-spacing:1px; margin:20px 0 10px 0; font-weight:600;'>
+        Signal Breakdown — Top 3
+    </p>
+    """, unsafe_allow_html=True)
+
+    cats   = ["Momentum","Cit. Density","Novelty","Isolation","Patent Gap"]
+    fig_r  = go.Figure()
+    rcols  = T['chart_seq'][:3]
+
+    for i, paper in enumerate(all_scores[:3]):
+        s = paper["scores"]
+        fig_r.add_trace(go.Scatterpolar(
+            r=[s["research_momentum"],s["citation_density"],
+               s["keyword_novelty"],s["isolation_score"],
+               s.get("patent_gap_score",0)],
+            theta=cats, fill="toself",
+            name=paper["title"][:35]+"...",
+            line_color=rcols[i],
+            fillcolor=hex_to_rgba(rcols[i], 0.14)
+        ))
+
+    fig_r.update_layout(
+        polar=dict(
+            bgcolor=T['surface2'],
+            radialaxis=dict(visible=True,range=[0,1],
+                            gridcolor=T['border'],color=T['muted']),
+            angularaxis=dict(gridcolor=T['border'],color=T['muted'])
+        ),
+        paper_bgcolor=T['surface'],
+        font_color=T['muted'],
+        height=420,
+        legend=dict(font_size=10, bgcolor=T['surface'],
+                    bordercolor=T['border'])
+    )
+    st.plotly_chart(fig_r, use_container_width=True)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 5 — AI PROPOSALS
+# ─────────────────────────────────────────────────────────────────────────────
+with tab5:
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            AI-Generated Innovation Proposals
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Generated by Llama 3.3-70B · Analyzing underexplored BCI research gaps
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    innovations_file = "data/processed/bci_innovations.json"
+    if not os.path.exists(innovations_file):
+        st.warning("No proposals found. Run `python src/llm_generator.py` first.")
+    else:
+        with open(innovations_file,"r",encoding="utf-8") as f:
+            innovations = json.load(f)
+
+        st.markdown(f"""
+        <div style='background:{T['success']}12; border:1px solid {T['success']}33;
+                    border-radius:8px; padding:10px 16px; margin-bottom:16px;
+                    display:inline-block;'>
+            <span style='color:{T['success']}; font-weight:700; font-size:0.88rem;'>
+                ✓ {len(innovations)} proposals generated
             </span>
-            <span style='color:#fff; margin-left:10px'>{paper['title']}</span>
-            <br>
-            <span style='color:#888; font-size:0.8rem'>
-                📅 {paper['year']} &nbsp;|&nbsp;
-                📚 {paper['citations']} citations &nbsp;|&nbsp;
-                🏷️ {', '.join(paper['bci_keywords'][:4])}
+            <span style='color:{T['muted']}; font-size:0.82rem; margin-left:6px;'>
+                by Llama 3.3-70B via Groq
             </span>
         </div>
         """, unsafe_allow_html=True)
 
-    # Radar chart for top 3
-    st.markdown("### Signal Breakdown — Top 3 Papers")
-    categories = ["Momentum", "Citations", "Novelty", "Isolation"]
-
-    fig_radar = go.Figure()
-    colors    = ["#00D4FF", "#FF6B6B", "#4ECDC4"]
-
-    for i, paper in enumerate(top10[:3]):
-        s = paper["scores"]
-        fig_radar.add_trace(go.Scatterpolar(
-            r=[
-                s["research_momentum"],
-                s["citation_density"],
-                s["keyword_novelty"],
-                s["isolation_score"]
-            ],
-            theta=categories,
-            fill="toself",
-            name=paper["title"][:35] + "...",
-            line_color=colors[i]
-        ))
-
-    fig_radar.update_layout(
-        polar=dict(
-            radialaxis=dict(visible=True, range=[0, 1]),
-            bgcolor="#0e1117"
-        ),
-        paper_bgcolor="#0e1117",
-        font_color="#fff",
-        height=420,
-        legend=dict(font=dict(size=9))
-    )
-    st.plotly_chart(fig_radar, use_container_width=True)
-
-# ─────────────────────────────────────────────────────────────────────────────
-# TAB 5 — AI INNOVATION GENERATOR
-# ─────────────────────────────────────────────────────────────────────────────
-with tab5:
-    st.subheader("🤖 AI-Generated Innovation Proposals")
-    st.caption("Each proposal was generated by an LLM analyzing underexplored BCI research gaps.")
-
-    # Load innovations
-    import os
-    innovations_file = "data/processed/bci_innovations.json"
-
-    if not os.path.exists(innovations_file):
-        st.warning("No innovation proposals found. Run src/llm_generator.py first.")
-    else:
-        with open(innovations_file, "r", encoding="utf-8") as f:
-            innovations = json.load(f)
-
-        st.success(f"✅ {len(innovations)} Innovation Proposals Generated by AI")
-
         for i, inv in enumerate(innovations, 1):
             p     = inv["proposal"]
-            score = inv["gap_score"]
-            title = p.get("innovation_title", "Untitled") or "Untitled"
-
-            # Color top 3 differently
-            border_color = "#00D4FF" if i <= 3 else "#444"
-
+            sc    = inv["gap_score"]
+            title = clean_text(p.get("innovation_title","Untitled") or "Untitled").strip()
+            if len(title) > 70:
+                title_summary = title[:67].rstrip() + "..."
+            else:
+                title_summary = title
+            summary_prefix = f"★ " if i <= 3 else ""
             with st.expander(
-                f"💡 Innovation #{i} — {title}",
-                expanded=(i == 1)
+                f"{summary_prefix}#{i} · {title_summary}",
+                expanded=(i==1)
             ):
-                # Top metadata row
-                col_a, col_b, col_b2 = st.columns([1, 1, 1])
-                col_a.metric("Gap Score",  f"{score:.4f}")
-                col_b.metric("Source Year", inv.get("gap_year", "N/A"))
-                col_b2.metric("Citations",  inv.get("gap_citations", 0))
+                m1,m2,m3 = st.columns(3)
+                m1.metric("Gap Score", f"{sc:.4f}")
+                m2.metric("Year",      inv.get("gap_year","N/A"))
+                m3.metric("Citations", inv.get("gap_citations",0))
 
-                st.markdown("---")
+                st.markdown(f"<div style='height:8px'></div>",
+                            unsafe_allow_html=True)
+                left, right = st.columns([3,2])
 
-                # Main proposal sections
-                col1, col2 = st.columns([3, 2])
+                with left:
+                    for key, label in [
+                        ("problem_it_solves",    "Problem It Solves"),
+                        ("proposed_solution",    "Proposed Solution"),
+                        ("why_novel",            "Why It Is Novel"),
+                        ("research_contribution","Research Contribution"),
+                    ]:
+                        val = clean_text(p.get(key,""))
+                        if val:
+                            st.markdown(f"""
+                            <div style='margin-bottom:16px;'>
+                                <p style='color:{T['accent']}; font-weight:700;
+                                          font-size:0.75rem; text-transform:uppercase;
+                                          letter-spacing:1px; margin:0 0 5px 0;'>
+                                    {label}
+                                </p>
+                                <p style='color:{T['text']}; font-size:0.87rem;
+                                          line-height:1.65; margin:0;'>{val}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
 
-                with col1:
-                    st.markdown("### 🎯 Problem It Solves")
-                    st.markdown(p.get("problem_it_solves", "N/A"))
+                with right:
+                    for key, label in [
+                        ("technology_stack","Technology Stack"),
+                        ("target_users",    "Target Users"),
+                    ]:
+                        val = clean_text(p.get(key,""))
+                        if val:
+                            st.markdown(f"""
+                            <div style='background:{T['surface2']}; border:1px solid {T['border']};
+                                        border-radius:8px; padding:12px 14px; margin-bottom:10px;'>
+                                <p style='color:{T['accent']}; font-weight:700;
+                                          font-size:0.72rem; text-transform:uppercase;
+                                          letter-spacing:1px; margin:0 0 6px 0;'>{label}</p>
+                                <p style='color:{T['muted']}; font-size:0.83rem;
+                                          line-height:1.55; margin:0;'>{val}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
 
-                    st.markdown("### 🔧 Proposed Solution")
-                    st.markdown(p.get("proposed_solution", "N/A"))
+                    patent = p.get("patent_opportunity","")
+                    patent = clean_text(patent)
+                    if patent:
+                        st.markdown(f"""
+                        <div style='background:{T['accent']}08; border:1px solid {T['accent']}22;
+                                    border-radius:8px; padding:12px 14px; margin-bottom:10px;'>
+                            <p style='color:{T['accent']}; font-weight:700;
+                                      font-size:0.72rem; text-transform:uppercase;
+                                      letter-spacing:1px; margin:0 0 6px 0;'>
+                                Patent Opportunity
+                            </p>
+                            <p style='color:{T['text']}; font-size:0.83rem;
+                                      line-height:1.55; margin:0; font-style:italic;'>
+                                {patent}
+                            </p>
+                        </div>
+                        """, unsafe_allow_html=True)
 
-                    st.markdown("### ✨ Why It Is Novel")
-                    st.markdown(p.get("why_novel", "N/A"))
+                    impact = p.get("impact_score","")
+                    if impact:
+                        num = re.search(r'\d+', impact)
+                        if num:
+                            n = int(num.group())
+                            st.markdown(f"""
+                            <div style='background:{T['surface2']}; border:1px solid {T['border']};
+                                        border-radius:8px; padding:12px 14px;'>
+                                <p style='color:{T['muted']}; font-weight:700;
+                                          font-size:0.72rem; text-transform:uppercase;
+                                          letter-spacing:1px; margin:0 0 8px 0;'>
+                                    Impact Score
+                                </p>
+                                <p style='color:{T['accent']}; font-weight:800;
+                                          font-size:1.4rem; margin:0 0 6px 0;'>
+                                    {n}<span style='font-size:0.8rem; color:{T['muted']};'>/10</span>
+                                </p>
+                            """, unsafe_allow_html=True)
+                            st.progress(n/10)
+                            st.markdown("</div>", unsafe_allow_html=True)
 
-                    st.markdown("### 🎓 Research Contribution")
-                    st.markdown(p.get("research_contribution", "N/A"))
+                st.markdown(f"""
+                <div style='margin-top:14px; padding-top:12px;
+                            border-top:1px solid {T['border']};'>
+                    <p style='color:{T['muted']}; font-size:0.72rem;
+                              text-transform:uppercase; letter-spacing:1px;
+                              margin:0 0 4px 0;'>Source Paper</p>
+                    <p style='color:{T['text']}; font-size:0.83rem;
+                              font-style:italic; margin:0 0 8px 0;'>
+                        {clean_text(inv.get('gap_title',''))}
+                    </p>
+                    {''.join([accent_tag(clean_text(kw)) for kw in inv.get('gap_keywords',[])])}
+                </div>
+                """, unsafe_allow_html=True)
 
-                with col2:
-                    st.markdown("### 🛠️ Technology Stack")
-                    tech = p.get("technology_stack", "N/A")
-                    st.markdown(tech)
-
-                    st.markdown("### 👥 Target Users")
-                    st.markdown(p.get("target_users", "N/A"))
-
-                    st.markdown("### ⚖️ Patent Opportunity")
-                    st.markdown(f"> {p.get('patent_opportunity', 'N/A')}")
-
-                    st.markdown("### 📈 Impact Score")
-                    impact_text = p.get("impact_score", "N/A")
-                    # Try to extract the number
-                    import re
-                    impact_num = re.search(r'\d+', impact_text)
-                    if impact_num:
-                        num = int(impact_num.group())
-                        st.progress(num / 10)
-                        st.markdown(f"**{num}/10** — {impact_text[:100]}")
-                    else:
-                        st.markdown(impact_text)
-
-                st.markdown("---")
-                st.markdown("**📄 Source Research Paper:**")
-                st.markdown(f"*{inv['gap_title']}*")
-                st.markdown(
-                    f"🏷️ Keywords: `{'` `'.join(inv.get('gap_keywords', []))}`"
-                )
-
-# ── Footer ────────────────────────────────────────────────────────────────────
-st.markdown("---")
-st.markdown("""
-<p style='text-align:center; color:#444; font-size:0.8rem'>
-    NIIE — National Innovation Intelligence Engine &nbsp;|&nbsp;
-    Built with Python · Streamlit · NetworkX · Sentence-Transformers · Plotly
-</p>
+# ── FOOTER ────────────────────────────────────────────────────────────────────
+st.markdown(f"""
+<div style='text-align:center; padding:20px 0 6px 0;
+            border-top:1px solid {T['border']}; margin-top:20px;'>
+    <span style='color:{T['muted']}; font-size:0.75rem;'>
+        NIIE · National Innovation Intelligence Engine ·
+        Python · Streamlit · NetworkX · Sentence-Transformers · Plotly · Groq
+    </span>
+</div>
 """, unsafe_allow_html=True)
