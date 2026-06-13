@@ -517,10 +517,11 @@ k4.metric("Gaps Detected",     scores_data["total_gaps"])
 st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
 
 # ── TABS ──────────────────────────────────────────────────────────────────────
-tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
+tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs([
     "🔍  Live Query",
     "📚  Literature Search",
     "⏱️  Timing Advisor",
+    "🗺️  Roadmap",
     "⚔️  Compare Domains",
     "📂  History",
     "🌐  Knowledge Graph",
@@ -1339,6 +1340,242 @@ with tab2:
                 ):
                     delete_history_entry(entry["_file"])
                     st.rerun()
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 3 — RESEARCH ROADMAP GENERATOR
+# ─────────────────────────────────────────────────────────────────────────────
+with tab3:
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            🗺️ AI Research Roadmap Generator
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Select any research gap and get a complete 6-step execution plan —
+            hypothesis, methodology, dataset, expected results, publication
+            strategy, and patent claim. No other tool does this.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if not gaps:
+        st.info("No gaps loaded. Run a Live Query first.")
+    else:
+        # Gap selector
+        gap_titles = [
+            f"Gap #{i+1} [{g['scores']['innovation_opportunity_score']:.4f}] "
+            f"— {g['title'][:55]}..."
+            for i, g in enumerate(gaps[:10])
+        ]
+
+        selected_gap_idx = st.selectbox(
+            "Select a research gap to generate a roadmap for:",
+            range(len(gap_titles)),
+            format_func=lambda i: gap_titles[i],
+            key="roadmap_gap_selector"
+        )
+
+        selected_gap = gaps[selected_gap_idx]
+
+        # Preview selected gap
+        st.markdown(f"""
+        <div style='background:{T['surface']};
+                    border:1px solid {T['border']};
+                    border-left:3px solid {T['accent']};
+                    border-radius:8px; padding:14px 18px;
+                    margin:12px 0;'>
+            <p style='color:{T['accent']}; font-weight:700;
+                      font-size:0.72rem; text-transform:uppercase;
+                      letter-spacing:1px; margin:0 0 6px 0;'>
+                Selected Gap
+            </p>
+            <p style='color:{T['text']}; font-weight:600;
+                      font-size:0.9rem; margin:0 0 4px 0;'>
+                {selected_gap['title']}
+            </p>
+            <span style='color:{T['muted']}; font-size:0.78rem;'>
+                {selected_gap.get('year','N/A')}
+                · {selected_gap.get('citations',0)} citations
+                · Score: {selected_gap['scores']['innovation_opportunity_score']:.4f}
+            </span>
+        </div>
+        """, unsafe_allow_html=True)
+
+        roadmap_btn = st.button(
+            "🗺️  Generate Research Roadmap", type="primary"
+        )
+
+        if roadmap_btn:
+            from roadmap_generator import generate_roadmap
+
+            with st.spinner(
+                "Generating your complete research roadmap..."
+            ):
+                roadmap = generate_roadmap(
+                    selected_gap,
+                    domain="Brain-Computer Interfaces"
+                )
+
+            st.markdown("---")
+            st.markdown(f"""
+            <div style='background:{T['success']}12;
+                        border:1px solid {T['success']}33;
+                        border-radius:8px; padding:10px 18px;
+                        margin-bottom:20px;'>
+                <span style='color:{T['success']}; font-weight:700;'>
+                    ✓ Roadmap generated
+                </span>
+                <span style='color:{T['muted']}; font-size:0.85rem;
+                             margin-left:8px;'>
+                    6-step execution plan for:
+                    {selected_gap['title'][:50]}...
+                </span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 6 steps
+            steps = [
+                ("hypothesis",  "1",  "Hypothesis",
+                 "The specific research question to investigate.",
+                 "🔬"),
+                ("methodology", "2",  "Methodology",
+                 "Exact research design and statistical approach.",
+                 "⚗️"),
+                ("dataset",     "3",  "Dataset",
+                 "Specific data sources and collection strategy.",
+                 "🗄️"),
+                ("expected",    "4",  "Expected Results",
+                 "What success looks like — specific metrics.",
+                 "📈"),
+                ("publication", "5",  "Publication Strategy",
+                 "Target journals/conferences and timeline.",
+                 "📄"),
+                ("patent",      "6",  "Patent Strategy",
+                 "The specific independent claim to file.",
+                 "⚖️"),
+            ]
+
+            for key, num, label, desc, icon in steps:
+                content = roadmap.get(key, "")
+                if not content:
+                    content = roadmap.get("raw", "")[:200]
+
+                # Color varies by step
+                step_colors = [
+                    T['accent'], T['accent2'],
+                    "#10b981", "#f59e0b",
+                    "#06b6d4", "#f43f5e"
+                ]
+                sc = step_colors[int(num)-1]
+
+                st.markdown(f"""
+                <div style='background:{T['surface']};
+                            border:1px solid {T['border']};
+                            border-radius:10px; padding:18px 22px;
+                            margin-bottom:12px;
+                            border-left:4px solid {sc};'>
+                    <div style='display:flex; align-items:center;
+                                gap:10px; margin-bottom:10px;'>
+                        <div style='width:32px; height:32px;
+                                    background:{sc}22;
+                                    border:1px solid {sc}44;
+                                    border-radius:8px;
+                                    display:flex; align-items:center;
+                                    justify-content:center;
+                                    font-size:1rem; flex-shrink:0;'>
+                            {icon}
+                        </div>
+                        <div>
+                            <span style='color:{sc}; font-weight:800;
+                                         font-size:0.72rem;
+                                         text-transform:uppercase;
+                                         letter-spacing:1px;'>
+                                Step {num}
+                            </span>
+                            <span style='color:{T['text']};
+                                         font-weight:700;
+                                         font-size:0.95rem;
+                                         margin-left:8px;'>
+                                {label}
+                            </span>
+                        </div>
+                    </div>
+                    <p style='color:{T['muted']}; font-size:0.75rem;
+                              margin:0 0 8px 0; font-style:italic;'>
+                        {desc}
+                    </p>
+                    <p style='color:{T['text']}; font-size:0.87rem;
+                              line-height:1.7; margin:0;'>
+                        {content}
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Risk assessment
+            risk = roadmap.get("risk", "")
+            if risk:
+                st.markdown(f"""
+                <div style='background:{T['surface2']};
+                            border:1px solid {T['border']};
+                            border-radius:10px; padding:18px 22px;
+                            margin-bottom:12px;
+                            border-left:4px solid #f59e0b;'>
+                    <div style='display:flex; align-items:center;
+                                gap:10px; margin-bottom:10px;'>
+                        <div style='width:32px; height:32px;
+                                    background:#f59e0b22;
+                                    border:1px solid #f59e0b44;
+                                    border-radius:8px;
+                                    display:flex; align-items:center;
+                                    justify-content:center;
+                                    font-size:1rem;'>
+                            ⚠️
+                        </div>
+                        <span style='color:#f59e0b; font-weight:800;
+                                     font-size:0.9rem;'>
+                            Risk Assessment
+                        </span>
+                    </div>
+                    <p style='color:{T['text']}; font-size:0.87rem;
+                              line-height:1.7; margin:0;'>
+                        {risk}
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Export this roadmap
+            st.markdown("---")
+            roadmap_text = f"""NIIE — Research Roadmap
+Generated for: {selected_gap['title']}
+Innovation Score: {selected_gap['scores']['innovation_opportunity_score']:.4f}
+
+STEP 1 - HYPOTHESIS
+{roadmap.get('hypothesis','')}
+
+STEP 2 - METHODOLOGY
+{roadmap.get('methodology','')}
+
+STEP 3 - DATASET
+{roadmap.get('dataset','')}
+
+STEP 4 - EXPECTED RESULTS
+{roadmap.get('expected','')}
+
+STEP 5 - PUBLICATION STRATEGY
+{roadmap.get('publication','')}
+
+STEP 6 - PATENT STRATEGY
+{roadmap.get('patent','')}
+
+RISK ASSESSMENT
+{roadmap.get('risk','')}
+"""
+            st.download_button(
+                label="⬇️ Download Roadmap as .txt",
+                data=roadmap_text,
+                file_name="NIIE_Research_Roadmap.txt",
+                mime="text/plain"
+            )
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 1 — DOMAIN COMPARISON
