@@ -467,8 +467,9 @@ k4.metric("Gaps Detected",     scores_data["total_gaps"])
 st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
 
 # ── TABS ──────────────────────────────────────────────────────────────────────
-tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab0, tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "🔍  Live Query",
+    "⚔️  Compare Domains",
     "🌐  Knowledge Graph",
     "📊  Scores",
     "💡  Research Gaps",
@@ -636,6 +637,335 @@ with tab0:
 
     elif run_btn:
         st.warning("Please enter a topic.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 1 — DOMAIN COMPARISON
+# ─────────────────────────────────────────────────────────────────────────────
+with tab1:
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            ⚔️ Domain Comparison
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Run two research domains simultaneously and compare innovation
+            opportunities head-to-head.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col_d1, col_vs, col_d2 = st.columns([5, 1, 5])
+
+    with col_d1:
+        domain_a = st.text_input(
+            "Domain A",
+            placeholder="e.g. brain-computer interfaces",
+            key="domain_a"
+        )
+    with col_vs:
+        st.markdown(f"""
+        <div style='text-align:center; padding-top:28px;
+                    color:{T['accent']}; font-weight:800; font-size:1.2rem;'>
+            VS
+        </div>
+        """, unsafe_allow_html=True)
+    with col_d2:
+        domain_b = st.text_input(
+            "Domain B",
+            placeholder="e.g. neuromorphic chips",
+            key="domain_b"
+        )
+
+    compare_btn = st.button("⚔️  Run Comparison", type="primary")
+
+    if compare_btn and domain_a.strip() and domain_b.strip():
+        from pipeline import run_pipeline
+
+        st.markdown("---")
+        col_a, col_b = st.columns(2)
+
+        results = {}
+        errors  = {}
+
+        for domain, col in [(domain_a.strip(), col_a),
+                             (domain_b.strip(), col_b)]:
+            with col:
+                st.markdown(f"""
+                <div style='background:{T['surface']}; border:1px solid {T['border']};
+                            border-top:3px solid {T['accent']};
+                            border-radius:8px; padding:12px 16px; margin-bottom:12px;'>
+                    <span style='color:{T['accent']}; font-weight:700;'>
+                        {domain.upper()}
+                    </span>
+                </div>
+                """, unsafe_allow_html=True)
+
+                log   = st.empty()
+                steps = []
+                cnt   = [0]
+
+                def upd_cmp(msg, steps=steps, cnt=cnt, log=log):
+                    steps.append(msg)
+                    cnt[0] += 1
+                    log.markdown(
+                        f"<div style='background:{T['surface2']}; "
+                        f"border:1px solid {T['border']}; border-radius:6px; "
+                        f"padding:10px 14px; font-size:0.78rem; color:{T['muted']};'>"
+                        + "<br>".join(steps[-5:]) + "</div>",
+                        unsafe_allow_html=True
+                    )
+
+                with st.spinner(f"Analysing {domain}..."):
+                    result, err = run_pipeline(domain, upd_cmp)
+
+                if err:
+                    errors[domain] = err
+                    st.error(err)
+                else:
+                    results[domain] = result
+                    s = result["scores"]
+
+                    # Mini KPIs
+                    m1, m2 = st.columns(2)
+                    m1.metric("Papers",  result["papers"])
+                    m2.metric("Gaps",    s["total_gaps"])
+                    m1.metric("Edges",   result["graph"]["num_edges"])
+                    m2.metric("Clusters",result["graph"]["num_clusters"])
+
+                    # Top 3 opportunities
+                    st.markdown(f"""
+                    <p style='color:{T['muted']}; font-size:0.72rem;
+                              text-transform:uppercase; letter-spacing:1px;
+                              margin:12px 0 6px 0; font-weight:600;'>
+                        Top Opportunities
+                    </p>
+                    """, unsafe_allow_html=True)
+
+                    for i, p in enumerate(s["top_opportunities"][:3], 1):
+                        sc = p["scores"]["innovation_opportunity_score"]
+                        st.markdown(f"""
+                        <div style='background:{T['surface2']};
+                                    border-left:2px solid {T['accent']};
+                                    border-radius:0 6px 6px 0;
+                                    padding:8px 12px; margin-bottom:5px;'>
+                            <span style='color:{T['accent']}; font-weight:700;
+                                         font-size:0.82rem;'>
+                                #{i} {sc:.4f}
+                            </span><br>
+                            <span style='color:{T['text']}; font-size:0.78rem;'>
+                                {p['title'][:50]}...
+                            </span>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+        # ── COMPARISON CHARTS ─────────────────────────────────────────────
+        if len(results) == 2:
+            st.markdown("---")
+            st.markdown(f"""
+            <h4 style='color:{T['text']}; font-weight:700; margin-bottom:12px;'>
+                Head-to-Head Analysis
+            </h4>
+            """, unsafe_allow_html=True)
+
+            domains   = list(results.keys())
+            signals   = ["research_momentum","citation_density",
+                         "keyword_novelty","isolation_score",
+                         "patent_gap_score"]
+            sig_labels = ["Momentum","Cit. Density",
+                          "Novelty","Isolation","Patent Gap"]
+
+            # Average scores per signal
+            def avg_signal(result, signal):
+                scores = result["scores"]["all_scores"]
+                vals   = [p["scores"].get(signal, 0) for p in scores]
+                return sum(vals) / len(vals) if vals else 0
+
+            avg_a = [avg_signal(results[domains[0]], s) for s in signals]
+            avg_b = [avg_signal(results[domains[1]], s) for s in signals]
+
+            # Overall innovation score average
+            def avg_inn(result):
+                scores = result["scores"]["all_scores"]
+                vals   = [p["scores"]["innovation_opportunity_score"]
+                          for p in scores]
+                return round(sum(vals)/len(vals), 4) if vals else 0
+
+            inn_a = avg_inn(results[domains[0]])
+            inn_b = avg_inn(results[domains[1]])
+
+            # Winner banner
+            winner = domains[0] if inn_a >= inn_b else domains[1]
+            winner_score = max(inn_a, inn_b)
+            st.markdown(f"""
+            <div style='background:{T['success']}12;
+                        border:1px solid {T['success']}44;
+                        border-radius:10px; padding:14px 20px;
+                        margin-bottom:16px; text-align:center;'>
+                <span style='color:{T['success']}; font-size:1.1rem;
+                             font-weight:800;'>
+                    🏆 Higher Opportunity Domain:
+                </span>
+                <span style='color:{T['text']}; font-size:1.1rem;
+                             font-weight:700; margin-left:8px;'>
+                    {winner.upper()}
+                </span>
+                <span style='color:{T['muted']}; font-size:0.85rem;
+                             margin-left:8px;'>
+                    (avg score: {winner_score:.4f})
+                </span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            ch1, ch2 = st.columns(2)
+
+            # Signal comparison bar chart
+            with ch1:
+                fig_cmp = go.Figure()
+                fig_cmp.add_trace(go.Bar(
+                    name=domains[0][:20],
+                    x=sig_labels, y=avg_a,
+                    marker_color=T['accent'],
+                    text=[f"{v:.3f}" for v in avg_a],
+                    textposition="outside",
+                    textfont=dict(size=9, color=T['muted'])
+                ))
+                fig_cmp.add_trace(go.Bar(
+                    name=domains[1][:20],
+                    x=sig_labels, y=avg_b,
+                    marker_color=T['accent2'],
+                    text=[f"{v:.3f}" for v in avg_b],
+                    textposition="outside",
+                    textfont=dict(size=9, color=T['muted'])
+                ))
+                fig_cmp.update_layout(
+                    title="Signal Comparison",
+                    barmode="group",
+                    paper_bgcolor=T['surface'],
+                    plot_bgcolor=T['surface2'],
+                    font_color=T['muted'],
+                    height=320,
+                    margin=dict(l=10,r=10,t=40,b=10),
+                    legend=dict(font_size=9,
+                                bgcolor=T['surface'],
+                                bordercolor=T['border']),
+                    yaxis=dict(range=[0,1],
+                               gridcolor=T['border']),
+                    xaxis=dict(gridcolor=T['border']),
+                    title_font_color=T['text']
+                )
+                st.plotly_chart(fig_cmp, use_container_width=True)
+
+            # Radar comparison
+            with ch2:
+                fig_rad = go.Figure()
+                fig_rad.add_trace(go.Scatterpolar(
+                    r=avg_a + [avg_a[0]],
+                    theta=sig_labels + [sig_labels[0]],
+                    fill="toself",
+                    name=domains[0][:20],
+                    line_color=T['accent'],
+                    fillcolor=hex_to_rgba(T['accent'], 0.13)
+                ))
+                fig_rad.add_trace(go.Scatterpolar(
+                    r=avg_b + [avg_b[0]],
+                    theta=sig_labels + [sig_labels[0]],
+                    fill="toself",
+                    name=domains[1][:20],
+                    line_color=T['accent2'],
+                    fillcolor=hex_to_rgba(T['accent2'], 0.13)
+                ))
+                fig_rad.update_layout(
+                    title="Radar Comparison",
+                    polar=dict(
+                        bgcolor=T['surface2'],
+                        radialaxis=dict(
+                            visible=True, range=[0,1],
+                            gridcolor=T['border'],
+                            color=T['muted']
+                        ),
+                        angularaxis=dict(
+                            gridcolor=T['border'],
+                            color=T['muted']
+                        )
+                    ),
+                    paper_bgcolor=T['surface'],
+                    font_color=T['muted'],
+                    height=320,
+                    margin=dict(l=10,r=10,t=40,b=10),
+                    legend=dict(font_size=9,
+                                bgcolor=T['surface'],
+                                bordercolor=T['border']),
+                    title_font_color=T['text']
+                )
+                st.plotly_chart(fig_rad, use_container_width=True)
+
+            # Score summary table
+            st.markdown(f"""
+            <table style='width:100%; border-collapse:collapse;
+                          font-size:0.85rem; margin-top:8px;'>
+                <thead>
+                    <tr style='background:{T['surface2']};'>
+                        <th style='padding:10px 14px; text-align:left;
+                                   color:{T['muted']}; font-weight:600;
+                                   border-bottom:1px solid {T['border']};'>
+                            Signal
+                        </th>
+                        <th style='padding:10px 14px; text-align:center;
+                                   color:{T['accent']}; font-weight:700;
+                                   border-bottom:1px solid {T['border']};'>
+                            {domains[0][:25]}
+                        </th>
+                        <th style='padding:10px 14px; text-align:center;
+                                   color:{T['accent2']}; font-weight:700;
+                                   border-bottom:1px solid {T['border']};'>
+                            {domains[1][:25]}
+                        </th>
+                        <th style='padding:10px 14px; text-align:center;
+                                   color:{T['muted']}; font-weight:600;
+                                   border-bottom:1px solid {T['border']};'>
+                            Winner
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {"".join([
+                        f"<tr style='background:{T['surface'] if i%2==0 else T['surface2']};'>"
+                        f"<td style='padding:9px 14px; color:{T['text']}; "
+                        f"border-bottom:1px solid {T['border']};'>{sig_labels[i]}</td>"
+                        f"<td style='padding:9px 14px; text-align:center; "
+                        f"color:{T['accent']}; font-weight:600; "
+                        f"border-bottom:1px solid {T['border']};'>{avg_a[i]:.3f}</td>"
+                        f"<td style='padding:9px 14px; text-align:center; "
+                        f"color:{T['accent2']}; font-weight:600; "
+                        f"border-bottom:1px solid {T['border']};'>{avg_b[i]:.3f}</td>"
+                        f"<td style='padding:9px 14px; text-align:center; "
+                        f"border-bottom:1px solid {T['border']};'>"
+                        f"<span style='color:{T['success']}; font-weight:700;'>"
+                        f"{'→ ' + domains[0][:15] if avg_a[i] >= avg_b[i] else '→ ' + domains[1][:15]}"
+                        f"</span></td></tr>"
+                        for i in range(len(sig_labels))
+                    ])}
+                    <tr style='background:{T['surface2']};'>
+                        <td style='padding:10px 14px; color:{T['text']};
+                                   font-weight:700;'>Overall Innovation</td>
+                        <td style='padding:10px 14px; text-align:center;
+                                   color:{T['accent']}; font-weight:800;
+                                   font-size:1rem;'>{inn_a:.4f}</td>
+                        <td style='padding:10px 14px; text-align:center;
+                                   color:{T['accent2']}; font-weight:800;
+                                   font-size:1rem;'>{inn_b:.4f}</td>
+                        <td style='padding:10px 14px; text-align:center;'>
+                            <span style='color:{T['success']}; font-weight:800;'>
+                                🏆 {winner[:15]}
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            """, unsafe_allow_html=True)
+
+    elif compare_btn:
+        st.warning("Please enter both domains before running comparison.")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 1 — KNOWLEDGE GRAPH
