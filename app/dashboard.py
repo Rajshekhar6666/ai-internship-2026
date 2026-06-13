@@ -517,8 +517,10 @@ k4.metric("Gaps Detected",     scores_data["total_gaps"])
 st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
 
 # ── TABS ──────────────────────────────────────────────────────────────────────
-tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
     "🔍  Live Query",
+    "📚  Literature Search",
+    "⏱️  Timing Advisor",
     "⚔️  Compare Domains",
     "📂  History",
     "🌐  Knowledge Graph",
@@ -540,14 +542,20 @@ def accent_tag(text):
 
 
 def hex_to_rgba(hex_color, alpha=0.14):
-    hex_color = hex_color.lstrip('#')
-    if len(hex_color) != 6:
-        raise ValueError(f"Invalid hex color: {hex_color}")
-    r = int(hex_color[0:2], 16)
-    g = int(hex_color[2:4], 16)
-    b = int(hex_color[4:6], 16)
-    return f"rgba({r},{g},{b},{alpha})"
-
+    """Convert hex color to rgba string. Safe for all Plotly fillcolor uses."""
+    try:
+        hex_color = hex_color.lstrip('#')
+        # Handle shorthand hex like #fff
+        if len(hex_color) == 3:
+            hex_color = ''.join([c*2 for c in hex_color])
+        if len(hex_color) != 6:
+            return f"rgba(99,102,241,{alpha})"
+        r = int(hex_color[0:2], 16)
+        g = int(hex_color[2:4], 16)
+        b = int(hex_color[4:6], 16)
+        return f"rgba({r},{g},{b},{alpha})"
+    except Exception:
+        return f"rgba(99,102,241,{alpha})"
 
 def clean_text(value, max_len=None):
     if value is None:
@@ -691,6 +699,414 @@ with tab0:
 
     elif run_btn:
         st.warning("Please enter a topic.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 1 — LITERATURE SEARCH
+# ─────────────────────────────────────────────────────────────────────────────
+with tab1:
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            📚 Literature Search & Summarization
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Search any research question. NIIE finds relevant papers,
+            generates AI summaries, and maps the research landscape —
+            replacing Elicit, ResearchRabbit, and Semantic Scholar in one place.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    lit_query = st.text_input(
+        "",
+        placeholder="e.g.  What are the latest non-invasive BCI methods for motor rehabilitation?",
+        key="lit_query",
+        label_visibility="collapsed"
+    )
+    lit_btn = st.button("🔍  Search Literature", type="primary")
+
+    if lit_btn and lit_query.strip():
+        from literature_search import run_literature_search
+
+        log  = st.empty()
+        steps = []
+
+        def upd_lit(msg):
+            steps.append(msg)
+            log.markdown(
+                f"<div style='background:{T['surface']}; "
+                f"border:1px solid {T['border']}; border-radius:8px; "
+                f"padding:12px 16px; font-size:0.82rem;'>"
+                + "".join([
+                    f"<div style='color:"
+                    f"{'#10b981' if '✅' in s or '🎉' in s else T['muted']}'>"
+                    f"{s}</div>"
+                    for s in steps[-6:]
+                ]) + "</div>",
+                unsafe_allow_html=True
+            )
+
+        with st.spinner(""):
+            lit_result, lit_err = run_literature_search(
+                lit_query.strip(),
+                summarize_top=5,
+                status_callback=upd_lit
+            )
+
+        if lit_err:
+            st.error(lit_err)
+        elif lit_result:
+            st.markdown("---")
+
+            # Stats row
+            s1, s2, s3 = st.columns(3)
+            s1.metric("Papers Found",    lit_result["total"])
+            s2.metric("Papers Summarized", 5)
+            s3.metric("Query", lit_query.strip()[:20] + "...")
+
+            # Research landscape
+            st.markdown(f"""
+            <div style='background:{T['surface']};
+                        border:1px solid {T['border']};
+                        border-left:3px solid {T['accent']};
+                        border-radius:8px; padding:20px 24px;
+                        margin:16px 0;'>
+                <p style='color:{T['accent']}; font-weight:700;
+                          font-size:0.75rem; text-transform:uppercase;
+                          letter-spacing:1px; margin:0 0 12px 0;'>
+                    🌐 Research Landscape Overview
+                </p>
+                <p style='color:{T['text']}; font-size:0.88rem;
+                          line-height:1.7; margin:0;'>
+                    {lit_result['landscape'].replace(chr(10), '<br>')}
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # Papers
+            st.markdown(f"""
+            <p style='color:{T['muted']}; font-size:0.75rem;
+                      text-transform:uppercase; letter-spacing:1px;
+                      margin:16px 0 10px 0; font-weight:600;'>
+                Papers — Ranked by Citations
+            </p>
+            """, unsafe_allow_html=True)
+
+            papers = lit_result["papers"]
+
+            for i, paper in enumerate(papers, 1):
+                title     = paper.get("title","") or "Untitled"
+                year      = paper.get("year","N/A")
+                citations = paper.get("citationCount", 0) or 0
+                abstract  = paper.get("abstract","") or ""
+                summary   = paper.get("ai_summary","")
+                authors   = paper.get("authors",[]) or []
+                author_str = ", ".join([
+                    a.get("name","") for a in authors[:3]
+                ])
+                if len(authors) > 3:
+                    author_str += f" +{len(authors)-3} more"
+
+                is_summarized = i <= 5
+                border = T['accent'] if i <= 3 else T['border']
+
+                with st.expander(
+                    f"{'⭐ ' if i<=3 else ''}#{i}  ·  "
+                    f"{title[:65]}{'...' if len(title)>65 else ''}",
+                    expanded=(i == 1)
+                ):
+                    m1, m2, m3 = st.columns(3)
+                    m1.metric("Year",      year)
+                    m2.metric("Citations", citations)
+                    m3.metric("Rank",      f"#{i}")
+
+                    if author_str:
+                        st.markdown(
+                            f"<p style='color:{T['muted']}; "
+                            f"font-size:0.78rem; margin:8px 0;'>"
+                            f"👤 {author_str}</p>",
+                            unsafe_allow_html=True
+                        )
+
+                    if is_summarized and summary:
+                        st.markdown(f"""
+                        <div style='background:{T['accent']}08;
+                                    border:1px solid {T['accent']}22;
+                                    border-radius:8px;
+                                    padding:14px 16px; margin:10px 0;'>
+                            <p style='color:{T['accent']}; font-weight:700;
+                                      font-size:0.72rem; text-transform:uppercase;
+                                      letter-spacing:1px; margin:0 0 8px 0;'>
+                                🤖 AI Summary
+                            </p>
+                            <p style='color:{T['text']}; font-size:0.86rem;
+                                      line-height:1.65; margin:0;'>
+                                {summary}
+                            </p>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                    if abstract:
+                        st.markdown(f"""
+                        <div style='margin-top:10px;'>
+                            <p style='color:{T['muted']}; font-weight:600;
+                                      font-size:0.72rem; text-transform:uppercase;
+                                      letter-spacing:1px; margin:0 0 6px 0;'>
+                                Abstract
+                            </p>
+                            <p style='color:{T['muted']}; font-size:0.83rem;
+                                      line-height:1.6; margin:0;'>
+                                {abstract[:500]}{'...' if len(abstract)>500 else ''}
+                            </p>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                    # External IDs
+                    ext_ids = paper.get("externalIds", {}) or {}
+                    doi = ext_ids.get("DOI","")
+                    if doi:
+                        st.markdown(
+                            f"<a href='https://doi.org/{doi}' "
+                            f"target='_blank' "
+                            f"style='color:{T['accent']}; "
+                            f"font-size:0.78rem;'>"
+                            f"🔗 View Paper (DOI)</a>",
+                            unsafe_allow_html=True
+                        )
+
+    elif lit_btn:
+        st.warning("Please enter a search query.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TAB 2 — INNOVATION TIMING ADVISOR
+# ─────────────────────────────────────────────────────────────────────────────
+with tab2:
+    st.markdown(f"""
+    <div style='margin-bottom:16px;'>
+        <h3 style='margin:0 0 3px 0; color:{T['text']}; font-weight:700;'>
+            ⏱️ Innovation Timing Advisor
+        </h3>
+        <p style='margin:0; color:{T['muted']}; font-size:0.83rem;'>
+            Is now the right time to publish, patent, or pivot?
+            NIIE analyzes publication momentum curves and patent density
+            to tell you exactly where a field stands — and what to do next.
+            No other tool does this.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Use existing BCI data for timing analysis
+    if all_scores:
+        years = [p["year"] for p in all_scores if p.get("year")]
+        from collections import Counter
+        year_counts = Counter(years)
+        sorted_years = sorted(year_counts.keys())
+        counts       = [year_counts[y] for y in sorted_years]
+
+        if len(sorted_years) >= 3:
+            # Momentum calculation
+            recent_3  = sum(counts[-3:])
+            previous_3 = sum(counts[-6:-3]) if len(counts) >= 6 else sum(counts[:-3])
+            momentum_ratio = recent_3 / previous_3 if previous_3 > 0 else 2.0
+
+            # Determine field status
+            if momentum_ratio >= 1.8:
+                status      = "🚀 PEAK MOMENTUM"
+                status_color = "#10b981"
+                advice      = "This field is exploding right now. Best time to publish and file patents before saturation hits."
+                action      = "PUBLISH NOW · FILE PATENT NOW"
+            elif momentum_ratio >= 1.2:
+                status      = "📈 GROWING"
+                status_color = "#6366f1"
+                advice      = "Research activity is accelerating. Strong window to establish presence before the field peaks."
+                action      = "PUBLISH SOON · START PATENT PROCESS"
+            elif momentum_ratio >= 0.8:
+                status      = "⚖️ STABLE"
+                status_color = "#f59e0b"
+                advice      = "Field is mature and consistent. Focus on differentiation — find the gaps that others are missing."
+                action      = "FIND GAPS · TARGET NICHE"
+            else:
+                status      = "📉 DECLINING"
+                status_color = "#f43f5e"
+                advice      = "Research activity is slowing. Pivot to adjacent emerging areas or find the contrarian angle."
+                action      = "PIVOT · FIND ADJACENT FIELD"
+
+            # Status banner
+            st.markdown(f"""
+            <div style='background:{status_color}12;
+                        border:2px solid {status_color}44;
+                        border-radius:12px; padding:20px 24px;
+                        margin-bottom:20px; text-align:center;'>
+                <p style='color:{status_color}; font-size:1.6rem;
+                          font-weight:800; margin:0 0 6px 0;'>
+                    {status}
+                </p>
+                <p style='color:{T['text']}; font-size:0.95rem;
+                          margin:0 0 10px 0; line-height:1.6;'>
+                    {advice}
+                </p>
+                <div style='background:{status_color}22;
+                            border-radius:6px; padding:8px 16px;
+                            display:inline-block;'>
+                    <span style='color:{status_color}; font-weight:800;
+                                 font-size:0.85rem; letter-spacing:1px;'>
+                        RECOMMENDED ACTION: {action}
+                    </span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # Momentum metrics
+            t1, t2, t3, t4 = st.columns(4)
+            t1.metric("Recent 3yr Papers",   recent_3)
+            t2.metric("Previous 3yr Papers", previous_3)
+            t3.metric("Momentum Ratio",      f"{momentum_ratio:.2f}x")
+            t4.metric("Peak Year",
+                      sorted_years[counts.index(max(counts))])
+
+            st.markdown("<div style='height:12px'></div>",
+                        unsafe_allow_html=True)
+
+            # Publication trend chart
+            import plotly.graph_objects as go
+            from plotly.subplots import make_subplots
+
+            fig_time = make_subplots(
+                rows=1, cols=2,
+                subplot_titles=["Publication Volume by Year",
+                                "Cumulative Research Growth"]
+            )
+
+            # Bar chart
+            fig_time.add_trace(
+                go.Bar(
+                    x=sorted_years, y=counts,
+                    marker_color=[
+                        status_color if y >= sorted_years[-3]
+                        else T['border']
+                        for y in sorted_years
+                    ],
+                    name="Papers/Year"
+                ),
+                row=1, col=1
+            )
+
+            # Cumulative line
+            cumulative = []
+            total = 0
+            for c in counts:
+                total += c
+                cumulative.append(total)
+
+            fig_time.add_trace(
+                go.Scatter(
+                    x=sorted_years, y=cumulative,
+                    mode="lines+markers",
+                    line=dict(color=T['accent'], width=2.5),
+                    marker=dict(size=6, color=T['accent']),
+                    fill="tozeroy",
+                    fillcolor=hex_to_rgba(T['accent'], 0.1),
+                    name="Cumulative"
+                ),
+                row=1, col=2
+            )
+
+            fig_time.update_layout(
+                paper_bgcolor=T['surface'],
+                plot_bgcolor=T['surface2'],
+                font_color=T['muted'],
+                height=320,
+                showlegend=False,
+                margin=dict(l=10,r=10,t=40,b=10)
+            )
+            fig_time.update_xaxes(gridcolor=T['border'],
+                                   color=T['muted'])
+            fig_time.update_yaxes(gridcolor=T['border'],
+                                   color=T['muted'])
+
+            st.plotly_chart(fig_time, use_container_width=True)
+
+            # Score evolution by year
+            st.markdown(f"""
+            <p style='color:{T['muted']}; font-size:0.75rem;
+                      text-transform:uppercase; letter-spacing:1px;
+                      margin:16px 0 8px 0; font-weight:600;'>
+                Innovation Score Evolution by Year
+            </p>
+            """, unsafe_allow_html=True)
+
+            year_scores = {}
+            for p in all_scores:
+                y = p.get("year")
+                s = p["scores"]["innovation_opportunity_score"]
+                if y:
+                    year_scores.setdefault(y, []).append(s)
+
+            avg_by_year = {
+                y: round(sum(v)/len(v), 4)
+                for y, v in year_scores.items()
+            }
+            ys = sorted(avg_by_year.keys())
+            vs = [avg_by_year[y] for y in ys]
+
+            fig_evo = go.Figure()
+            fig_evo.add_trace(go.Scatter(
+                x=ys, y=vs,
+                mode="lines+markers",
+                line=dict(color=T['accent2'], width=2.5),
+                marker=dict(size=8, color=T['accent2'],
+                            line=dict(width=1.5,
+                                      color=T['surface'])),
+                fill="tozeroy",
+                fillcolor=hex_to_rgba(T['accent2'], 0.1),
+                name="Avg Innovation Score"
+            ))
+            fig_evo.update_layout(
+                paper_bgcolor=T['surface'],
+                plot_bgcolor=T['surface2'],
+                font_color=T['muted'],
+                height=260,
+                margin=dict(l=10,r=10,t=10,b=10),
+                xaxis=dict(gridcolor=T['border'],
+                           color=T['muted']),
+                yaxis=dict(gridcolor=T['border'],
+                           color=T['muted'],
+                           range=[0, 1])
+            )
+            st.plotly_chart(fig_evo, use_container_width=True)
+
+            # 2-year prediction
+            st.markdown(f"""
+            <div style='background:{T['surface']};
+                        border:1px solid {T['border']};
+                        border-left:3px solid {T['accent2']};
+                        border-radius:8px; padding:16px 20px;
+                        margin-top:8px;'>
+                <p style='color:{T['accent2']}; font-weight:700;
+                          font-size:0.75rem; text-transform:uppercase;
+                          letter-spacing:1px; margin:0 0 8px 0;'>
+                    🔮 2-Year Trajectory Prediction
+                </p>
+                <p style='color:{T['text']}; font-size:0.88rem;
+                          line-height:1.65; margin:0;'>
+                    Based on a momentum ratio of <strong>{momentum_ratio:.2f}x</strong>,
+                    this field is projected to
+                    {'accelerate significantly — expect 2-3x more papers by 2027 and increasing patent activity.' if momentum_ratio >= 1.5
+                     else 'continue growing steadily — expect moderate increase in publications and patent filings.' if momentum_ratio >= 1.0
+                     else 'plateau or contract — consider pivoting to adjacent emerging areas for maximum impact.'}
+                    The current innovation score distribution suggests
+                    {'high opportunity in underexplored sub-domains.' if scores_data['total_gaps'] >= 15
+                     else 'moderate opportunity with targeted gap areas available.' if scores_data['total_gaps'] >= 8
+                     else 'a maturing field with limited white space remaining.'}
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        else:
+            st.info("Not enough year data for timing analysis. "
+                    "Run a Live Query first.")
+    else:
+        st.info("No data loaded. Run a Live Query first.")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TAB 2 — HISTORY
