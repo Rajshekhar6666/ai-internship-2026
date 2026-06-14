@@ -30,32 +30,121 @@ def generate_section(client, section_name, prompt):
     return response.choices[0].message.content.strip()
 
 
-def generate_paper(paper_data):
+def generate_paper(paper_data, progress_callback=None):
     """
     Generate a complete IEEE-format research paper.
-
-    paper_data keys:
-        title, authors, domain, problem, solution, methodology,
-        results, keywords, gaps_found, top_score, num_papers,
-        num_clusters, num_gaps
+    progress_callback(section_name, content) called after each section.
     """
     client = Groq(api_key=GROQ_API_KEY)
 
-    title       = paper_data.get("title", "")
-    authors     = paper_data.get("authors", "")
-    domain      = paper_data.get("domain", "")
-    problem     = paper_data.get("problem", "")
-    solution    = paper_data.get("solution", "")
-    methodology = paper_data.get("methodology", "")
-    results     = paper_data.get("results", "")
-    keywords    = paper_data.get("keywords", "")
-    gaps_found  = paper_data.get("gaps_found", "")
-    top_score   = paper_data.get("top_score", "")
-    num_papers  = paper_data.get("num_papers", 100)
-    num_clusters= paper_data.get("num_clusters", 12)
-    num_gaps    = paper_data.get("num_gaps", 20)
+    title        = paper_data.get("title", "")
+    authors      = paper_data.get("authors", "")
+    domain       = paper_data.get("domain", "")
+    problem      = paper_data.get("problem", "")
+    solution     = paper_data.get("solution", "")
+    methodology  = paper_data.get("methodology", "")
+    results      = paper_data.get("results", "")
+    keywords     = paper_data.get("keywords", "")
+    gaps_found   = paper_data.get("gaps_found", "")
+    top_score    = paper_data.get("top_score", "")
+    num_papers   = paper_data.get("num_papers", 100)
+    num_clusters = paper_data.get("num_clusters", 12)
+    num_gaps     = paper_data.get("num_gaps", 20)
 
     sections = {}
+
+    section_prompts = {
+        "abstract": f"""Write a 150-word IEEE-format abstract.
+Title: {title}
+Domain: {domain}
+Problem: {problem}
+Solution: {solution}
+Key Results: {results}
+Structure: background → problem → method → results → significance.
+Past tense. No citations. No bullet points. Paragraphs only.""",
+
+        "introduction": f"""Write a 300-word IEEE-format Introduction.
+Title: {title}
+Domain: {domain}
+Problem: {problem}
+Solution: {solution}
+Paragraph 1: Why does this domain matter?
+Paragraph 2: The specific problem or gap.
+Paragraph 3: Our proposed approach and novelty.
+Paragraph 4: Main contributions as (1)... (2)... (3)...
+Paragraph 5: Paper organization.
+Include citation placeholders [1],[2],[3]. Academic English. Paragraphs only.""",
+
+        "related_work": f"""Write a 300-word IEEE-format Related Work section.
+Domain: {domain}
+Our approach: {solution}
+Subsection A: Existing research discovery tools
+Subsection B: Knowledge graphs in research analysis
+Subsection C: AI-based innovation scoring
+Subsection D: Limitations of Elicit, ResearchRabbit, Connected Papers, Semantic Scholar
+Include [4],[5],[6],[7],[8]. Academic English. Paragraphs only.""",
+
+        "methodology": f"""Write a 350-word IEEE-format Methodology section.
+System: {solution}
+Approach: {methodology}
+Subsection A: Data Acquisition — Semantic Scholar, {num_papers} papers
+Subsection B: Entity Extraction — 30 BCI keywords
+Subsection C: Knowledge Graph — cosine similarity 0.65, NetworkX
+Subsection D: Innovation Scoring — 5 signals, formula: IOS = 0.25*M + 0.20*C + 0.20*N + 0.20*I + 0.15*P
+Subsection E: AI Generation — Llama 3.3-70B via Groq
+Academic English. Paragraphs only.""",
+
+        "results": f"""Write a 250-word IEEE-format Results section.
+Papers: {num_papers}, Clusters: {num_clusters}, Gaps: {num_gaps}, Top score: {top_score}
+Top gaps: {gaps_found}
+Subsection A: Knowledge Graph Analysis
+Subsection B: Innovation Scoring Results
+Subsection C: Research Gap Detection
+Reference specific numbers. Academic English. Paragraphs only.""",
+
+        "discussion": f"""Write a 200-word IEEE-format Discussion section.
+Domain: {domain}, Gaps: {num_gaps}, Top score: {top_score}
+Paragraph 1: What the gaps mean for the field
+Paragraph 2: How NIIE compares to Elicit, ResearchRabbit, Connected Papers
+Paragraph 3: Limitations and how to address them
+Paragraph 4: Broader implications
+Academic English. Analytical tone. Paragraphs only.""",
+
+        "conclusion": f"""Write a 150-word IEEE-format Conclusion.
+Title: {title}
+Results: {num_papers} papers, {num_gaps} gaps, top score {top_score}
+Paragraph 1: Summary of contributions
+Paragraph 2: Most significant finding
+Paragraph 3: Future work — real-time streaming, cross-domain detection, automated patents
+Past tense for completed work. Future tense for future work.""",
+
+        "references": f"""Generate 12 IEEE-format references for a paper about:
+- AI research gap detection and knowledge graphs
+- Innovation opportunity scoring
+- {domain}
+- Large language models for research
+Format: [1] A. Author, "Title," Journal, vol. X, pp. XX, Year.
+Mix of IEEE journals, NeurIPS, AAAI, ICML. Years 2019-2025. Realistic.""",
+    }
+
+    section_order = [
+        "abstract","introduction","related_work",
+        "methodology","results","discussion",
+        "conclusion","references"
+    ]
+
+    for key in section_order:
+        try:
+            content = generate_section(client, key, section_prompts[key])
+            sections[key] = content
+            if progress_callback:
+                progress_callback(key, content)
+        except Exception as e:
+            sections[key] = f"[Error generating {key}: {e}]"
+            if progress_callback:
+                progress_callback(key, sections[key])
+
+    return sections
 
     # ── ABSTRACT ─────────────────────────────────────────────────────────────
     sections["abstract"] = generate_section(client, "Abstract", f"""

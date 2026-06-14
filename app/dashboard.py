@@ -27,7 +27,7 @@ st.set_page_config(
     page_title="NIIE — National Innovation Intelligence Engine",
     page_icon="🧠",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # ── HISTORY HELPERS ───────────────────────────────────────────────────────────
@@ -287,41 +287,89 @@ st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-html, body, [data-testid="stAppViewContainer"],
-[data-testid="stMain"], .main, .block-container {{
+html {{
+    overflow-y: auto !important;
+    scroll-behavior: smooth !important;
+}}
+
+body {{
+    overflow-y: auto !important;
+}}
+
+html, body,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+.main {{
     font-family: 'Inter', sans-serif !important;
     background-color: {T['bg']} !important;
     color: {T['text']} !important;
-    position: relative !important;
+}}
+
+[data-testid="stMain"] {{
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 100vh !important;
+}}
+
+section[data-testid="stMain"] > div:first-child {{
+    overflow-y: auto !important;
+    height: 100% !important;
+    padding-top: 4rem !important;
+    padding-bottom: 60px !important;
+}}
+
+[data-testid="stAppViewContainer"] {{
     overflow: visible !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    max-height: none !important;
 }}
-.stAppHeader, [data-testid="stHeader"] {{
-    position: relative !important;
-    z-index: 9999 !important;
-}}
-[data-testid="stMain"] .main .block-container {{
-    padding-top: 0.5rem !important;
-}}
+
 [data-testid="stHeader"] {{
     background-color: {T['bg']} !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 14000 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 20px !important;
+    height: 60px !important;
+    backdrop-filter: blur(4px) !important;
 }}
+
 [data-testid="stSidebar"] {{
     background-color: {T['surface']} !important;
     border-right: 1px solid {T['border']} !important;
+    overflow-y: auto !important;
+    padding-top: 0 !important;
 }}
+
+[data-testid="stSidebarHeader"] {{
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+}}
+
+[data-testid="stSidebarUserContent"] {{
+    margin-top: 0 !important;
+}}
+
 [data-testid="stSidebar"] * {{
     color: {T['text']} !important;
 }}
-.block-container {{
-    padding-top: 1rem !important;
-    max-width: 1300px !important;
+
+[data-testid="stSidebar"] .stVerticalBlock > div:first-child {{
+    padding-top: 0 !important;
 }}
-.main h1, .main h2, .main h3, .main h4 {{
+
+.block-container {{
+    padding-top: 0.5rem !important;
+    max-width: 1300px !important;
     overflow: visible !important;
 }}
+
+[data-testid="stVerticalBlock"] {{
+    overflow: visible !important;
+    height: auto !important;
+}}
+
 [data-testid="stMetric"] {{
     background: {T['surface']} !important;
     border: 1px solid {T['border']} !important;
@@ -393,6 +441,7 @@ hr {{ border-color: {T['border']} !important; }}
     background:{T['border']}; border-radius:3px;
 }}
 ::-webkit-scrollbar-thumb:hover {{ background:{T['accent']}; }}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -1202,25 +1251,47 @@ elif selected == "Paper Maker":
             "num_gaps":scores_data["total_gaps"],
         }
 
-        st.info("⏳ Writing 8 sections... ~60 seconds.")
-        with st.spinner(""):
-            sections = generate_paper(paper_data)
+        section_labels = {
+            "abstract"    : "Abstract",
+            "introduction": "1. Introduction",
+            "related_work": "2. Related Work",
+            "methodology" : "3. Methodology",
+            "results"     : "4. Results",
+            "discussion"  : "5. Discussion",
+            "conclusion"  : "6. Conclusion",
+            "references"  : "References",
+        }
 
-        st.success("✓ Paper generated — 8 sections · IEEE format")
+        prog_bar   = st.progress(0)
+        status_txt = st.empty()
+        sections   = {}
+        completed  = [0]
 
-        for key,label in [
-            ("abstract","Abstract"),
-            ("introduction","1. Introduction"),
-            ("related_work","2. Related Work"),
-            ("methodology","3. Methodology"),
-            ("results","4. Results"),
-            ("discussion","5. Discussion"),
-            ("conclusion","6. Conclusion"),
-            ("references","References"),
-        ]:
-            content = sections.get(key,"")
-            if content:
-                with st.expander(label, expanded=(key=="abstract")):
+        st.markdown("---")
+        st.markdown(f"""
+        
+            Generated Sections
+        
+
+        """, unsafe_allow_html=True)
+
+        live_container = st.container()
+
+        def on_section_done(key, content):
+            completed[0] += 1
+            prog_bar.progress(completed[0] / 8)
+            status_txt.markdown(
+                f"<p style='color:{T['muted']};font-size:0.83rem;'>"
+                f"✅ {section_labels.get(key, key)} written "
+                f"({completed[0]}/8)</p>",
+                unsafe_allow_html=True
+            )
+            sections[key] = content
+            with live_container:
+                with st.expander(
+                    section_labels.get(key, key),
+                    expanded=False
+                ):
                     st.markdown(
                         f"<div style='color:{T['text']};"
                         f"font-size:0.87rem;line-height:1.75;'>"
@@ -1228,6 +1299,15 @@ elif selected == "Paper Maker":
                         f"</div>",
                         unsafe_allow_html=True
                     )
+
+        from paper_maker import (
+            generate_paper, format_paper_latex,
+            format_paper_markdown
+        )
+        generate_paper(paper_data, progress_callback=on_section_done)
+        prog_bar.progress(1.0)
+        status_txt.empty()
+        st.success("✓ Paper complete — 8 sections · IEEE format · Ready for Overleaf")
 
         st.markdown("---")
         latex_out = format_paper_latex(paper_data, sections)
